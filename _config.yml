@@ -12,9 +12,9 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://ithack.github.io
 root: /
-permalink: :year:month:day:title.html
+permalink: /:year/:month/:day/:title.html
 permalink_defaults:
 
 # Directory
@@ -25,7 +25,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: [about/*, about/**/*] 
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -40,11 +40,11 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
-  tab_replace:
+  auto_detect: true
+  tab_replace: true
 
 # Category & Tag
-default_category: uncategorized
+default_category: blog
 category_map:
 tag_map:
 
@@ -64,17 +64,49 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yilia
+theme: yilia2.4
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:ithack/ithack.github.io.git
+  repository: 
+      github: git@github.com:ithack/ithack.github.io.git
+      coding: git@git.coding.net:ithack/ithack.coding.me.git
   branch: master
+
+# sitemap
+sitemap:
+    path: sitemap.xml
+baidusitemap:
+    path: baidusitemap.xml
+
 # Admin
 admin:
     name: hexo
     password: hey
     secret: hey hexo
     expire: 60*1
+#文章加密功能开启
+encrypt:
+    enable: true
+
+#yilia2.0所有文章
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
