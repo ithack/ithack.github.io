@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">cceshi</button>
+    <iframe id='myIFrame' src="http://localhost:4000/about/index.html" frameborder="0"></iframe>
+    <script>
+        window.onload=function () {
+            var butt=document.getElementById('button');
+            var i=0;
+            var iframe = document.getElementById('myIFrame').contentWindow;
+            butt.onclick=function(){
+                iframe.postMessage("aaaa", 'http://localhost:4000/about/index.html');
+            }
+        }
+    </script>
+</body>
+</html>
