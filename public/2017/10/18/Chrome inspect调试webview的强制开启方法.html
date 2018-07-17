@@ -9,20 +9,22 @@
   <title>Chrome inspect调试webview的强制开启方法 | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="对于inspect很多前端开发并不陌生，我们经常用inspect调试我们移动端页面嵌套进原生webview的页面；但这个调试方法需要安卓4.4以上版本支持，但同时由于安卓本身是开源的国内很多手机厂商都在安卓的基础上做了封装再开发，导致有些手机我们即使在inspect里识别了当前手机，但用浏览器或webview打开页面时却不能看到我们的html，之前在开发时遇到，在google搜索了一堆的解决方案，">
+<meta name="keywords" content="APP调试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Chrome inspect调试webview的强制开启方法">
 <meta property="og:url" content="http://ithack.github.io/2017/10/18/Chrome inspect调试webview的强制开启方法.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
 <meta property="og:description" content="对于inspect很多前端开发并不陌生，我们经常用inspect调试我们移动端页面嵌套进原生webview的页面；但这个调试方法需要安卓4.4以上版本支持，但同时由于安卓本身是开源的国内很多手机厂商都在安卓的基础上做了封装再开发，导致有些手机我们即使在inspect里识别了当前手机，但用浏览器或webview打开页面时却不能看到我们的html，之前在开发时遇到，在google搜索了一堆的解决方案，">
-<meta property="og:image" content="http://ithack.github.io/\images\webview调试\1.jpg">
-<meta property="og:image" content="http://ithack.github.io/\images\webview调试\2.jpg">
-<meta property="og:image" content="http://ithack.github.io/\images\webview调试\3.jpg">
-<meta property="og:image" content="http://ithack.github.io/\images\webview调试\4.jpg">
-<meta property="og:updated_time" content="2017-10-18T07:48:23.226Z">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ithack.github.io/images/webview调试/1.jpg">
+<meta property="og:image" content="http://ithack.github.io/images/webview调试/2.jpg">
+<meta property="og:image" content="http://ithack.github.io/images/webview调试/3.jpg">
+<meta property="og:image" content="http://ithack.github.io/images/webview调试/4.jpg">
+<meta property="og:updated_time" content="2017-10-18T07:48:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chrome inspect调试webview的强制开启方法">
 <meta name="twitter:description" content="对于inspect很多前端开发并不陌生，我们经常用inspect调试我们移动端页面嵌套进原生webview的页面；但这个调试方法需要安卓4.4以上版本支持，但同时由于安卓本身是开源的国内很多手机厂商都在安卓的基础上做了封装再开发，导致有些手机我们即使在inspect里识别了当前手机，但用浏览器或webview打开页面时却不能看到我们的html，之前在开发时遇到，在google搜索了一堆的解决方案，">
-<meta name="twitter:image" content="http://ithack.github.io/\images\webview调试\1.jpg">
+<meta name="twitter:image" content="http://ithack.github.io/images/webview调试/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -211,11 +213,11 @@ var _hmt = _hmt || [];
       
         <p>对于inspect很多前端开发并不陌生，我们经常用inspect调试我们移动端页面嵌套进原生webview的页面；但这个调试方法需要安卓4.4以上版本支持，但同时由于安卓本身是开源的国内很多手机厂商都在安卓的基础上做了封装再开发，导致有些手机我们即使在inspect里识别了当前手机，但用浏览器或webview打开页面时却不能看到我们的html，之前在开发时遇到，在google搜索了一堆的解决方案，都是要安卓开启debug模式，但app内部测试版本就是开启状态，那么如何解决我们才能调试我们自己的html页面呢？之前搜到过资料没有进行记录，今天调试时又遇到了这个问题是个小米手机，安卓版本4.4.4；接下来看看怎么解决这个问题；</p>
 <h2 id="基于webkit核心的webview端调试"><a href="#基于webkit核心的webview端调试" class="headerlink" title="基于webkit核心的webview端调试"></a>基于webkit核心的webview端调试</h2><p>从 <strong>Android 4.4</strong> 开始，webkit是支持远程调试的，不过需要将app的debug模式打开，可以使用如下代码：</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WebView.setWebContentsDebuggingEnabled(true)<span class="comment">;12</span></div></pre></td></tr></table></figure>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WebView.setWebContentsDebuggingEnabled(true)<span class="comment">;12</span></span><br></pre></td></tr></table></figure>
 <p>由于大部分 App 的 debug 模式是关闭的，即便是内部 App，比如 QQ/微信，要去找一个开启了debug 模式的版本还是比较麻烦的。因此需要使用借助第三方工具来强制开启任何 App 的 <strong>Android webview debug模式</strong>，使之可以使用 chrome inspect。<strong>而这个工具就是 Xposed </strong>。</p>
-<p>我们已经提供了一份要安装的文件，请首先到 <a href="https://github.com/feix760/WebViewDebugHook" target="_blank" rel="external">https://github.com/feix760/WebViewDebugHook</a> 下载文件。</p>
+<p>我们已经提供了一份要安装的文件，请首先到 <a href="https://github.com/feix760/WebViewDebugHook" target="_blank" rel="noopener">https://github.com/feix760/WebViewDebugHook</a> 下载文件。</p>
 <h3 id="1、root设备"><a href="#1、root设备" class="headerlink" title="1、root设备"></a>1、root设备</h3><p>因为涉及到 root 权限，因此需要将手机进行 root。有很多工具可以来 root，比如KingRoot、一键root、360一键root等。如果你安装了QQ电脑管家，可以在“电脑管家-工具箱-其他”列表里面看到KingRoot。 <a id="more"></a></p>
-<h3 id="2、安装xposed框架"><a href="#2、安装xposed框架" class="headerlink" title="2、安装xposed框架"></a>2、安装xposed框架</h3><p>在下载文件的hook.zip中，找到 <strong>de.robv.android.xposed.installer_v33_36570c.apk</strong>，安装之。也可以去 <a href="http://repo.xposed.info/module/de.robv.android.xposed.installer" target="_blank" rel="external">官网</a> 下载。 </p>
+<h3 id="2、安装xposed框架"><a href="#2、安装xposed框架" class="headerlink" title="2、安装xposed框架"></a>2、安装xposed框架</h3><p>在下载文件的hook.zip中，找到 <strong>de.robv.android.xposed.installer_v33_36570c.apk</strong>，安装之。也可以去 <a href="http://repo.xposed.info/module/de.robv.android.xposed.installer" target="_blank" rel="noopener">官网</a> 下载。 </p>
 <h3 id="3、安装xposed-webview-debugging模块"><a href="#3、安装xposed-webview-debugging模块" class="headerlink" title="3、安装xposed webview debugging模块"></a>3、安装xposed webview debugging模块</h3><p>在下载文件的hook.zip中，找到 <strong>WebViewDebugHook.apk</strong>，安装之。 </p>
 <h3 id="4、激活Xposed"><a href="#4、激活Xposed" class="headerlink" title="4、激活Xposed"></a>4、激活Xposed</h3><p>安装后上述两个apk之后，可以看到手机上面出现了一个叫 <strong>Xposed Installer</strong> 的图标，点击进去之后会看到提示说Xposed未激活，点击红色字体部分，会切换到另外一条页面，点击“安装/更新”按钮即可。</p>
 <p><img src="\images\webview调试\1.jpg" alt="1"></p>
@@ -340,6 +342,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2018/07/12/vue拖拽-生成页面问题记录.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vue拖拽组件，拖拽生成html问题记录
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/08/16/css实现正方形图片展示网格布局.html" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">css实现正方形图片展示网格布局</div>
@@ -414,7 +425,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -501,15 +512,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,6 +540,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -541,6 +560,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -550,10 +573,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

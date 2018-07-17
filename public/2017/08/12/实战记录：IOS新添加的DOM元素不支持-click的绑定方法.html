@@ -8,19 +8,18 @@
   <link rel="dns-prefetch" href="http://ithack.github.io">
   <title>实战记录：IOS新添加的DOM元素不支持.click的绑定方法 | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="​    周末来加班准备下周项目从线工作，坐着等QA和审核等部门的问题解决，目前帝都的外边下着忽大忽小的雷阵雨， 昨天下班在雨中漫步回家，今天早起去体检又雨中漫步来上班，有一种说不出的感觉；好了天气预报说完了，下班就来说说我在上一片文章提到正在做的项目遇到的一个小问题，这里和大家分享下；
- 就像题目看到的在ios中动态加入的dom元素是不支持click绑定方法的，当时遇到这个问题我没有细想直接换成">
+  <meta name="description" content="​    周末来加班准备下周项目从线工作，坐着等QA和审核等部门的问题解决，目前帝都的外边下着忽大忽小的雷阵雨， 昨天下班在雨中漫步回家，今天早起去体检又雨中漫步来上班，有一种说不出的感觉；好了天气预报说完了，下班就来说说我在上一片文章提到正在做的项目遇到的一个小问题，这里和大家分享下；  就像题目看到的在ios中动态加入的dom元素是不支持click绑定方法的，当时遇到这个问题我没有细想直接换成">
+<meta name="keywords" content="javascript,IOS兼容性,JQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实战记录：IOS新添加的DOM元素不支持.click的绑定方法">
 <meta property="og:url" content="http://ithack.github.io/2017/08/12/实战记录：IOS新添加的DOM元素不支持-click的绑定方法.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="​    周末来加班准备下周项目从线工作，坐着等QA和审核等部门的问题解决，目前帝都的外边下着忽大忽小的雷阵雨， 昨天下班在雨中漫步回家，今天早起去体检又雨中漫步来上班，有一种说不出的感觉；好了天气预报说完了，下班就来说说我在上一片文章提到正在做的项目遇到的一个小问题，这里和大家分享下；
- 就像题目看到的在ios中动态加入的dom元素是不支持click绑定方法的，当时遇到这个问题我没有细想直接换成">
-<meta property="og:updated_time" content="2017-08-12T02:52:59.937Z">
+<meta property="og:description" content="​    周末来加班准备下周项目从线工作，坐着等QA和审核等部门的问题解决，目前帝都的外边下着忽大忽小的雷阵雨， 昨天下班在雨中漫步回家，今天早起去体检又雨中漫步来上班，有一种说不出的感觉；好了天气预报说完了，下班就来说说我在上一片文章提到正在做的项目遇到的一个小问题，这里和大家分享下；  就像题目看到的在ios中动态加入的dom元素是不支持click绑定方法的，当时遇到这个问题我没有细想直接换成">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-08-12T02:53:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实战记录：IOS新添加的DOM元素不支持.click的绑定方法">
-<meta name="twitter:description" content="​    周末来加班准备下周项目从线工作，坐着等QA和审核等部门的问题解决，目前帝都的外边下着忽大忽小的雷阵雨， 昨天下班在雨中漫步回家，今天早起去体检又雨中漫步来上班，有一种说不出的感觉；好了天气预报说完了，下班就来说说我在上一片文章提到正在做的项目遇到的一个小问题，这里和大家分享下；
- 就像题目看到的在ios中动态加入的dom元素是不支持click绑定方法的，当时遇到这个问题我没有细想直接换成">
+<meta name="twitter:description" content="​    周末来加班准备下周项目从线工作，坐着等QA和审核等部门的问题解决，目前帝都的外边下着忽大忽小的雷阵雨， 昨天下班在雨中漫步回家，今天早起去体检又雨中漫步来上班，有一种说不出的感觉；好了天气预报说完了，下班就来说说我在上一片文章提到正在做的项目遇到的一个小问题，这里和大家分享下；  就像题目看到的在ios中动态加入的dom元素是不支持click绑定方法的，当时遇到这个问题我没有细想直接换成">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -210,9 +209,9 @@ var _hmt = _hmt || [];
         <p>​    周末来加班准备下周项目从线工作，坐着等QA和审核等部门的问题解决，目前帝都的外边下着忽大忽小的雷阵雨， 昨天下班在雨中漫步回家，今天早起去体检又雨中漫步来上班，有一种说不出的感觉；好了天气预报说完了，下班就来说说我在上一片文章提到正在做的项目遇到的一个小问题，这里和大家分享下；</p>
 <p> 就像题目看到的在ios中动态加入的dom元素是不支持click绑定方法的，当时遇到这个问题我没有细想直接换成了touchstart来检测，发现可以通过，由于项目紧张就没有详查原因，记录下来今天做了一个查询：</p>
 <p>大概意思是,如果要用$(document).click()来绑定新生成的DOM元素,必须给此DOM添加css样式</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">cursor</span>: pointer;</div></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">cursor</span>: pointer;</span><br></pre></td></tr></table></figure>
 <p>或用touchstart方法；我并没有亲测css样式这个解决 方案，这里做个记录，下次遇到用一下试试！如下是解答地址：</p>
-<p><a href="http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery" target="_blank" rel="external">http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery</a></p>
+<p><a href="http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery" target="_blank" rel="noopener">http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery</a></p>
 
       
 
@@ -418,7 +417,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -505,15 +504,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,6 +532,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -545,6 +552,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -554,10 +565,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

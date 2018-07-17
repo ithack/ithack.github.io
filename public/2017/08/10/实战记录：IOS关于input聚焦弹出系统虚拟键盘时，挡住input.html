@@ -8,19 +8,18 @@
   <link rel="dns-prefetch" href="http://ithack.github.io">
   <title>实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="​    最近忙的暗无天日的节奏，不过收获很多很开心能同时3个项目的从0到1的过程，今天开始项目已经进入优化迭代阶段，基础功能和东西都已经弄好了，再也不用早九晚十一周七天的工作节奏了，说实话突然弄完了可以喘口气了还有点不那么适应了；
-​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个">
+  <meta name="description" content="​    最近忙的暗无天日的节奏，不过收获很多很开心能同时3个项目的从0到1的过程，今天开始项目已经进入优化迭代阶段，基础功能和东西都已经弄好了，再也不用早九晚十一周七天的工作节奏了，说实话突然弄完了可以喘口气了还有点不那么适应了； ​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个">
+<meta name="keywords" content="随笔,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input">
 <meta property="og:url" content="http://ithack.github.io/2017/08/10/实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="​    最近忙的暗无天日的节奏，不过收获很多很开心能同时3个项目的从0到1的过程，今天开始项目已经进入优化迭代阶段，基础功能和东西都已经弄好了，再也不用早九晚十一周七天的工作节奏了，说实话突然弄完了可以喘口气了还有点不那么适应了；
-​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个">
-<meta property="og:updated_time" content="2017-08-10T09:35:43.939Z">
+<meta property="og:description" content="​    最近忙的暗无天日的节奏，不过收获很多很开心能同时3个项目的从0到1的过程，今天开始项目已经进入优化迭代阶段，基础功能和东西都已经弄好了，再也不用早九晚十一周七天的工作节奏了，说实话突然弄完了可以喘口气了还有点不那么适应了； ​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-08-10T09:35:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input">
-<meta name="twitter:description" content="​    最近忙的暗无天日的节奏，不过收获很多很开心能同时3个项目的从0到1的过程，今天开始项目已经进入优化迭代阶段，基础功能和东西都已经弄好了，再也不用早九晚十一周七天的工作节奏了，说实话突然弄完了可以喘口气了还有点不那么适应了；
-​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个">
+<meta name="twitter:description" content="​    最近忙的暗无天日的节奏，不过收获很多很开心能同时3个项目的从0到1的过程，今天开始项目已经进入优化迭代阶段，基础功能和东西都已经弄好了，再也不用早九晚十一周七天的工作节奏了，说实话突然弄完了可以喘口气了还有点不那么适应了； ​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -208,16 +207,16 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>​    最近忙的暗无天日的节奏，不过收获很多很开心能同时3个项目的从0到1的过程，今天开始项目已经进入优化迭代阶段，基础功能和东西都已经弄好了，再也不用早九晚十一周七天的工作节奏了，说实话突然弄完了可以喘口气了还有点不那么适应了；</p>
-<p>​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个是vue+nuxt+公司node架构搭建中间成做的后台系统，vue对于我来说没什么挑战性分配给我的工作早早就解决了，之后主要工作就是一直带一个校招新手做一个h5页面，嵌套在APP中的一个项目，由于这个新手没做过项目所以基本手把手教，之前在大数字也带过一个校招研究生两个对比还是大数字的校招基础扎实一点，没带多久基本就已经出师了；现在这个貌似带了这一整个项目进步也不是很大，主要是基础不扎实，很多东西都不了解；主要在这个项目中遇到很多坑，主要内部的node框架用了<a href="http://www.xidea.org/lite/index.html" target="_blank" rel="external">lite</a>模版，这个模版之前从未听过有一些不太习惯；不过在做这个h5项目中还是有一点收获的，仔细想来最大的收获是在教的过程中发现自己的不足；感觉在做项目的时候遇到很多问题都像闯关一样，每过一关都觉得好爽；</p>
+<p>​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个是vue+nuxt+公司node架构搭建中间成做的后台系统，vue对于我来说没什么挑战性分配给我的工作早早就解决了，之后主要工作就是一直带一个校招新手做一个h5页面，嵌套在APP中的一个项目，由于这个新手没做过项目所以基本手把手教，之前在大数字也带过一个校招研究生两个对比还是大数字的校招基础扎实一点，没带多久基本就已经出师了；现在这个貌似带了这一整个项目进步也不是很大，主要是基础不扎实，很多东西都不了解；主要在这个项目中遇到很多坑，主要内部的node框架用了<a href="http://www.xidea.org/lite/index.html" target="_blank" rel="noopener">lite</a>模版，这个模版之前从未听过有一些不太习惯；不过在做这个h5项目中还是有一点收获的，仔细想来最大的收获是在教的过程中发现自己的不足；感觉在做项目的时候遇到很多问题都像闯关一样，每过一关都觉得好爽；</p>
 <p>​    好了废话不多说，进入主题，不知道谁遇到过，反正我遇到了，（我的应用场景：在一个详情页最下边有一个发布评论的div，这个div是fixed的，里边有个input和submit按钮，在详情的content里有一个评论的click事件，点击后我会让这个fixed里的input聚焦，在APP里会唤起键盘，做完后发现安卓没有问题，在IOS里可以唤起键盘但是fixed这个div会被键盘遮挡住，体验不好，所以需要解决这个问题，就有了之后的一切摸索过程……）之前没遇到过第一次遇到我 首先百度原因，各种说法都有如下是查到的两个比较靠谱的评论链接，或许你也回遇到相同的问题，希望对你有所帮助：</p>
 <a id="more"></a>
 <p><a href="">知乎：移动web页面，input获取焦点弹出系统虚拟键盘时，挡住input，求解决方案？</a></p>
-<p><a href="http://www.alloyteam.com/2017/03/moves-the-input-box-fill-series-a/" target="_blank" rel="external">腾讯：移动端输入框填坑系列（一）</a></p>
+<p><a href="http://www.alloyteam.com/2017/03/moves-the-input-box-fill-series-a/" target="_blank" rel="noopener">腾讯：移动端输入框填坑系列（一）</a></p>
 <p>如果你也遇到在ios的input聚焦时键盘挡住了input可能在这两个文章里能找到你的解决方案，虽然我最终不是用这两个里的任何一个方案，但是我还是从这两个文章里收获了一些知识，下边和大家分享下，就以知乎文章里的评论来说；</p>
-<p>首先一楼(<a href="https://www.zhihu.com/people/huang-ming-28-61" target="_blank" rel="external">黄明</a>)童鞋说的大家完全可以直接忽略，亲测在ios里根本不会触发resize事件；</p>
+<p>首先一楼(<a href="https://www.zhihu.com/people/huang-ming-28-61" target="_blank" rel="noopener">黄明</a>)童鞋说的大家完全可以直接忽略，亲测在ios里根本不会触发resize事件；</p>
 <p>其次当我发现resize这个事件在ios根本不会触发后我就把一楼之后的所有评论都看了一边大家都有自己的解答方案，但是其中的评论还是有些坑，有些评论根本就是凭空想的没有亲自去实验操作（我认为，也有可能IOS版本不通解决方法不同把），最大一个坑是我的ios里如果不用这个某一个click触发后去给input聚焦的话直接用$(‘input’).focus()的话在IOS里根本就没有这个事件，或者可以说直接用这个事件是不行的；还有一些文章评论说用scrollIntoView这个方法可以直接解决，亲测不可以，或许是场景不通所以不能使用吧；</p>
 <p>这里简单说一下我最后的解决方案：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//点击input  获取焦点</span></div><div class="line"><span class="comment">//由于我的评论模块是在ajax请求数据成功后用js模版渲染出来的，所以把input的focus事件用如下方式加入</span></div><div class="line">   $(<span class="built_in">document</span>).on(<span class="string">'focus'</span>,<span class="string">'.publish-content'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="comment">//.publish-content就是发布的input的class，聚焦后我开了个定时器，因为键盘唤起需要一个事件，所以我开了个定时器来设置scrollTop</span></div><div class="line">   <span class="comment">//本来$('.comment-publish').css('position','fixed')这个代码是看到知乎里设置了static的但后来发现设置成static还要在失焦后改会fixed所以我在这里把		scrollTop设置完后还是用fixed</span></div><div class="line">       setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">           $(<span class="built_in">window</span>).scrollTop($(<span class="built_in">document</span>).height());</div><div class="line">           $(<span class="string">'.comment-publish'</span>).css(<span class="string">'position'</span>,<span class="string">'fixed'</span>)</div><div class="line">       &#125;,<span class="number">300</span>)</div><div class="line">   &#125;);</div><div class="line"><span class="comment">//如果直接写 $('.publish-content').focus();在里边做的话是无效的亲测根本没触发focus事件,但我下变的在其他按钮click后给这个input一个聚焦事件是可以聚焦成功的</span></div><div class="line">   <span class="comment">//点击评论，定位到发布评论</span></div><div class="line">   $(<span class="string">'#action-comment'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       $(<span class="string">'.publish-content'</span>).focus();</div><div class="line">   &#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//点击input  获取焦点</span></span><br><span class="line"><span class="comment">//由于我的评论模块是在ajax请求数据成功后用js模版渲染出来的，所以把input的focus事件用如下方式加入</span></span><br><span class="line">   $(<span class="built_in">document</span>).on(<span class="string">'focus'</span>,<span class="string">'.publish-content'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="comment">//.publish-content就是发布的input的class，聚焦后我开了个定时器，因为键盘唤起需要一个事件，所以我开了个定时器来设置scrollTop</span></span><br><span class="line">   <span class="comment">//本来$('.comment-publish').css('position','fixed')这个代码是看到知乎里设置了static的但后来发现设置成static还要在失焦后改会fixed所以我在这里把		scrollTop设置完后还是用fixed</span></span><br><span class="line">       setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           $(<span class="built_in">window</span>).scrollTop($(<span class="built_in">document</span>).height());</span><br><span class="line">           $(<span class="string">'.comment-publish'</span>).css(<span class="string">'position'</span>,<span class="string">'fixed'</span>)</span><br><span class="line">       &#125;,<span class="number">300</span>)</span><br><span class="line">   &#125;);</span><br><span class="line"><span class="comment">//如果直接写 $('.publish-content').focus();在里边做的话是无效的亲测根本没触发focus事件,但我下变的在其他按钮click后给这个input一个聚焦事件是可以聚焦成功的</span></span><br><span class="line">   <span class="comment">//点击评论，定位到发布评论</span></span><br><span class="line">   $(<span class="string">'#action-comment'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       $(<span class="string">'.publish-content'</span>).focus();</span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure>
 <p>如上方法完美解决了IOS键盘遮盖input的问题，如果你是一个追求完美的人可以在失焦后把定时器清除掉；</p>
 <p><strong>总结：</strong></p>
 <p>从我的解决问题和查百度的结果看，关于这个IOS这个问题可能不只这一个bug，可能和这个很相近但解决方案应该都差不多，不要指望其他的，粗暴点也许不是什么坏事，从各个帖子的问题和答案来看，真正遇到问题的是真需要自己冷静思考问题原因和解决问题方案的，不能完全依靠评论里的人给的答案，他们给的要么没有亲身体验，联想出来的答案，要么就是亲身体验但可能和你遇到的问题有那么一点点偏差，我们在看帖子时要学会动脑思考整理，从一堆答案中思考自己的问题；一个问题也许有很多种方案解决有时只有自己思考出的答案才能感觉到快感；</p>
@@ -422,7 +421,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -509,15 +508,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,6 +536,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -549,6 +556,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -558,10 +569,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

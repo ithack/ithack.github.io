@@ -8,22 +8,18 @@
   <link rel="dns-prefetch" href="http://ithack.github.io">
   <title>浅谈JavaScript跨域和总结 | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天无事，聊一聊javascript跨域，面试经常会问到关于跨域的问题，今天我来聊一聊关于跨域的小知识！
-JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦;
-先来说一说什么是跨域简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更">
+  <meta name="description" content="今天无事，聊一聊javascript跨域，面试经常会问到关于跨域的问题，今天我来聊一聊关于跨域的小知识！ JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦; 先来说一说什么是跨域简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更">
+<meta name="keywords" content="随笔,javascript,跨域">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈JavaScript跨域和总结">
 <meta property="og:url" content="http://ithack.github.io/2016/08/10/JavaScript跨域浅谈.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="今天无事，聊一聊javascript跨域，面试经常会问到关于跨域的问题，今天我来聊一聊关于跨域的小知识！
-JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦;
-先来说一说什么是跨域简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更">
-<meta property="og:updated_time" content="2016-08-10T09:52:06.284Z">
+<meta property="og:description" content="今天无事，聊一聊javascript跨域，面试经常会问到关于跨域的问题，今天我来聊一聊关于跨域的小知识！ JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦; 先来说一说什么是跨域简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2016-08-10T09:52:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈JavaScript跨域和总结">
-<meta name="twitter:description" content="今天无事，聊一聊javascript跨域，面试经常会问到关于跨域的问题，今天我来聊一聊关于跨域的小知识！
-JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦;
-先来说一说什么是跨域简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更">
+<meta name="twitter:description" content="今天无事，聊一聊javascript跨域，面试经常会问到关于跨域的问题，今天我来聊一聊关于跨域的小知识！ JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦; 先来说一说什么是跨域简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -223,42 +219,42 @@ var _hmt = _hmt || [];
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
 <td style="text-align:center">同一域名下</td>
 <td style="text-align:center"><strong><code>允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/lab/a.js" target="_blank" rel="external">http://www.a.com/lab/a.js</a><br><a href="http://www.a.com/script/b.js" target="_blank" rel="external">http://www.a.com/script/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/lab/a.js" target="_blank" rel="noopener">http://www.a.com/lab/a.js</a><br><a href="http://www.a.com/script/b.js" target="_blank" rel="noopener">http://www.a.com/script/b.js</a></td>
 <td style="text-align:center">同一域名下不同文件夹</td>
 <td style="text-align:center"><strong><code>允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com:8000/a.js" target="_blank" rel="external">http://www.a.com:8000/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com:8000/a.js" target="_blank" rel="noopener">http://www.a.com:8000/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
 <td style="text-align:center">同一域名，不同端口</td>
 <td style="text-align:center"><strong><code>不允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="https://www.a.com/b.js" target="_blank" rel="external">https://www.a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="https://www.a.com/b.js" target="_blank" rel="noopener">https://www.a.com/b.js</a></td>
 <td style="text-align:center">同一域名，不同协议</td>
 <td style="text-align:center"><strong><code>不允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://70.32.92.74/b.js" target="_blank" rel="external">http://70.32.92.74/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://70.32.92.74/b.js" target="_blank" rel="noopener">http://70.32.92.74/b.js</a></td>
 <td style="text-align:center">域名和域名对应ip</td>
 <td style="text-align:center"><strong><code>不允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://script.a.com/b.js" target="_blank" rel="external">http://script.a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://script.a.com/b.js" target="_blank" rel="noopener">http://script.a.com/b.js</a></td>
 <td style="text-align:center">主域相同，子域不同</td>
 <td style="text-align:center"><strong><code>不允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a><br><a href="http://a.com/b.js" target="_blank" rel="external">http://a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://a.com/b.js" target="_blank" rel="noopener">http://a.com/b.js</a></td>
 <td style="text-align:center">同一域名，不同二级域名（同上）</td>
 <td style="text-align:center"><strong><code>不允许（cookie这种情况下也不允许访问）</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.cnblogs.com/a.js" target="_blank" rel="external">http://www.cnblogs.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/a.js" target="_blank" rel="noopener">http://www.cnblogs.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
 <td style="text-align:center">不同域名</td>
 <td style="text-align:center"><strong><code>不允许</code></strong></td>
 </tr>
@@ -389,8 +385,8 @@ var state = 0,
 </pre>
 
 <p>总结起来即：iframe的src属性由外域转向本地域，跨域数据即由iframe的window.name从外域传递到本地域。这个就巧妙地绕过了浏览器的跨域访问限制，但同时它又是安全操作。</p>
-<h2 id="4-document-domain"><a href="#4-document-domain" class="headerlink" title="4. document.domain"></a>4. document.domain</h2><p>对于主域相同而子域不同的例子，可以通过设置document.domain的办法来解决。 具体的做法是可以在<a href="http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上" target="_blank" rel="external">http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上</a> document.domain = ‘a.com’；然后通过a.html文件中创建一个iframe，去控制iframe的contentDocument，这样两个js文件之间就可以 “交互”了。当然这种办法只能解决主域相同而二级域名不同的情况，如果你异想天开的把script.a.com的domian设为alibaba.com 那显然是会报错地！代码如下：</p>
-<p>www.a.com上的a.html</p>
+<h2 id="4-document-domain"><a href="#4-document-domain" class="headerlink" title="4. document.domain"></a>4. document.domain</h2><p>对于主域相同而子域不同的例子，可以通过设置document.domain的办法来解决。 具体的做法是可以在<a href="http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上" target="_blank" rel="noopener">http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上</a> document.domain = ‘a.com’；然后通过a.html文件中创建一个iframe，去控制iframe的contentDocument，这样两个js文件之间就可以 “交互”了。当然这种办法只能解决主域相同而二级域名不同的情况，如果你异想天开的把script.a.com的domian设为alibaba.com 那显然是会报错地！代码如下：</p>
+<p><a href="http://www.a.com上的a.html" target="_blank" rel="noopener">www.a.com上的a.html</a></p>
 <pre>
 document.domain = 'a.com';
 var ifr = document.createElement('iframe');
@@ -408,8 +404,8 @@ script.a.com上的b.html
 document.domain = 'a.com';
 </pre>
 
-<p>这种方式适用于{www.kuqin.com, kuqin.com, script.kuqin.com, css.kuqin.com}中的任何页面相互通信。</p>
-<p>备注：某一页面的domain默认等于window.location.hostname。主域名是不带www的域名，例如a.com，主域名前面带前缀的通常都为二级域名或多级域名，例如www.a.com其实是二级域名。 domain只能设置为主域名，不可以在b.a.com中将domain设置为c.a.com。</p>
+<p>这种方式适用于{<a href="http://www.kuqin.com" target="_blank" rel="noopener">www.kuqin.com</a>, kuqin.com, script.kuqin.com, css.kuqin.com}中的任何页面相互通信。</p>
+<p>备注：某一页面的domain默认等于window.location.hostname。主域名是不带www的域名，例如a.com，主域名前面带前缀的通常都为二级域名或多级域名，例如<a href="http://www.a.com其实是二级域名。" target="_blank" rel="noopener">www.a.com其实是二级域名。</a> domain只能设置为主域名，不可以在b.a.com中将domain设置为c.a.com。</p>
 <p>问题：<br>1、安全性，当一个站点（b.a.com）被攻击后，另一个站点（c.a.com）会引起安全漏洞。<br>2、如果一个页面中引入多个iframe，要想能够操作所有iframe，必须都得设置相同domain。</p>
 <h2 id="5-动态创建script"><a href="#5-动态创建script" class="headerlink" title="5.动态创建script"></a>5.动态创建script</h2><p>虽然浏览器默认禁止了跨域访问，但并不禁止在页面中引用其他域的JS文件，并可以自由执行引入的JS文件中的function（包括操作cookie、Dom等等）。根据这一点，可以方便地通过创建script节点的方法来实现完全跨域的通信</p>
 <p>这里判断script节点加载完毕还是蛮有意思的：ie只能通过script的readystatechange属性，其它浏览器是script的load事件。以下是部分判断script加载完毕的方法。</p>
@@ -422,7 +418,7 @@ js.onload = js.onreadystatechange = function() {
 };
 </pre>
 
-<h2 id="6-利用iframe和location-hash"><a href="#6-利用iframe和location-hash" class="headerlink" title="6.利用iframe和location.hash"></a>6.利用iframe和location.hash</h2><p>这个办法比较绕，但是可以解决完全跨域情况下的脚步置换问题。原理是利用location.hash来进行传值。在url： <a href="http://a.com#helloword中的‘#helloworld’就是location.hash，改变hash并不会导致页面刷新，所以可" target="_blank" rel="external">http://a.com#helloword中的‘#helloworld’就是location.hash，改变hash并不会导致页面刷新，所以可</a> 以利用hash值来进行数据传递，当然数据容量是有限的。假设域名a.com下的文件cs1.html要和cnblogs.com域名下的 cs2.html传递信息，cs1.html首先创建自动创建一个隐藏的iframe，iframe的src指向cnblogs.com域名下的 cs2.html页面，这时的hash值可以做参数传递用。cs2.html响应请求后再将通过修改cs1.html的hash值来传递数据（由于两个页面不在同一个域下IE、Chrome不允许修改parent.location.hash的值，所以要借助于a.com域名下的一个代理iframe；Firefox可以修改）。同时在cs1.html上加一个定时器，隔一段时间来判断location.hash的值有没有变化，一点有变化则获取获取hash值。代码如下：</p>
+<h2 id="6-利用iframe和location-hash"><a href="#6-利用iframe和location-hash" class="headerlink" title="6.利用iframe和location.hash"></a>6.利用iframe和location.hash</h2><p>这个办法比较绕，但是可以解决完全跨域情况下的脚步置换问题。原理是利用location.hash来进行传值。在url： <a href="http://a.com#helloword中的‘#helloworld’就是location.hash，改变hash并不会导致页面刷新，所以可" target="_blank" rel="noopener">http://a.com#helloword中的‘#helloworld’就是location.hash，改变hash并不会导致页面刷新，所以可</a> 以利用hash值来进行数据传递，当然数据容量是有限的。假设域名a.com下的文件cs1.html要和cnblogs.com域名下的 cs2.html传递信息，cs1.html首先创建自动创建一个隐藏的iframe，iframe的src指向cnblogs.com域名下的 cs2.html页面，这时的hash值可以做参数传递用。cs2.html响应请求后再将通过修改cs1.html的hash值来传递数据（由于两个页面不在同一个域下IE、Chrome不允许修改parent.location.hash的值，所以要借助于a.com域名下的一个代理iframe；Firefox可以修改）。同时在cs1.html上加一个定时器，隔一段时间来判断location.hash的值有没有变化，一点有变化则获取获取hash值。代码如下：</p>
 <p>先是a.com下的文件cs1.html文件：</p>
 <pre>
 function startRequest(){
@@ -712,7 +708,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -799,15 +795,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -827,6 +823,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -839,6 +843,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -848,10 +856,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

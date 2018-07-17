@@ -8,22 +8,21 @@
   <link rel="dns-prefetch" href="http://ithack.github.io">
   <title>css实现正方形图片展示网格布局 | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这两周手里的项目第一期0的阶段已经基本结束了，后边的迭代还没有开始，所以这两天闲来没事在梳理在做项目时遇到的问题和需要优化的点，昨天晚上加班点击做过的东西发现一个可优化的问题，之前没有做是因为时间紧任务重，所以用了一个比较暴力的方法暂时解决了，但是当时我思考中有一个思路觉得可以解决却没有用，所以就用了一点时间解决这个问题，下边就来说说场景：
-在app里有个列表页和详情页，列表页大概就和朋友圈布局">
+  <meta name="description" content="这两周手里的项目第一期0的阶段已经基本结束了，后边的迭代还没有开始，所以这两天闲来没事在梳理在做项目时遇到的问题和需要优化的点，昨天晚上加班点击做过的东西发现一个可优化的问题，之前没有做是因为时间紧任务重，所以用了一个比较暴力的方法暂时解决了，但是当时我思考中有一个思路觉得可以解决却没有用，所以就用了一点时间解决这个问题，下边就来说说场景： 在app里有个列表页和详情页，列表页大概就和朋友圈布局">
+<meta name="keywords" content="css,移动端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css实现正方形图片展示网格布局">
 <meta property="og:url" content="http://ithack.github.io/2017/08/16/css实现正方形图片展示网格布局.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="这两周手里的项目第一期0的阶段已经基本结束了，后边的迭代还没有开始，所以这两天闲来没事在梳理在做项目时遇到的问题和需要优化的点，昨天晚上加班点击做过的东西发现一个可优化的问题，之前没有做是因为时间紧任务重，所以用了一个比较暴力的方法暂时解决了，但是当时我思考中有一个思路觉得可以解决却没有用，所以就用了一点时间解决这个问题，下边就来说说场景：
-在app里有个列表页和详情页，列表页大概就和朋友圈布局">
-<meta property="og:image" content="http://ithack.github.io/\images\css正方形\1.png">
-<meta property="og:image" content="http://ithack.github.io/\images\css正方形\2.png">
-<meta property="og:updated_time" content="2017-08-16T07:18:03.387Z">
+<meta property="og:description" content="这两周手里的项目第一期0的阶段已经基本结束了，后边的迭代还没有开始，所以这两天闲来没事在梳理在做项目时遇到的问题和需要优化的点，昨天晚上加班点击做过的东西发现一个可优化的问题，之前没有做是因为时间紧任务重，所以用了一个比较暴力的方法暂时解决了，但是当时我思考中有一个思路觉得可以解决却没有用，所以就用了一点时间解决这个问题，下边就来说说场景： 在app里有个列表页和详情页，列表页大概就和朋友圈布局">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ithack.github.io/images/css正方形/1.png">
+<meta property="og:image" content="http://ithack.github.io/images/css正方形/2.png">
+<meta property="og:updated_time" content="2017-08-16T07:18:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css实现正方形图片展示网格布局">
-<meta name="twitter:description" content="这两周手里的项目第一期0的阶段已经基本结束了，后边的迭代还没有开始，所以这两天闲来没事在梳理在做项目时遇到的问题和需要优化的点，昨天晚上加班点击做过的东西发现一个可优化的问题，之前没有做是因为时间紧任务重，所以用了一个比较暴力的方法暂时解决了，但是当时我思考中有一个思路觉得可以解决却没有用，所以就用了一点时间解决这个问题，下边就来说说场景：
-在app里有个列表页和详情页，列表页大概就和朋友圈布局">
-<meta name="twitter:image" content="http://ithack.github.io/\images\css正方形\1.png">
+<meta name="twitter:description" content="这两周手里的项目第一期0的阶段已经基本结束了，后边的迭代还没有开始，所以这两天闲来没事在梳理在做项目时遇到的问题和需要优化的点，昨天晚上加班点击做过的东西发现一个可优化的问题，之前没有做是因为时间紧任务重，所以用了一个比较暴力的方法暂时解决了，但是当时我思考中有一个思路觉得可以解决却没有用，所以就用了一点时间解决这个问题，下边就来说说场景： 在app里有个列表页和详情页，列表页大概就和朋友圈布局">
+<meta name="twitter:image" content="http://ithack.github.io/images/css正方形/1.png">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -218,7 +217,7 @@ var _hmt = _hmt || [];
 <p>h5详情页用七牛云裁剪后的效果</p>
 <p><img src="\images\css正方形\2.png" alt="2"></p>
 <p>有木有很丑，裁剪的很生硬，由于是移动端所以宽度是不固定的，发现这个问题时我第一个闪现的思路就是用flex布局，内部再给个据对定位，在用tranform做个居中显示，但是再细节一点没有多想，所以就用了七牛云的裁剪先上了，昨天想到这个问题，我就按照我的思路做了一个小demo，发现思路对了，但平铺不了还是有一点点不完美，所以有了之后的不断思考和常识，找到了最终完美的解决方案：</p>
-<p></p><p data-height="265" data-theme-id="0" data-slug-hash="BdmVLo" data-default-tab="result" data-user="it_hack" data-embed-version="2" data-pen-title="css 正方形图片布局" class="codepen">See the Pen <a href="https://codepen.io/it_hack/pen/BdmVLo/" target="_blank" rel="external">css 正方形图片布局</a> by kevin (<a href="https://codepen.io/it_hack" target="_blank" rel="external">@it_hack</a>) on <a href="https://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<p></p><p data-height="265" data-theme-id="0" data-slug-hash="BdmVLo" data-default-tab="result" data-user="it_hack" data-embed-version="2" data-pen-title="css 正方形图片布局" class="codepen">See the Pen <a href="https://codepen.io/it_hack/pen/BdmVLo/" target="_blank" rel="noopener">css 正方形图片布局</a> by kevin (<a href="https://codepen.io/it_hack" target="_blank" rel="noopener">@it_hack</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 <p>在这种布局下，每个容器的宽高比就越接近图片的真实宽高比，多数图片都能显示出其主要部分。</p>
@@ -425,7 +424,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -512,15 +511,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,6 +539,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -552,6 +559,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -561,10 +572,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

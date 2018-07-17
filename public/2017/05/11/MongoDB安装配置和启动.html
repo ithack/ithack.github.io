@@ -8,32 +8,28 @@
   <link rel="dns-prefetch" href="http://ithack.github.io">
   <title>MongoDB安装配置和启动 | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这周手里没项目，所以闲来没事就吓研究，之前一直想搞一搞node+mongoDB一直没有机会，所以这周就考虑了一下vue+node+mongodb组合做个后台之类的demo，首先我之前完全没有用过mongodb+node的经验所以基本是从0开始摸索，今天我就来说说mongodb的安装配置和启动；
-首先必须要有一套node环境这是必须的，我就不多说了，目前大部分前端多少都要搭建node环境来开发；
-下">
+  <meta name="description" content="这周手里没项目，所以闲来没事就吓研究，之前一直想搞一搞node+mongoDB一直没有机会，所以这周就考虑了一下vue+node+mongodb组合做个后台之类的demo，首先我之前完全没有用过mongodb+node的经验所以基本是从0开始摸索，今天我就来说说mongodb的安装配置和启动； 首先必须要有一套node环境这是必须的，我就不多说了，目前大部分前端多少都要搭建node环境来开发； 下">
+<meta name="keywords" content="MongoDB">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB安装配置和启动">
 <meta property="og:url" content="http://ithack.github.io/2017/05/11/MongoDB安装配置和启动.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="这周手里没项目，所以闲来没事就吓研究，之前一直想搞一搞node+mongoDB一直没有机会，所以这周就考虑了一下vue+node+mongodb组合做个后台之类的demo，首先我之前完全没有用过mongodb+node的经验所以基本是从0开始摸索，今天我就来说说mongodb的安装配置和启动；
-首先必须要有一套node环境这是必须的，我就不多说了，目前大部分前端多少都要搭建node环境来开发；
-下">
-<meta property="og:image" content="http://ithack.github.io/\images\mongodb\1.png">
-<meta property="og:image" content="http://ithack.github.io/\images\mongodb\2.png">
-<meta property="og:image" content="http://ithack.github.io/\images\mongodb\3.png">
-<meta property="og:image" content="http://ithack.github.io/\images\mongodb\4.png">
-<meta property="og:image" content="http://ithack.github.io/\images\mongodb\5.png">
-<meta property="og:image" content="http://ithack.github.io/\images\mongodb\6.png">
-<meta property="og:image" content="http://ithack.github.io/\images\mongodb\7.png">
-<meta property="og:image" content="http://ithack.github.io/\images\mongodb\8.png">
-<meta property="og:image" content="http://ithack.github.io/\images\mongodb\9.png">
-<meta property="og:updated_time" content="2017-05-11T07:36:16.222Z">
+<meta property="og:description" content="这周手里没项目，所以闲来没事就吓研究，之前一直想搞一搞node+mongoDB一直没有机会，所以这周就考虑了一下vue+node+mongodb组合做个后台之类的demo，首先我之前完全没有用过mongodb+node的经验所以基本是从0开始摸索，今天我就来说说mongodb的安装配置和启动； 首先必须要有一套node环境这是必须的，我就不多说了，目前大部分前端多少都要搭建node环境来开发； 下">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ithack.github.io/images/mongodb/1.png">
+<meta property="og:image" content="http://ithack.github.io/images/mongodb/2.png">
+<meta property="og:image" content="http://ithack.github.io/images/mongodb/3.png">
+<meta property="og:image" content="http://ithack.github.io/images/mongodb/4.png">
+<meta property="og:image" content="http://ithack.github.io/images/mongodb/5.png">
+<meta property="og:image" content="http://ithack.github.io/images/mongodb/6.png">
+<meta property="og:image" content="http://ithack.github.io/images/mongodb/7.png">
+<meta property="og:image" content="http://ithack.github.io/images/mongodb/8.png">
+<meta property="og:image" content="http://ithack.github.io/images/mongodb/9.png">
+<meta property="og:updated_time" content="2017-05-11T07:36:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB安装配置和启动">
-<meta name="twitter:description" content="这周手里没项目，所以闲来没事就吓研究，之前一直想搞一搞node+mongoDB一直没有机会，所以这周就考虑了一下vue+node+mongodb组合做个后台之类的demo，首先我之前完全没有用过mongodb+node的经验所以基本是从0开始摸索，今天我就来说说mongodb的安装配置和启动；
-首先必须要有一套node环境这是必须的，我就不多说了，目前大部分前端多少都要搭建node环境来开发；
-下">
-<meta name="twitter:image" content="http://ithack.github.io/\images\mongodb\1.png">
+<meta name="twitter:description" content="这周手里没项目，所以闲来没事就吓研究，之前一直想搞一搞node+mongoDB一直没有机会，所以这周就考虑了一下vue+node+mongodb组合做个后台之类的demo，首先我之前完全没有用过mongodb+node的经验所以基本是从0开始摸索，今天我就来说说mongodb的安装配置和启动； 首先必须要有一套node环境这是必须的，我就不多说了，目前大部分前端多少都要搭建node环境来开发； 下">
+<meta name="twitter:image" content="http://ithack.github.io/images/mongodb/1.png">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -222,7 +218,7 @@ var _hmt = _hmt || [];
       
         <p>这周手里没项目，所以闲来没事就吓研究，之前一直想搞一搞node+mongoDB一直没有机会，所以这周就考虑了一下vue+node+mongodb组合做个后台之类的demo，首先我之前完全没有用过mongodb+node的经验所以基本是从0开始摸索，今天我就来说说mongodb的安装配置和启动；</p>
 <p>首先必须要有一套node环境这是必须的，我就不多说了，目前大部分前端多少都要搭建node环境来开发；</p>
-<p>下面今天的主角登场<a href="https://www.mongodb.com" target="_blank" rel="external">MongoDB</a>，先下载<a href="https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.4.4-signed.msi/download" target="_blank" rel="external">MongoDB</a>，这里的下载连接是官方64位msi包，有其他系统或需求的可直接到官网自行下载，由于我本机是win7(64-bit)，所以我今天是围绕win7来讲解的；</p>
+<p>下面今天的主角登场<a href="https://www.mongodb.com" target="_blank" rel="noopener">MongoDB</a>，先下载<a href="https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.4.4-signed.msi/download" target="_blank" rel="noopener">MongoDB</a>，这里的下载连接是官方64位msi包，有其他系统或需求的可直接到官网自行下载，由于我本机是win7(64-bit)，所以我今天是围绕win7来讲解的；</p>
 <p>mongoDB 本地安装如图：</p>
 <p><img src="\images\mongodb\1.png" alt="1"></p>
 <a id="more"></a>
@@ -235,7 +231,7 @@ var _hmt = _hmt || [];
 <p><img src="\images\mongodb\7.png" alt="1"></p>
 <p><img src="\images\mongodb\8.png" alt="1"></p>
 <p>安装目录中主要命令行程序都在bin目录下：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">mongo</span><span class="selector-class">.exe</span>：客户端，支持<span class="selector-tag">js</span>语法</div><div class="line"></div><div class="line"><span class="selector-tag">mongod</span><span class="selector-class">.exe</span>：服务端</div><div class="line"></div><div class="line"><span class="selector-tag">mongodump</span><span class="selector-class">.exe</span>：备份工具</div><div class="line"></div><div class="line"><span class="selector-tag">mongorestore</span><span class="selector-class">.exe</span>：恢复工具</div><div class="line"></div><div class="line"><span class="selector-tag">mongoexport</span><span class="selector-class">.exe</span>：导出工具</div><div class="line"></div><div class="line"><span class="selector-tag">mongoimport</span><span class="selector-class">.exe</span>：导入工具</div><div class="line"></div><div class="line"><span class="selector-tag">mongostat</span><span class="selector-class">.exe</span>：实时性能监控工具</div><div class="line"></div><div class="line"><span class="selector-tag">mongotop</span><span class="selector-class">.exe</span>：跟踪<span class="selector-tag">MongDB</span>实例读写时间工具</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">mongo</span><span class="selector-class">.exe</span>：客户端，支持<span class="selector-tag">js</span>语法</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">mongod</span><span class="selector-class">.exe</span>：服务端</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">mongodump</span><span class="selector-class">.exe</span>：备份工具</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">mongorestore</span><span class="selector-class">.exe</span>：恢复工具</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">mongoexport</span><span class="selector-class">.exe</span>：导出工具</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">mongoimport</span><span class="selector-class">.exe</span>：导入工具</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">mongostat</span><span class="selector-class">.exe</span>：实时性能监控工具</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">mongotop</span><span class="selector-class">.exe</span>：跟踪<span class="selector-tag">MongDB</span>实例读写时间工具</span><br></pre></td></tr></table></figure>
 <p>到这里我们已经把mongodb安装完了，但是还需要手动创建文件夹方便数据库的管理：</p>
 <p>d:\mongodb<br>d:\mongodb\db 数据库目录<br>d:\mongodb\log 日志存放目录<br>d:\mongodb\log\mongoDB.log 日志</p>
 <p>接下来我们要启动mongoDB服务了</p>
@@ -246,8 +242,8 @@ var _hmt = _hmt || [];
 <p>开启服务<code>net start MongoDB</code>,停止服务<code>net stop MongoDB</code>，这种这个过程中或许开启失败，这个时候可能需要你去<code>C:\Windows\System32</code>下找到cmd.exe右击管理员运行，然后一路cd到mongodb\bin目录下运行<code>mongod --dbpath=d:\mongodb\db --logpath=d:\mongodb\log\mongoDB.log --install --serviceName &quot;MongoDB&quot;</code>这一命令;</p>
 <p>到这里我们的mongoDB基本已经配置启动成功了；</p>
 <p>最后多说一嘴推荐两个mongodb比较好的可视化工具：</p>
-<p><a href="https://mongobooster.com/" target="_blank" rel="external">mongobooster</a></p>
-<p><a href="https://www.mongodbmanager.com/" target="_blank" rel="external">NoSQL Manager</a></p>
+<p><a href="https://mongobooster.com/" target="_blank" rel="noopener">mongobooster</a></p>
+<p><a href="https://www.mongodbmanager.com/" target="_blank" rel="noopener">NoSQL Manager</a></p>
 <p>MongoVUE</p>
 
       
@@ -446,7 +442,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -533,15 +529,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,6 +557,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -573,6 +577,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -582,10 +590,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

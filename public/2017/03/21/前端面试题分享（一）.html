@@ -8,19 +8,18 @@
   <link rel="dns-prefetch" href="http://ithack.github.io">
   <title>前端面试题分享（一） | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="很久没来更新文章了，因为我从大数字离开了，现在才刚刚稳定一点吧，今天开始不定期和大家分享一些我面试遇到的一些问题，可能有些问题我都忘了，但一些比较经典，比较基础的问题还记住了一些；
-其实前段时间面试发现，前端面试基本上离不开那几个知识点，对象继承、闭包、数组、作用域等等这些js基础只是，关于其他的框架问题不外乎就是最近比较流行的vuejs，webpack，react，gulp，nodejs等等这些">
+  <meta name="description" content="很久没来更新文章了，因为我从大数字离开了，现在才刚刚稳定一点吧，今天开始不定期和大家分享一些我面试遇到的一些问题，可能有些问题我都忘了，但一些比较经典，比较基础的问题还记住了一些； 其实前段时间面试发现，前端面试基本上离不开那几个知识点，对象继承、闭包、数组、作用域等等这些js基础只是，关于其他的框架问题不外乎就是最近比较流行的vuejs，webpack，react，gulp，nodejs等等这些">
+<meta name="keywords" content="随笔,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端面试题分享（一）">
 <meta property="og:url" content="http://ithack.github.io/2017/03/21/前端面试题分享（一）.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="很久没来更新文章了，因为我从大数字离开了，现在才刚刚稳定一点吧，今天开始不定期和大家分享一些我面试遇到的一些问题，可能有些问题我都忘了，但一些比较经典，比较基础的问题还记住了一些；
-其实前段时间面试发现，前端面试基本上离不开那几个知识点，对象继承、闭包、数组、作用域等等这些js基础只是，关于其他的框架问题不外乎就是最近比较流行的vuejs，webpack，react，gulp，nodejs等等这些">
-<meta property="og:updated_time" content="2017-03-21T05:27:31.999Z">
+<meta property="og:description" content="很久没来更新文章了，因为我从大数字离开了，现在才刚刚稳定一点吧，今天开始不定期和大家分享一些我面试遇到的一些问题，可能有些问题我都忘了，但一些比较经典，比较基础的问题还记住了一些； 其实前段时间面试发现，前端面试基本上离不开那几个知识点，对象继承、闭包、数组、作用域等等这些js基础只是，关于其他的框架问题不外乎就是最近比较流行的vuejs，webpack，react，gulp，nodejs等等这些">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-03-21T05:27:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端面试题分享（一）">
-<meta name="twitter:description" content="很久没来更新文章了，因为我从大数字离开了，现在才刚刚稳定一点吧，今天开始不定期和大家分享一些我面试遇到的一些问题，可能有些问题我都忘了，但一些比较经典，比较基础的问题还记住了一些；
-其实前段时间面试发现，前端面试基本上离不开那几个知识点，对象继承、闭包、数组、作用域等等这些js基础只是，关于其他的框架问题不外乎就是最近比较流行的vuejs，webpack，react，gulp，nodejs等等这些">
+<meta name="twitter:description" content="很久没来更新文章了，因为我从大数字离开了，现在才刚刚稳定一点吧，今天开始不定期和大家分享一些我面试遇到的一些问题，可能有些问题我都忘了，但一些比较经典，比较基础的问题还记住了一些； 其实前段时间面试发现，前端面试基本上离不开那几个知识点，对象继承、闭包、数组、作用域等等这些js基础只是，关于其他的框架问题不外乎就是最近比较流行的vuejs，webpack，react，gulp，nodejs等等这些">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -248,20 +247,20 @@ foo("var a = 10;");
 
 <p>如大家所想，输出结果为 10。<br>因为 eval(“var a = 10;”) 在 foo 的作用域中新创建了一个同名变量 a，引擎在 foo 作用域中对 a 进行 RHS 查询，找到了新定义的 a，值为 10，所以不再向上查找全局作用域中的 a，所以导致输出结果为 10，这就是 eval(…) 的作用。</p>
 <p>在严格模式下，eval(…) 在运行时有自己的词法作用域，意味着其中的声明无法修改所在的作用域。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="string">'use strict;'</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">str</span>) </span>&#123;</div><div class="line">   <span class="built_in">eval</span>(str);        <span class="comment">// eval() 有自己的作用域，所以并不会修改 foo 的词法作用域</span></div><div class="line">   <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</div><div class="line">foo(<span class="string">"var a = 10;"</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'use strict;'</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">str</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">eval</span>(str);        <span class="comment">// eval() 有自己的作用域，所以并不会修改 foo 的词法作用域</span></span><br><span class="line">   <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">foo(<span class="string">"var a = 10;"</span>);</span><br></pre></td></tr></table></figure>
 <p>这里输出结果为 2。</p>
 <p>JavaScript 中还有一些功能和 eval(…) 类似的函数，例如 setTimeout(…) 和 setInterval(…) 的第一个参数可以是一个字符串，字符串的内容可以解释为一段动态生成的代码。这些功能已经过时并且不被提倡，最好不要使用它们。new Function(…) 函数的最后一个参数也可以接受代码字符串，并将其转化为动态生成的函数，也尽量避免使用。</p>
 <p>在程序中动态生成代码的使用场景非常罕见，因为它所带来的好处无法抵消性能上的损失。</p>
 <ul>
 <li>第二种： with<br>with 通常被当做重复引用同一个对象中的多个属性的快捷方式，可以不需要重复引用对象本身。</li>
 </ul>
-<p>举个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">   <span class="attr">a</span>: <span class="number">2</span>,</div><div class="line">   <span class="attr">b</span>: <span class="number">3</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">with</span> (obj) &#123;</div><div class="line">   <span class="built_in">console</span>.log(a);      <span class="comment">// 2</span></div><div class="line">   <span class="built_in">console</span>.log(b);      <span class="comment">// 3</span></div><div class="line">   c = <span class="number">4</span>;         </div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(c);          <span class="comment">// 4, c 被泄露到全局作用域上</span></div></pre></td></tr></table></figure></p>
+<p>举个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">   a: <span class="number">2</span>,</span><br><span class="line">   b: <span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> (obj) &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(a);      <span class="comment">// 2</span></span><br><span class="line">   <span class="built_in">console</span>.log(b);      <span class="comment">// 3</span></span><br><span class="line">   c = <span class="number">4</span>;         </span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(c);          <span class="comment">// 4, c 被泄露到全局作用域上</span></span><br></pre></td></tr></table></figure></p>
 <p>如上所示，我们对 c 进行 LHS 查询，因为在 with 引入的新作用域中没有找到 c，所以向上一级作用域（这里是全局作用域）查找，也没有找到，在非严格模式下，在全局对象中新建了一个属性 c 并赋值为 4。</p>
 <p>with 可以将一个没有或有多个属性的对象处理为一个完全隔离的词法作用域，因此这个对象的属性也会被处理为定义在这个作用域中的词法标识符。</p>
 <p>尽管 with 块可以将一个对象处理为词法作用域，但是这个块内部正常的 var 声明并不会限制在这个块作用域中，而是被添加到 with 所处的函数作用域中。</p>
-<p>严格模式下，with 被完全禁止使用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">   <span class="attr">a</span>: <span class="number">2</span>,</div><div class="line">   <span class="attr">b</span>: <span class="number">3</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">with</span> (obj) &#123;</div><div class="line">   <span class="built_in">console</span>.log(a);     </div><div class="line">   <span class="built_in">console</span>.log(b);      </div><div class="line">   c = <span class="number">4</span>;         </div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(c);</div></pre></td></tr></table></figure></p>
+<p>严格模式下，with 被完全禁止使用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">   a: <span class="number">2</span>,</span><br><span class="line">   b: <span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> (obj) &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(a);     </span><br><span class="line">   <span class="built_in">console</span>.log(b);      </span><br><span class="line">   c = <span class="number">4</span>;         </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(c);</span><br></pre></td></tr></table></figure></p>
 <p>*第三种： try…catch<br>try…catch 可以测试代码中的错误。try 部分包含需要运行的代码，而 catch 部分包含错误发生时运行的代码。</p>
-<p>举个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">   foo();</div><div class="line">&#125; <span class="keyword">catch</span> (err) &#123;</div><div class="line">   <span class="built_in">console</span>.log(err);   </div><div class="line"></div><div class="line">   <span class="keyword">var</span> a = <span class="number">2</span>; </div><div class="line"><span class="comment">// 打印出 "ReferenceError: foo is not defined at &lt;anonymous&gt;:2:4"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a);      <span class="comment">// 2</span></div></pre></td></tr></table></figure></p>
+<p>举个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">   foo();</span><br><span class="line">&#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">   <span class="built_in">console</span>.log(err);   </span><br><span class="line"></span><br><span class="line">   <span class="keyword">var</span> a = <span class="number">2</span>; </span><br><span class="line"><span class="comment">// 打印出 "ReferenceError: foo is not defined at &lt;anonymous&gt;:2:4"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a);      <span class="comment">// 2</span></span><br></pre></td></tr></table></figure></p>
 <p>当 try 中的代码出现错误时，就会进入 catch 块，此时会把异常对象添加到作用域链的最前端，类似于 with 一样，catch 中定义的局部变量也都会添加到包含 try…catch 的函数作用域（或全局作用域）中。</p>
 <h1 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h1><p>JavaScript 引擎会在编译阶段进行数项性能优化。其中有些优化依赖于能够根据代码的词法进行静态分析，并预先确定所有变量和函数定义的位置，才能在执行过程中快速找到标识符。</p>
 <p>但如果引擎在代码中发现了 eval(…)、with 和 try…catch ，它只能简单的假设关于标识符位置的判断都是无效的，因为无法在词法分析阶段明确知道 eval(…) 会接受到什么代码，这些代码会如何对作用域进行修改，也无法知道传递给 with 用来创建新词法作用域的对象的内容到底是什么。</p>
@@ -470,7 +469,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -557,15 +556,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,6 +584,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -597,6 +604,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -606,10 +617,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

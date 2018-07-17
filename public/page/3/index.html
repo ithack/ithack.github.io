@@ -14,6 +14,7 @@
 <meta property="og:url" content="http://ithack.github.io/page/3/index.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
 <meta property="og:description" content="web前端,前端工程师,前端程序猿">
+<meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不羁放纵爱自由的猿人">
 <meta name="twitter:description" content="web前端,前端工程师,前端程序猿">
@@ -185,6 +186,139 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CSS3实现关闭X按钮" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/12/CSS3实现关闭X按钮.html">CSS3实现关闭X按钮</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/12/CSS3实现关闭X按钮.html" class="archive-article-date">
+  	<time datetime="2016-08-12T02:11:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天做一个小的页面时用到了弹框，一般弹框都有close按钮，有时我们为了偷懒直接用个X来做关闭按钮！但这种情况基本很难看，所以我们需要UI给我设计一个关闭按钮，或者我们要用font-face来做这个关闭，这样做起来美观，但是却有一点麻烦！之前我无意间发现一个好玩的方法，简单好用,今天分享一下；</p>
+<p>用CSS3设计出来的样式来呈现出关闭按钮的样子，这样以后想设计简单的对话框，就不需要求美工来帮忙画按钮的图片了。先来看看样式:</p>
+<p><pre><br>/<em> basic style </em>/<br>.close {<br>    background: orange;<br>    color: red;<br>    border-radius: 12px;<br>    line-height: 20px;<br>    text-align: center;<br>    height: 20px;<br>    width: 20px;<br>    font-size: 18px;<br>    padding: 1px;<br>}<br>/<em> use cross as close button </em>/<br>.close::before {<br>    content: “\2716”;<br>}<br>/<em> place the button on top-right </em>/<br>.close {<br>    top: -10px;<br>    right: -10px;<br>    position: absolute;<br>}<br></pre><br>然后直接把它加到HTML元素上就可以看到效果了：</p>
+<p><pre><br>&lt;div style=”height: 100px; width: 100px; border: 1px solid black; position: relative;”&gt;<span class="close"></span>&lt;/div&gt;<br></pre><br>这主要是利用了在CSS的::before伪属性可以直接添加内容的特点，这样就可以直接设置样式在class上而不用做其它操作。当然这里用::after效果也是一样的。唯一要注意的是如果要指定关闭按钮在特定位置，就需要使用到position:absolut;，相应的其父元素就不能是默认的position:static;。像上边的示例中就使用的是position:relative;以保证按钮呈现在正确的位置上。</p>
+<p>对于按钮中的叉按钮，用的是Unicode中的一种标识，以下这些也可以使用：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标识</th>
+<th style="text-align:center">编码(16进制)</th>
+<th style="text-align:center">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="http://oap59rfi2.bkt.clouddn.com/2716.png" alt=""></td>
+<td style="text-align:center">\2716</td>
+<td style="text-align:center">粗体乘法</td>
+</tr>
+<tr>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">\2717</td>
+<td style="text-align:center">交叉</td>
+</tr>
+<tr>
+<td style="text-align:center">✘</td>
+<td style="text-align:center">\2718</td>
+<td style="text-align:center">粗体交叉</td>
+</tr>
+<tr>
+<td style="text-align:center">×</td>
+<td style="text-align:center">\00D7</td>
+<td style="text-align:center">乘法符号</td>
+</tr>
+<tr>
+<td style="text-align:center">⨯</td>
+<td style="text-align:center">\2A2F</td>
+<td style="text-align:center">向量乘积</td>
+</tr>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:center">\78</td>
+<td style="text-align:center">小写字母</td>
+</tr>
+<tr>
+<td style="text-align:center">X</td>
+<td style="text-align:center">\58</td>
+<td style="text-align:center">大写字母</td>
+</tr>
+</tbody>
+</table>
+<p>只是使用了不同字符后，可能居中位置会有偏差需要重新调整。</p>
+<p>再结合JavaScript和CSS3的gradient，就能完成一个看起来还不错的对话框了。效果如下图：</p>
+<p><img src="http://oap59rfi2.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160812110840.png" alt=""></p>
+<p>其实我们可以完全用字符编码解决关闭X按钮的美观问题，上面是一种不用美工不用font-face的解决方案，在这个基础上我们也可以发散思维，用另一种方法解决，这里这是做一个简单的介绍，我们可以利用css3的旋转属性，父级有个边框，子级有个边框，把子级旋转九十度，和父级交叉，把父级旋转45°这样也是一个关闭X按钮！</p>
+<p>如果大家还有什么好的建议和想法，欢迎留言分享！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/12/CSS3实现关闭X按钮.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-简单说下this对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -299,42 +433,42 @@ var _hmt = _hmt || [];
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js">http://www.a.com/a.js</a><br><a href="http://www.a.com/b.js">http://www.a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
 <td style="text-align:center">同一域名下</td>
 <td style="text-align:center"><strong><code>允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/lab/a.js">http://www.a.com/lab/a.js</a><br><a href="http://www.a.com/script/b.js">http://www.a.com/script/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/lab/a.js" target="_blank" rel="noopener">http://www.a.com/lab/a.js</a><br><a href="http://www.a.com/script/b.js" target="_blank" rel="noopener">http://www.a.com/script/b.js</a></td>
 <td style="text-align:center">同一域名下不同文件夹</td>
 <td style="text-align:center"><strong><code>允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com:8000/a.js">http://www.a.com:8000/a.js</a><br><a href="http://www.a.com/b.js">http://www.a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com:8000/a.js" target="_blank" rel="noopener">http://www.a.com:8000/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
 <td style="text-align:center">同一域名，不同端口</td>
 <td style="text-align:center"><strong><code>不允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js">http://www.a.com/a.js</a><br><a href="https://www.a.com/b.js">https://www.a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="https://www.a.com/b.js" target="_blank" rel="noopener">https://www.a.com/b.js</a></td>
 <td style="text-align:center">同一域名，不同协议</td>
 <td style="text-align:center"><strong><code>不允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js">http://www.a.com/a.js</a><br><a href="http://70.32.92.74/b.js">http://70.32.92.74/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://70.32.92.74/b.js" target="_blank" rel="noopener">http://70.32.92.74/b.js</a></td>
 <td style="text-align:center">域名和域名对应ip</td>
 <td style="text-align:center"><strong><code>不允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js">http://www.a.com/a.js</a><br><a href="http://script.a.com/b.js">http://script.a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://script.a.com/b.js" target="_blank" rel="noopener">http://script.a.com/b.js</a></td>
 <td style="text-align:center">主域相同，子域不同</td>
 <td style="text-align:center"><strong><code>不允许</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js">http://www.a.com/a.js</a><br><a href="http://a.com/b.js">http://a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://a.com/b.js" target="_blank" rel="noopener">http://a.com/b.js</a></td>
 <td style="text-align:center">同一域名，不同二级域名（同上）</td>
 <td style="text-align:center"><strong><code>不允许（cookie这种情况下也不允许访问）</code></strong></td>
 </tr>
 <tr>
-<td style="text-align:center"><a href="http://www.cnblogs.com/a.js">http://www.cnblogs.com/a.js</a><br><a href="http://www.a.com/b.js">http://www.a.com/b.js</a></td>
+<td style="text-align:center"><a href="http://www.cnblogs.com/a.js" target="_blank" rel="noopener">http://www.cnblogs.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
 <td style="text-align:center">不同域名</td>
 <td style="text-align:center"><strong><code>不允许</code></strong></td>
 </tr>
@@ -687,7 +821,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -774,15 +908,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -802,6 +936,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -814,6 +956,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -823,10 +969,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

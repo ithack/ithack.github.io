@@ -8,22 +8,18 @@
   <link rel="dns-prefetch" href="http://ithack.github.io">
   <title>vue中Swipe插件在data的值更新后为什么不会重新更新dom？ | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天记录个随笔，希望大家在应用vue各种插件构成中少踩一些坑；
-上周做公司内部一个累死数据看板的页面，在原来vue的后台中加了一个组件；这个组件其实就是一个轮播效果其他的没什么太多东西，本来以为是so easy的事，谁想到遇到了个问题，一开始没想明白，用了一天时间我基本搞明白问题，今天记录下来，希望亲们有遇到相同问题时先考虑是不是我这次踩的坑；
-我在vue轮播组件式选用了vue-awesome-">
+  <meta name="description" content="今天记录个随笔，希望大家在应用vue各种插件构成中少踩一些坑； 上周做公司内部一个累死数据看板的页面，在原来vue的后台中加了一个组件；这个组件其实就是一个轮播效果其他的没什么太多东西，本来以为是so easy的事，谁想到遇到了个问题，一开始没想明白，用了一天时间我基本搞明白问题，今天记录下来，希望亲们有遇到相同问题时先考虑是不是我这次踩的坑； 我在vue轮播组件式选用了vue-awesome-">
+<meta name="keywords" content="随笔,vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue中Swipe插件在data的值更新后为什么不会重新更新dom？">
 <meta property="og:url" content="http://ithack.github.io/2017/05/08/vue中Swipe插件在data的值更新后为什么不会重新更新dom？.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="今天记录个随笔，希望大家在应用vue各种插件构成中少踩一些坑；
-上周做公司内部一个累死数据看板的页面，在原来vue的后台中加了一个组件；这个组件其实就是一个轮播效果其他的没什么太多东西，本来以为是so easy的事，谁想到遇到了个问题，一开始没想明白，用了一天时间我基本搞明白问题，今天记录下来，希望亲们有遇到相同问题时先考虑是不是我这次踩的坑；
-我在vue轮播组件式选用了vue-awesome-">
-<meta property="og:updated_time" content="2017-05-08T10:31:45.363Z">
+<meta property="og:description" content="今天记录个随笔，希望大家在应用vue各种插件构成中少踩一些坑； 上周做公司内部一个累死数据看板的页面，在原来vue的后台中加了一个组件；这个组件其实就是一个轮播效果其他的没什么太多东西，本来以为是so easy的事，谁想到遇到了个问题，一开始没想明白，用了一天时间我基本搞明白问题，今天记录下来，希望亲们有遇到相同问题时先考虑是不是我这次踩的坑； 我在vue轮播组件式选用了vue-awesome-">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-05-08T10:31:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue中Swipe插件在data的值更新后为什么不会重新更新dom？">
-<meta name="twitter:description" content="今天记录个随笔，希望大家在应用vue各种插件构成中少踩一些坑；
-上周做公司内部一个累死数据看板的页面，在原来vue的后台中加了一个组件；这个组件其实就是一个轮播效果其他的没什么太多东西，本来以为是so easy的事，谁想到遇到了个问题，一开始没想明白，用了一天时间我基本搞明白问题，今天记录下来，希望亲们有遇到相同问题时先考虑是不是我这次踩的坑；
-我在vue轮播组件式选用了vue-awesome-">
+<meta name="twitter:description" content="今天记录个随笔，希望大家在应用vue各种插件构成中少踩一些坑； 上周做公司内部一个累死数据看板的页面，在原来vue的后台中加了一个组件；这个组件其实就是一个轮播效果其他的没什么太多东西，本来以为是so easy的事，谁想到遇到了个问题，一开始没想明白，用了一天时间我基本搞明白问题，今天记录下来，希望亲们有遇到相同问题时先考虑是不是我这次踩的坑； 我在vue轮播组件式选用了vue-awesome-">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -212,9 +208,9 @@ var _hmt = _hmt || [];
       
         <p> 今天记录个随笔，希望大家在应用vue各种插件构成中少踩一些坑；</p>
 <p>上周做公司内部一个累死数据看板的页面，在原来vue的后台中加了一个组件；这个组件其实就是一个轮播效果其他的没什么太多东西，本来以为是so easy的事，谁想到遇到了个问题，一开始没想明白，用了一天时间我基本搞明白问题，今天记录下来，希望亲们有遇到相同问题时先考虑是不是我这次踩的坑；</p>
-<p>我在vue轮播组件式选用了<a href="https://surmon-china.github.io/vue-awesome-swiper/" target="_blank" rel="external">vue-awesome-swiper</a>,这个vuejs组件是基于<a href="http://www.swiper.com.cn/" target="_blank" rel="external">swiper</a>开发的；至于这个组件是怎么用的可到github上查看这里不做详细介绍，下面上我的代码</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">&lt;span&gt;&#123;&#123;activeIndex&#125;&#125;---&#123;&#123;<span class="keyword">in</span>&#125;&#125;&lt;/span&gt;</div><div class="line">   &lt;swiper :options=<span class="string">"swiperOption"</span> <span class="keyword">class</span>=<span class="string">"swiperbox"</span> :<span class="keyword">class</span>=<span class="string">"&#123;swiper2:activeIndex==1,swiper3:activeIndex==2&#125;"</span>&gt;</div><div class="line">        &lt;swiper-slide <span class="keyword">class</span>=<span class="string">"swiperItem"</span> v-<span class="keyword">for</span>=<span class="string">"(keyP,itemBox) in swiperTitle"</span>&gt;&#123;&#123;activeIndex&#125;&#125;---&#123;&#123;<span class="keyword">in</span>&#125;&#125;</div><div class="line">        &lt;/swiper-slide&gt; </div><div class="line">       &lt;div <span class="keyword">class</span>=<span class="string">"swiper-pagination"</span> slot=<span class="string">"pagination"</span>&gt;&lt;/div&gt;</div><div class="line">   &lt;/swiper&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line"><span class="keyword">return</span> &#123;</div><div class="line">       swiperOption: &#123;</div><div class="line">         height: <span class="number">300</span>,</div><div class="line">         autoplay: <span class="literal">false</span>,<span class="comment">//20000</span></div><div class="line">         loop : <span class="literal">true</span>,</div><div class="line">         autoplayDisableOnInteraction : <span class="literal">false</span>,</div><div class="line">         setWrapperSize :<span class="literal">true</span>,</div><div class="line">         pagination : <span class="string">'.swiper-pagination'</span>,</div><div class="line">         paginationClickable :<span class="literal">true</span>,</div><div class="line">         mousewheelControl : <span class="literal">true</span>,</div><div class="line">         observer:<span class="literal">true</span>,</div><div class="line">         observeParents:<span class="literal">true</span>,</div><div class="line">         onSlideChangeStart: function(swiper)&#123;</div><div class="line">           vm.activeIndex=swiper.realIndex;</div><div class="line">           vm.<span class="keyword">in</span>=swiper.activeIndex;</div><div class="line">           console.log(vm.activeIndex,vm.<span class="keyword">in</span>)</div><div class="line">         &#125;</div><div class="line">       &#125;,</div><div class="line">       activeIndex:<span class="number">0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这段轮播看上去没什么问题，假如我们有3个slide索引分别是：0=&gt;1=&gt;2，我们手动切换会发现0=&gt;1=&gt;2正序切换怎么切都ok，当我们从0=&gt;2时出问题了，在onSlideChangeStart回调中activeIndex和in控制台是更新了索引的，但是在dom中swiper-slide里的dom数据是未更新的，而swiper外的dom是更新的，这是怎么回事呢？我google后发现<a href="https://segmentfault.com/q/1010000009147101/a-1020000009309928" target="_blank" rel="external">segmentfault</a>有相同的问题，有人回答说要配置swiper的观察者模式为true，我想说这是分情况的，这是针对组件数据是异步进去时开启观察者管用，但我这个情况是不起作用的，经过多方考证发现这是swiper的loop问题，开启了loop的话，swiper只是自己在dom上自己复制了两个节点进去，但是vm是不知道这个节点状态的，所以导致在0=&gt;2时出现不更新dom的问题，我最后的解决办法是舍弃了loop这个功能，反正开了自动轮播，手动切换就关了loop吧；</p>
+<p>我在vue轮播组件式选用了<a href="https://surmon-china.github.io/vue-awesome-swiper/" target="_blank" rel="noopener">vue-awesome-swiper</a>,这个vuejs组件是基于<a href="http://www.swiper.com.cn/" target="_blank" rel="noopener">swiper</a>开发的；至于这个组件是怎么用的可到github上查看这里不做详细介绍，下面上我的代码</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;span&gt;&#123;&#123;activeIndex&#125;&#125;---&#123;&#123;<span class="keyword">in</span>&#125;&#125;&lt;/span&gt;</span><br><span class="line">   &lt;swiper :options=<span class="string">"swiperOption"</span> <span class="keyword">class</span>=<span class="string">"swiperbox"</span> :<span class="keyword">class</span>=<span class="string">"&#123;swiper2:activeIndex==1,swiper3:activeIndex==2&#125;"</span>&gt;</span><br><span class="line">        &lt;swiper-slide <span class="keyword">class</span>=<span class="string">"swiperItem"</span> v-<span class="keyword">for</span>=<span class="string">"(keyP,itemBox) in swiperTitle"</span>&gt;&#123;&#123;activeIndex&#125;&#125;---&#123;&#123;<span class="keyword">in</span>&#125;&#125;</span><br><span class="line">        &lt;/swiper-slide&gt; </span><br><span class="line">       &lt;div <span class="keyword">class</span>=<span class="string">"swiper-pagination"</span> slot=<span class="string">"pagination"</span>&gt;&lt;/div&gt;</span><br><span class="line">   &lt;/swiper&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">       swiperOption: &#123;</span><br><span class="line">         height: <span class="number">300</span>,</span><br><span class="line">         autoplay: <span class="literal">false</span>,<span class="comment">//20000</span></span><br><span class="line">         loop : <span class="literal">true</span>,</span><br><span class="line">         autoplayDisableOnInteraction : <span class="literal">false</span>,</span><br><span class="line">         setWrapperSize :<span class="literal">true</span>,</span><br><span class="line">         pagination : <span class="string">'.swiper-pagination'</span>,</span><br><span class="line">         paginationClickable :<span class="literal">true</span>,</span><br><span class="line">         mousewheelControl : <span class="literal">true</span>,</span><br><span class="line">         observer:<span class="literal">true</span>,</span><br><span class="line">         observeParents:<span class="literal">true</span>,</span><br><span class="line">         onSlideChangeStart: function(swiper)&#123;</span><br><span class="line">           vm.activeIndex=swiper.realIndex;</span><br><span class="line">           vm.<span class="keyword">in</span>=swiper.activeIndex;</span><br><span class="line">           console.log(vm.activeIndex,vm.<span class="keyword">in</span>)</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;,</span><br><span class="line">       activeIndex:<span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段轮播看上去没什么问题，假如我们有3个slide索引分别是：0=&gt;1=&gt;2，我们手动切换会发现0=&gt;1=&gt;2正序切换怎么切都ok，当我们从0=&gt;2时出问题了，在onSlideChangeStart回调中activeIndex和in控制台是更新了索引的，但是在dom中swiper-slide里的dom数据是未更新的，而swiper外的dom是更新的，这是怎么回事呢？我google后发现<a href="https://segmentfault.com/q/1010000009147101/a-1020000009309928" target="_blank" rel="noopener">segmentfault</a>有相同的问题，有人回答说要配置swiper的观察者模式为true，我想说这是分情况的，这是针对组件数据是异步进去时开启观察者管用，但我这个情况是不起作用的，经过多方考证发现这是swiper的loop问题，开启了loop的话，swiper只是自己在dom上自己复制了两个节点进去，但是vm是不知道这个节点状态的，所以导致在0=&gt;2时出现不更新dom的问题，我最后的解决办法是舍弃了loop这个功能，反正开了自动轮播，手动切换就关了loop吧；</p>
 <p>希望大家在vue中用swiper时注意一下这个loop问题，尽量绕开loop;</p>
 <p>如上文章有点潦草，还望谅解；有问题随时艾特本人；</p>
 
@@ -418,7 +414,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -505,15 +501,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,6 +529,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -545,6 +549,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -554,10 +562,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

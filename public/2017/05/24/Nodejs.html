@@ -8,24 +8,23 @@
   <link rel="dns-prefetch" href="http://ithack.github.io">
   <title>nodeJs+mongodb，nodejs的实战小demo | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="上周没事深入了解了下node的运行机制和原理，并在内部做了个小分享，今天拿出来整理下分享出来！之前配置了mongodb，所以最后用node+mongodb做了个小demo，简单易理解！好了下面进入正题！
-首先我们一定要记住一点：nodejs本身不是开发语言，它是一个工具或者平台，在服务器端解释、运行javascript；nodejs利用Google V8引擎来解释运行javascript，但是系统">
+  <meta name="description" content="上周没事深入了解了下node的运行机制和原理，并在内部做了个小分享，今天拿出来整理下分享出来！之前配置了mongodb，所以最后用node+mongodb做了个小demo，简单易理解！好了下面进入正题！ 首先我们一定要记住一点：nodejs本身不是开发语言，它是一个工具或者平台，在服务器端解释、运行javascript；nodejs利用Google V8引擎来解释运行javascript，但是系统">
+<meta name="keywords" content="nodeJs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nodeJs+mongodb，nodejs的实战小demo">
 <meta property="og:url" content="http://ithack.github.io/2017/05/24/Nodejs.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="上周没事深入了解了下node的运行机制和原理，并在内部做了个小分享，今天拿出来整理下分享出来！之前配置了mongodb，所以最后用node+mongodb做了个小demo，简单易理解！好了下面进入正题！
-首先我们一定要记住一点：nodejs本身不是开发语言，它是一个工具或者平台，在服务器端解释、运行javascript；nodejs利用Google V8引擎来解释运行javascript，但是系统">
-<meta property="og:image" content="http://ithack.github.io/\images\node分享\nodejs1.jpg">
-<meta property="og:image" content="http://ithack.github.io/\images\node分享\nodejs2.jpg">
-<meta property="og:image" content="http://ithack.github.io/\images\node分享\nodejs3.jpg">
-<meta property="og:image" content="http://ithack.github.io/\images\node分享\5.png">
-<meta property="og:updated_time" content="2017-05-24T08:22:48.891Z">
+<meta property="og:description" content="上周没事深入了解了下node的运行机制和原理，并在内部做了个小分享，今天拿出来整理下分享出来！之前配置了mongodb，所以最后用node+mongodb做了个小demo，简单易理解！好了下面进入正题！ 首先我们一定要记住一点：nodejs本身不是开发语言，它是一个工具或者平台，在服务器端解释、运行javascript；nodejs利用Google V8引擎来解释运行javascript，但是系统">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://ithack.github.io/images/node分享/nodejs1.jpg">
+<meta property="og:image" content="http://ithack.github.io/images/node分享/nodejs2.jpg">
+<meta property="og:image" content="http://ithack.github.io/images/node分享/nodejs3.jpg">
+<meta property="og:image" content="http://ithack.github.io/images/node分享/5.png">
+<meta property="og:updated_time" content="2017-05-24T08:22:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodeJs+mongodb，nodejs的实战小demo">
-<meta name="twitter:description" content="上周没事深入了解了下node的运行机制和原理，并在内部做了个小分享，今天拿出来整理下分享出来！之前配置了mongodb，所以最后用node+mongodb做了个小demo，简单易理解！好了下面进入正题！
-首先我们一定要记住一点：nodejs本身不是开发语言，它是一个工具或者平台，在服务器端解释、运行javascript；nodejs利用Google V8引擎来解释运行javascript，但是系统">
-<meta name="twitter:image" content="http://ithack.github.io/\images\node分享\nodejs1.jpg">
+<meta name="twitter:description" content="上周没事深入了解了下node的运行机制和原理，并在内部做了个小分享，今天拿出来整理下分享出来！之前配置了mongodb，所以最后用node+mongodb做了个小demo，简单易理解！好了下面进入正题！ 首先我们一定要记住一点：nodejs本身不是开发语言，它是一个工具或者平台，在服务器端解释、运行javascript；nodejs利用Google V8引擎来解释运行javascript，但是系统">
+<meta name="twitter:image" content="http://ithack.github.io/images/node分享/nodejs1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -212,7 +211,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>上周没事深入了解了下node的运行机制和原理，并在内部做了个小分享，今天拿出来整理下分享出来！之前配置了<a href="https://ithack.github.io/2017/05/11/MongoDB%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%92%8C%E5%90%AF%E5%8A%A8.html">mongodb</a>，所以最后用node+mongodb做了个小<a href="https://github.com/ithack/nodeJsMongodb-demo" target="_blank" rel="external">demo</a>，简单易理解！好了下面进入正题！</p>
+        <p>上周没事深入了解了下node的运行机制和原理，并在内部做了个小分享，今天拿出来整理下分享出来！之前配置了<a href="https://ithack.github.io/2017/05/11/MongoDB%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%92%8C%E5%90%AF%E5%8A%A8.html">mongodb</a>，所以最后用node+mongodb做了个小<a href="https://github.com/ithack/nodeJsMongodb-demo" target="_blank" rel="noopener">demo</a>，简单易理解！好了下面进入正题！</p>
 <p>首先我们一定要记住一点：nodejs本身不是开发语言，它是一个工具或者平台，在服务器端解释、运行javascript；nodejs利用Google V8引擎来解释运行javascript，但是系统真正执行的代码是用C++写的。javascript做的只是调用这些API而已。</p>
 <h2 id="NodeJS的三大特点"><a href="#NodeJS的三大特点" class="headerlink" title="NodeJS的三大特点"></a>NodeJS的三大特点</h2><ul>
 <li><strong>单线程</strong></li>
@@ -245,16 +244,16 @@ var _hmt = _hmt || [];
 </blockquote>
 <h2 id="同步-vs-异步"><a href="#同步-vs-异步" class="headerlink" title="同步 vs 异步"></a>同步 vs 异步</h2><p>得益于异步的机制，NodeJS在拥有卓越性能的同时，也会使逻辑的实现变得更复杂和难于理解。</p>
 <p>首先，其实NodeJS也是能实现blocking的代码的，比如读取一个文件：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> contents = fs.readFileSync(<span class="string">"data.txt"</span>, <span class="string">"utf8"</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(contents);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"done"</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> contents = fs.readFileSync(<span class="string">"data.txt"</span>, <span class="string">"utf8"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(contents);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"done"</span>);</span><br></pre></td></tr></table></figure>
 <p>这样写的输出结果就是先读取打印文件的内容，再输出<code>done</code>.</p>
 <p>但是，这样就失去了使用NodeJS的优势，而且，绝大部分的库（比如文件的读取，数据库的操作等）都是使用异步机制，并且不提供类似fs的sync同步方法，而一般的Callback写法应该是这样的：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"></div><div class="line">fs.readFile(<span class="string">"data.txt"</span>, <span class="string">"utf8"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, contents</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span>(err) &#123;</div><div class="line">        errorHandler();</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(contents);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"done"</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"></span><br><span class="line">fs.readFile(<span class="string">"data.txt"</span>, <span class="string">"utf8"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, contents</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) &#123;</span><br><span class="line">        errorHandler();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(contents);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"done"</span>);</span><br></pre></td></tr></table></figure>
 <p>需要注意的是，这样的写的话，输出的顺序就是<code>done</code>之后再是文件的内容了。</p>
 <p>NodeJS一般的异步实现方式：</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">someThing.someFunction(param...,callback);</div></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">someThing.someFunction(param...,callback);</span><br></pre></td></tr></table></figure>
 <p>用通俗的话解释就是:因为是异步，所以当你派发任务的时候，请直接告诉我这件事完成之后该干什么，而不是等我做完了之后再告诉我。</p>
 <h2 id="nodejs适用场景"><a href="#nodejs适用场景" class="headerlink" title="nodejs适用场景"></a>nodejs适用场景</h2><p><strong>实时程序</strong></p>
-<p>比如聊天服务(<a href="https://microzz.com/vue-chat" target="_blank" rel="external">案例</a>)</p>
+<p>比如聊天服务(<a href="https://microzz.com/vue-chat" target="_blank" rel="noopener">案例</a>)</p>
 <p>聊天应用程序是最能体现 Node.js 优点的例子：轻量级、高流量并且能良好的应对跨平台设备上运行密集型数据。同时，聊天也是一个非常值得学习的用例，因为它很简单。</p>
 <p>单页APP</p>
 <p>ajax很多。现在单页的机制似乎很流行，比如phonegap做出来的APP</p>
@@ -267,12 +266,12 @@ var _hmt = _hmt || [];
 </ul>
 <h3 id="主要依赖包"><a href="#主要依赖包" class="headerlink" title="主要依赖包"></a>主要依赖包</h3><ul>
 <li>express-session</li>
-<li>mongoose(<a href="http://cnodejs.org/topic/504b4924e2b84515770103dd" target="_blank" rel="external">API</a>)</li>
+<li>mongoose(<a href="http://cnodejs.org/topic/504b4924e2b84515770103dd" target="_blank" rel="noopener">API</a>)</li>
 <li>express-validator</li>
 <li>md5</li>
 <li>passport</li>
 <li>connection-mongo</li>
-<li><a href="http://nodejs.cn/api/events.html" target="_blank" rel="external">官方包</a></li>
+<li><a href="http://nodejs.cn/api/events.html" target="_blank" rel="noopener">官方包</a></li>
 </ul>
 <p><strong>个人看法：node上手so easy，实际应用到项目中就需要积累各种模块和中间件的坑；</strong></p>
 
@@ -472,7 +471,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -559,15 +558,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,6 +586,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -599,6 +606,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -608,10 +619,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

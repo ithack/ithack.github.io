@@ -8,52 +8,18 @@
   <link rel="dns-prefetch" href="http://ithack.github.io">
   <title>一道面试题引起的猜想 | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="之前有一道面试题困惑我很久，后来在网上搜索了一下，貌似很多人都会进入误区，但到现在为止我还没有看到一个合理的解释这让我很郁闷！面试题如下：
-
-var foo={n:1};
-var bar=foo;
-foo.x=foo={n:2};
-console.log(foo.x) //输出？
-
-
-答案是：
-
-console.log(a.x); // undefined
-
-不知道各位有没有答对，至少我是答错了。">
+  <meta name="description" content="之前有一道面试题困惑我很久，后来在网上搜索了一下，貌似很多人都会进入误区，但到现在为止我还没有看到一个合理的解释这让我很郁闷！面试题如下：  var foo={n:1}; var bar=foo; foo.x=foo={n:2}; console.log(foo.x) //输出？   答案是：  console.log(a.x); // undefined  不知道各位有没有答对，至少我是答错了。">
+<meta name="keywords" content="Javascript,面试题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一道面试题引起的猜想">
 <meta property="og:url" content="http://ithack.github.io/2016/08/18/一道面试题引起的猜想.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="之前有一道面试题困惑我很久，后来在网上搜索了一下，貌似很多人都会进入误区，但到现在为止我还没有看到一个合理的解释这让我很郁闷！面试题如下：
-
-var foo={n:1};
-var bar=foo;
-foo.x=foo={n:2};
-console.log(foo.x) //输出？
-
-
-答案是：
-
-console.log(a.x); // undefined
-
-不知道各位有没有答对，至少我是答错了。">
-<meta property="og:updated_time" content="2016-08-18T10:19:59.204Z">
+<meta property="og:description" content="之前有一道面试题困惑我很久，后来在网上搜索了一下，貌似很多人都会进入误区，但到现在为止我还没有看到一个合理的解释这让我很郁闷！面试题如下：  var foo={n:1}; var bar=foo; foo.x=foo={n:2}; console.log(foo.x) //输出？   答案是：  console.log(a.x); // undefined  不知道各位有没有答对，至少我是答错了。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2016-08-18T10:20:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一道面试题引起的猜想">
-<meta name="twitter:description" content="之前有一道面试题困惑我很久，后来在网上搜索了一下，貌似很多人都会进入误区，但到现在为止我还没有看到一个合理的解释这让我很郁闷！面试题如下：
-
-var foo={n:1};
-var bar=foo;
-foo.x=foo={n:2};
-console.log(foo.x) //输出？
-
-
-答案是：
-
-console.log(a.x); // undefined
-
-不知道各位有没有答对，至少我是答错了。">
+<meta name="twitter:description" content="之前有一道面试题困惑我很久，后来在网上搜索了一下，貌似很多人都会进入误区，但到现在为止我还没有看到一个合理的解释这让我很郁闷！面试题如下：  var foo={n:1}; var bar=foo; foo.x=foo={n:2}; console.log(foo.x) //输出？   答案是：  console.log(a.x); // undefined  不知道各位有没有答对，至少我是答错了。">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -308,7 +274,7 @@ console.log(a===b.x);//true
 </pre>
 
 <p>因为我们增加了var bar=foo，即将原对象增加了一条引用，所以在上述第5步时不会被释放，证实了上面的结论。</p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>通过测试和<a href="https://www.cnblogs.com/xxcanghai/p/4998076.html?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="external">小小沧海</a> 的文章，我认为我还没有真正了解它内部的具体机制，文章中有些地方也是给出了猜想二字，所以我还是建议：<strong>尽量不要使用JS的连续赋值操作，除非真的了解它的内部机制及可能会产生的后果。</strong></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>通过测试和<a href="https://www.cnblogs.com/xxcanghai/p/4998076.html?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="noopener">小小沧海</a> 的文章，我认为我还没有真正了解它内部的具体机制，文章中有些地方也是给出了猜想二字，所以我还是建议：<strong>尽量不要使用JS的连续赋值操作，除非真的了解它的内部机制及可能会产生的后果。</strong></p>
 
       
 
@@ -510,7 +476,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -597,15 +563,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -625,6 +591,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -637,6 +611,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -646,10 +624,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">

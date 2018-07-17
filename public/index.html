@@ -14,6 +14,7 @@
 <meta property="og:url" content="http://ithack.github.io/index.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
 <meta property="og:description" content="web前端,前端工程师,前端程序猿">
+<meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不羁放纵爱自由的猿人">
 <meta name="twitter:description" content="web前端,前端工程师,前端程序猿">
@@ -185,6 +186,91 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue拖拽-生成页面问题记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/12/vue拖拽-生成页面问题记录.html">vue拖拽组件，拖拽生成html问题记录</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/12/vue拖拽-生成页面问题记录.html" class="archive-article-date">
+  	<time datetime="2018-07-12T06:37:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>已经停更一年了，平时不是没时间更新，就是不知道记录什么！平时遇到的问题和解决思路都简单的弄了个list作为文章更新点，今天忙里抽闲，在单位的电脑装上blog环境，开始更新一个从零到一纯手动搭建的关于<a href="https://github.com/ithack/vueCMS" target="_blank" rel="noopener">vue可视化系统，组件拼接页面</a></p>
+<p>，从开始的毫无头绪，到目前的一步步踩坑经历了从绝望看到希望，感觉自己变牛逼了（其实并没有）！好了废话不多说，内容比较多和杂，一步一步来；
+        
+          <a class="article-more-a" href="/2018/07/12/vue拖拽-生成页面问题记录.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vuedraggable</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">拖拽</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/12/vue拖拽-生成页面问题记录.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Chrome inspect调试webview的强制开启方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -207,9 +293,9 @@ var _hmt = _hmt || [];
       
         <p>对于inspect很多前端开发并不陌生，我们经常用inspect调试我们移动端页面嵌套进原生webview的页面；但这个调试方法需要安卓4.4以上版本支持，但同时由于安卓本身是开源的国内很多手机厂商都在安卓的基础上做了封装再开发，导致有些手机我们即使在inspect里识别了当前手机，但用浏览器或webview打开页面时却不能看到我们的html，之前在开发时遇到，在google搜索了一堆的解决方案，都是要安卓开启debug模式，但app内部测试版本就是开启状态，那么如何解决我们才能调试我们自己的html页面呢？之前搜到过资料没有进行记录，今天调试时又遇到了这个问题是个小米手机，安卓版本4.4.4；接下来看看怎么解决这个问题；</p>
 <h2 id="基于webkit核心的webview端调试"><a href="#基于webkit核心的webview端调试" class="headerlink" title="基于webkit核心的webview端调试"></a>基于webkit核心的webview端调试</h2><p>从 <strong>Android 4.4</strong> 开始，webkit是支持远程调试的，不过需要将app的debug模式打开，可以使用如下代码：</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">WebView.setWebContentsDebuggingEnabled(true)<span class="comment">;12</span></div></pre></td></tr></table></figure>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WebView.setWebContentsDebuggingEnabled(true)<span class="comment">;12</span></span><br></pre></td></tr></table></figure>
 <p>由于大部分 App 的 debug 模式是关闭的，即便是内部 App，比如 QQ/微信，要去找一个开启了debug 模式的版本还是比较麻烦的。因此需要使用借助第三方工具来强制开启任何 App 的 <strong>Android webview debug模式</strong>，使之可以使用 chrome inspect。<strong>而这个工具就是 Xposed </strong>。</p>
-<p>我们已经提供了一份要安装的文件，请首先到 <a href="https://github.com/feix760/WebViewDebugHook">https://github.com/feix760/WebViewDebugHook</a> 下载文件。</p>
+<p>我们已经提供了一份要安装的文件，请首先到 <a href="https://github.com/feix760/WebViewDebugHook" target="_blank" rel="noopener">https://github.com/feix760/WebViewDebugHook</a> 下载文件。</p>
 <h3 id="1、root设备"><a href="#1、root设备" class="headerlink" title="1、root设备"></a>1、root设备</h3><p>因为涉及到 root 权限，因此需要将手机进行 root。有很多工具可以来 root，比如KingRoot、一键root、360一键root等。如果你安装了QQ电脑管家，可以在“电脑管家-工具箱-其他”列表里面看到KingRoot。
         
           <a class="article-more-a" href="/2017/10/18/Chrome inspect调试webview的强制开启方法.html#more">more >></a>
@@ -371,9 +457,9 @@ var _hmt = _hmt || [];
         <p>​    周末来加班准备下周项目从线工作，坐着等QA和审核等部门的问题解决，目前帝都的外边下着忽大忽小的雷阵雨， 昨天下班在雨中漫步回家，今天早起去体检又雨中漫步来上班，有一种说不出的感觉；好了天气预报说完了，下班就来说说我在上一片文章提到正在做的项目遇到的一个小问题，这里和大家分享下；</p>
 <p> 就像题目看到的在ios中动态加入的dom元素是不支持click绑定方法的，当时遇到这个问题我没有细想直接换成了touchstart来检测，发现可以通过，由于项目紧张就没有详查原因，记录下来今天做了一个查询：</p>
 <p>大概意思是,如果要用$(document).click()来绑定新生成的DOM元素,必须给此DOM添加css样式</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">cursor</span>: pointer;</div></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">cursor</span>: pointer;</span><br></pre></td></tr></table></figure>
 <p>或用touchstart方法；我并没有亲测css样式这个解决 方案，这里做个记录，下次遇到用一下试试！如下是解答地址：</p>
-<p><a href="http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery" target="_blank" rel="external">http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery</a></p>
+<p><a href="http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery" target="_blank" rel="noopener">http://stackoverflow.com/questions/3705937/document-click-not-working-correctly-on-iphone-jquery</a></p>
 
       
 
@@ -456,7 +542,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>​    最近忙的暗无天日的节奏，不过收获很多很开心能同时3个项目的从0到1的过程，今天开始项目已经进入优化迭代阶段，基础功能和东西都已经弄好了，再也不用早九晚十一周七天的工作节奏了，说实话突然弄完了可以喘口气了还有点不那么适应了；</p>
-<p>​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个是vue+nuxt+公司node架构搭建中间成做的后台系统，vue对于我来说没什么挑战性分配给我的工作早早就解决了，之后主要工作就是一直带一个校招新手做一个h5页面，嵌套在APP中的一个项目，由于这个新手没做过项目所以基本手把手教，之前在大数字也带过一个校招研究生两个对比还是大数字的校招基础扎实一点，没带多久基本就已经出师了；现在这个貌似带了这一整个项目进步也不是很大，主要是基础不扎实，很多东西都不了解；主要在这个项目中遇到很多坑，主要内部的node框架用了<a href="http://www.xidea.org/lite/index.html">lite</a>模版，这个模版之前从未听过有一些不太习惯；不过在做这个h5项目中还是有一点收获的，仔细想来最大的收获是在教的过程中发现自己的不足；感觉在做项目的时候遇到很多问题都像闯关一样，每过一关都觉得好爽；</p>
+<p>​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个是vue+nuxt+公司node架构搭建中间成做的后台系统，vue对于我来说没什么挑战性分配给我的工作早早就解决了，之后主要工作就是一直带一个校招新手做一个h5页面，嵌套在APP中的一个项目，由于这个新手没做过项目所以基本手把手教，之前在大数字也带过一个校招研究生两个对比还是大数字的校招基础扎实一点，没带多久基本就已经出师了；现在这个貌似带了这一整个项目进步也不是很大，主要是基础不扎实，很多东西都不了解；主要在这个项目中遇到很多坑，主要内部的node框架用了<a href="http://www.xidea.org/lite/index.html" target="_blank" rel="noopener">lite</a>模版，这个模版之前从未听过有一些不太习惯；不过在做这个h5项目中还是有一点收获的，仔细想来最大的收获是在教的过程中发现自己的不足；感觉在做项目的时候遇到很多问题都像闯关一样，每过一关都觉得好爽；</p>
 <p>​    好了废话不多说，进入主题，不知道谁遇到过，反正我遇到了，（我的应用场景：在一个详情页最下边有一个发布评论的div，这个div是fixed的，里边有个input和submit按钮，在详情的content里有一个评论的click事件，点击后我会让这个fixed里的input聚焦，在APP里会唤起键盘，做完后发现安卓没有问题，在IOS里可以唤起键盘但是fixed这个div会被键盘遮挡住，体验不好，所以需要解决这个问题，就有了之后的一切摸索过程……）之前没遇到过第一次遇到我 首先百度原因，各种说法都有如下是查到的两个比较靠谱的评论链接，或许你也回遇到相同的问题，希望对你有所帮助：</p>
         
           <a class="article-more-a" href="/2017/08/10/实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input.html#more">more >></a>
@@ -699,9 +785,9 @@ var _hmt = _hmt || [];
 <p>​    2.后台系统用react作为框架搭建后台页面</p>
 <p>​    3.后台系统是用nodejs作为中间层接收后端接口数据后渲染模版传给客户端（浏览器）</p>
 <p>​    之前一直在看react的demo和API从来没有在项目中用过，之前看demo和api时觉得react的写法上实在让我这个纯前端觉得高大上同时望而却步的感觉，这次有机会用react在实际项目中使用内心却有那么一点的小激动；好了废话不多说，下面就说说react吧（由于第一次用，记录不对的地方还请看官大大批评指正）</p>
-<p>​    由于是实战小记，这里就不说react是什么，react解决了什么等问题了，这些问题可以在搜索引擎搜到一堆大大们的文章学习，今天以实战经历为主；我们用了（<a href="https://ant.design/">antDesign</a>）这个前端框架的，先说说react创建组件的ES5和ES6两种方法：</p>
+<p>​    由于是实战小记，这里就不说react是什么，react解决了什么等问题了，这些问题可以在搜索引擎搜到一堆大大们的文章学习，今天以实战经历为主；我们用了（<a href="https://ant.design/" target="_blank" rel="noopener">antDesign</a>）这个前端框架的，先说说react创建组件的ES5和ES6两种方法：</p>
 <p>ES5：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> reactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="comment">/*子组件*/</span></div><div class="line"><span class="keyword">var</span> Hello = React.createClass(&#123;</div><div class="line">  <span class="attr">getIntialState</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//初始化组件状态</span></div><div class="line">  getDefaultProps： <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//初始化组件的默认属性</span></div><div class="line">  </div><div class="line">  propTypes: &#123;&#125;, <span class="comment">//规定属性的存在性和类型</span></div><div class="line">  </div><div class="line">  <span class="comment">//一些生命周期相关函数</span></div><div class="line">  componentWillMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被嵌入之前触发</span></div><div class="line">  componentDidMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被嵌入之后触发</span></div><div class="line">  componentWillReceiveProps: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//当props有改变时触发</span></div><div class="line">  componentWillUnmount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被注销之前触发</span></div><div class="line">  <span class="comment">//渲染函数，不能省略    </span></div><div class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span> ;     </div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hello</div><div class="line"><span class="comment">/*父组件*/</span></div><div class="line">ReactDOM.render(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">Hello</span> <span class="attr">name</span>=<span class="string">"John"</span> /&gt;</span>,</div><div class="line">  document.getElementById('App')</div><div class="line">);</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> reactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="comment">/*子组件*/</span></span><br><span class="line"><span class="keyword">var</span> Hello = React.createClass(&#123;</span><br><span class="line">  getIntialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//初始化组件状态</span></span><br><span class="line">  getDefaultProps： <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//初始化组件的默认属性</span></span><br><span class="line">  </span><br><span class="line">  propTypes: &#123;&#125;, <span class="comment">//规定属性的存在性和类型</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//一些生命周期相关函数</span></span><br><span class="line">  componentWillMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被嵌入之前触发</span></span><br><span class="line">  componentDidMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被嵌入之后触发</span></span><br><span class="line">  componentWillReceiveProps: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//当props有改变时触发</span></span><br><span class="line">  componentWillUnmount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被注销之前触发</span></span><br><span class="line">  <span class="comment">//渲染函数，不能省略    </span></span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span> ;     </span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hello</span><br><span class="line"><span class="comment">/*父组件*/</span></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Hello name=<span class="string">"John"</span> /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'App'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2017/06/19/实战react小记一.html#more">more >></a>
         
@@ -781,7 +867,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>上周没事深入了解了下node的运行机制和原理，并在内部做了个小分享，今天拿出来整理下分享出来！之前配置了<a href="https://ithack.github.io/2017/05/11/MongoDB%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%92%8C%E5%90%AF%E5%8A%A8.html">mongodb</a>，所以最后用node+mongodb做了个小<a href="https://github.com/ithack/nodeJsMongodb-demo">demo</a>，简单易理解！好了下面进入正题！</p>
+        <p>上周没事深入了解了下node的运行机制和原理，并在内部做了个小分享，今天拿出来整理下分享出来！之前配置了<a href="https://ithack.github.io/2017/05/11/MongoDB%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%92%8C%E5%90%AF%E5%8A%A8.html">mongodb</a>，所以最后用node+mongodb做了个小<a href="https://github.com/ithack/nodeJsMongodb-demo" target="_blank" rel="noopener">demo</a>，简单易理解！好了下面进入正题！</p>
 <p>首先我们一定要记住一点：nodejs本身不是开发语言，它是一个工具或者平台，在服务器端解释、运行javascript；nodejs利用Google V8引擎来解释运行javascript，但是系统真正执行的代码是用C++写的。javascript做的只是调用这些API而已。</p>
 <h2 id="NodeJS的三大特点"><a href="#NodeJS的三大特点" class="headerlink" title="NodeJS的三大特点"></a>NodeJS的三大特点</h2><ul>
 <li><strong>单线程</strong></li>
@@ -866,7 +952,7 @@ var _hmt = _hmt || [];
       
         <p>这周手里没项目，所以闲来没事就吓研究，之前一直想搞一搞node+mongoDB一直没有机会，所以这周就考虑了一下vue+node+mongodb组合做个后台之类的demo，首先我之前完全没有用过mongodb+node的经验所以基本是从0开始摸索，今天我就来说说mongodb的安装配置和启动；</p>
 <p>首先必须要有一套node环境这是必须的，我就不多说了，目前大部分前端多少都要搭建node环境来开发；</p>
-<p>下面今天的主角登场<a href="https://www.mongodb.com">MongoDB</a>，先下载<a href="https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.4.4-signed.msi/download">MongoDB</a>，这里的下载连接是官方64位msi包，有其他系统或需求的可直接到官网自行下载，由于我本机是win7(64-bit)，所以我今天是围绕win7来讲解的；</p>
+<p>下面今天的主角登场<a href="https://www.mongodb.com" target="_blank" rel="noopener">MongoDB</a>，先下载<a href="https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-3.4.4-signed.msi/download" target="_blank" rel="noopener">MongoDB</a>，这里的下载连接是官方64位msi包，有其他系统或需求的可直接到官网自行下载，由于我本机是win7(64-bit)，所以我今天是围绕win7来讲解的；</p>
 <p>mongoDB 本地安装如图：</p>
 <p><img src="\images\mongodb\1.png" alt="1"></p>
         
@@ -924,86 +1010,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-css变量与calc()方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/09/css变量与calc()方法.html">css变量与calc()方法简单入门demo</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/09/css变量与calc()方法.html" class="archive-article-date">
-  	<time datetime="2017-05-09T02:31:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>CSS变量应该称之为 CSS 自定义属性 ，不过下文为了好理解都称之为 CSS 变量。</p>
-<p>一直以来我们都知道，CSS 中是没有变量而言的，要使用 CSS 变量，只能借助 SASS 或者 LESS 这类预编译器。</p>
-<p>这个重要的 CSS 新功能，所有主要浏览器已经都支持了。本文主要介绍如何使用它，我们发现css如此强大，这是一个令人激动的革新，下面写个简单的demo来感受下CSS变量的强悍：</p>
-<p><p data-height="265" data-theme-id="dark" data-slug-hash="eWyeoZ" data-default-tab="html" data-user="it_hack" data-embed-version="2" data-pen-title="css变量 " class="codepen">See the Pen <a href="https://codepen.io/it_hack/pen/eWyeoZ/">css变量 </a> by kevin (<a href="http://codepen.io/it_hack">@it_hack</a>) on <a href="http://codepen.io">CodePen</a>.</p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-        
-          <a class="article-more-a" href="/2017/05/09/css变量与calc()方法.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/09/css变量与calc()方法.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1018,7 +1024,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 kevin,杨凯
+    		&copy; 2018 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1105,15 +1111,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1133,6 +1139,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -1145,6 +1159,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -1154,10 +1172,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
