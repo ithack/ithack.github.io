@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://ithack.github.io">
-  <title>不羁放纵爱自由的猿人</title>
+  <title>Tag: pagehide | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="web前端,前端工程师,前端程序猿">
 <meta property="og:type" content="website">
 <meta property="og:title" content="不羁放纵爱自由的猿人">
-<meta property="og:url" content="http://ithack.github.io/page/3/index.html">
+<meta property="og:url" content="http://ithack.github.io/tag/pagehide/index.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
 <meta property="og:description" content="web前端,前端工程师,前端程序猿">
 <meta property="og:locale" content="default">
@@ -186,732 +186,66 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-常见的JS排序算法的实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/07/18/移动端pageshow-and-pagehide.html" class="archive-article-date">
+  	<time datetime="2018-07-18T02:00:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
+</a>
+        </div>
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/16/常见的JS排序算法的实现.html">常见的JS排序算法的实现</a>
+      <a class="archive-article-title" href="/2018/07/18/移动端pageshow-and-pagehide.html">移动端pageshow and pagehide</a>
     </h1>
   
 
-        
-        <a href="/2016/08/16/常见的JS排序算法的实现.html" class="archive-article-date">
-  	<time datetime="2016-08-16T07:29:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天就来说一说几种我们平时面试和实际应用中的JS排序的实现方法！下面的方法用了ES6中的一些新属性，但整体思路是不变的！</p>
-<p>原文：<a href="http://h3manth.com/javascript-sorting/" target="_blank" rel="noopener">Sorting Algorithms in Javascript</a></p>
-<p>译文：排序算法的JavaScript实现</p>
-<p>译者：dwqs</p>
-<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><blockquote>
-<p>let quicksort = function(arr) {<br>　if(arr.length &lt;= 1)return arr;<br>　let pivot = Math.floor((arr.length -1)/2);<br>　let val = arr[pivot], less = [], more = [];<br>　arr.splice(pivot, 1);<br>　arr.forEach(function(e,i,a){<br>　　e &lt; val ? less.push(e) : more.push(e);<br>　});<br>　return (quicksort(less)).concat([val],quicksort(more));<br>}</p>
-</blockquote>
-<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><pre>
-let compare = (n1, n2) => n1 - n2;
-
-let bubbleSort = (arr, cmp = compare) => {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i; j > 0; j--) {
-      if (cmp(arr[j], arr[j - 1]) < 0) {
-        [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
-      }
-    }
-  }
-  return arr;
-};
-</pre>
-        
-          <a class="article-more-a" href="/2016/08/16/常见的JS排序算法的实现.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/16/常见的JS排序算法的实现.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS3实现关闭X按钮" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/12/CSS3实现关闭X按钮.html">CSS3实现关闭X按钮</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/12/CSS3实现关闭X按钮.html" class="archive-article-date">
-  	<time datetime="2016-08-12T02:11:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>昨天做一个小的页面时用到了弹框，一般弹框都有close按钮，有时我们为了偷懒直接用个X来做关闭按钮！但这种情况基本很难看，所以我们需要UI给我设计一个关闭按钮，或者我们要用font-face来做这个关闭，这样做起来美观，但是却有一点麻烦！之前我无意间发现一个好玩的方法，简单好用,今天分享一下；</p>
-<p>用CSS3设计出来的样式来呈现出关闭按钮的样子，这样以后想设计简单的对话框，就不需要求美工来帮忙画按钮的图片了。先来看看样式:</p>
-<p><pre><br>/<em> basic style </em>/<br>.close {<br>    background: orange;<br>    color: red;<br>    border-radius: 12px;<br>    line-height: 20px;<br>    text-align: center;<br>    height: 20px;<br>    width: 20px;<br>    font-size: 18px;<br>    padding: 1px;<br>}<br>/<em> use cross as close button </em>/<br>.close::before {<br>    content: “\2716”;<br>}<br>/<em> place the button on top-right </em>/<br>.close {<br>    top: -10px;<br>    right: -10px;<br>    position: absolute;<br>}<br></pre><br>然后直接把它加到HTML元素上就可以看到效果了：</p>
-<p><pre><br>&lt;div style=”height: 100px; width: 100px; border: 1px solid black; position: relative;”&gt;<span class="close"></span>&lt;/div&gt;<br></pre><br>这主要是利用了在CSS的::before伪属性可以直接添加内容的特点，这样就可以直接设置样式在class上而不用做其它操作。当然这里用::after效果也是一样的。唯一要注意的是如果要指定关闭按钮在特定位置，就需要使用到position:absolut;，相应的其父元素就不能是默认的position:static;。像上边的示例中就使用的是position:relative;以保证按钮呈现在正确的位置上。</p>
-<p>对于按钮中的叉按钮，用的是Unicode中的一种标识，以下这些也可以使用：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">标识</th>
-<th style="text-align:center">编码(16进制)</th>
-<th style="text-align:center">Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><img src="http://oap59rfi2.bkt.clouddn.com/2716.png" alt=""></td>
-<td style="text-align:center">\2716</td>
-<td style="text-align:center">粗体乘法</td>
-</tr>
-<tr>
-<td style="text-align:center">✗</td>
-<td style="text-align:center">\2717</td>
-<td style="text-align:center">交叉</td>
-</tr>
-<tr>
-<td style="text-align:center">✘</td>
-<td style="text-align:center">\2718</td>
-<td style="text-align:center">粗体交叉</td>
-</tr>
-<tr>
-<td style="text-align:center">×</td>
-<td style="text-align:center">\00D7</td>
-<td style="text-align:center">乘法符号</td>
-</tr>
-<tr>
-<td style="text-align:center">⨯</td>
-<td style="text-align:center">\2A2F</td>
-<td style="text-align:center">向量乘积</td>
-</tr>
-<tr>
-<td style="text-align:center">x</td>
-<td style="text-align:center">\78</td>
-<td style="text-align:center">小写字母</td>
-</tr>
-<tr>
-<td style="text-align:center">X</td>
-<td style="text-align:center">\58</td>
-<td style="text-align:center">大写字母</td>
-</tr>
-</tbody>
-</table>
-<p>只是使用了不同字符后，可能居中位置会有偏差需要重新调整。</p>
-<p>再结合JavaScript和CSS3的gradient，就能完成一个看起来还不错的对话框了。效果如下图：</p>
-<p><img src="http://oap59rfi2.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160812110840.png" alt=""></p>
-<p>其实我们可以完全用字符编码解决关闭X按钮的美观问题，上面是一种不用美工不用font-face的解决方案，在这个基础上我们也可以发散思维，用另一种方法解决，这里这是做一个简单的介绍，我们可以利用css3的旋转属性，父级有个边框，子级有个边框，把子级旋转九十度，和父级交叉，把父级旋转45°这样也是一个关闭X按钮！</p>
-<p>如果大家还有什么好的建议和想法，欢迎留言分享！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pageshow</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pagehide</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/12/CSS3实现关闭X按钮.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-简单说下this对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/10/简单说下this对象.html">简单说下this对象</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/10/简单说下this对象.html" class="archive-article-date">
-  	<time datetime="2016-08-10T10:37:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>快下班了，闲来无事就说说this对象把！<br>在JavaScript中，this关键字是动态绑定的，或称为运行期绑定，这极大地增强的我们程序的灵活性，同时也给初学者带来了很多困惑。本文总结了this的几个使用场景和常见误区。</p>
-<p>#全局环境#<br>在全局环境中使用 this ，它会指向全局对象。</p>
-<p><pre><br>    console.log(this);          // window对象<br>    alert(this === window);    // true<br></pre></p>
-<p>#函数调用#<br>当作为普通函数被调用时，函数内部的的 this 也会指向全局对象。</p>
-<p><pre><br>var obj= “window”;<br>function Test(){<br>    var obj = “fun”;<br>    alert(this.obj);<br>}<br>sayName();    // “window”<br></pre></p>
-<p>#作为对象的方法调用#<br>当作为对象内部的方法被调用时，这里 this 指向这个方法所在的对象
-        
-          <a class="article-more-a" href="/2016/08/10/简单说下this对象.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/10/简单说下this对象.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript跨域浅谈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/10/JavaScript跨域浅谈.html">浅谈JavaScript跨域和总结</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/10/JavaScript跨域浅谈.html" class="archive-article-date">
-  	<time datetime="2016-08-10T06:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天无事，聊一聊javascript跨域，面试经常会问到关于跨域的问题，今天我来聊一聊关于跨域的小知识！</p>
-<p>JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦;</p>
-<h3 id="先来说一说什么是跨域"><a href="#先来说一说什么是跨域" class="headerlink" title="先来说一说什么是跨域"></a>先来说一说什么是跨域</h3><p>简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更详细的说明可以看下表：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">URL</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">是否允许通信</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
-<td style="text-align:center">同一域名下</td>
-<td style="text-align:center"><strong><code>允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/lab/a.js" target="_blank" rel="noopener">http://www.a.com/lab/a.js</a><br><a href="http://www.a.com/script/b.js" target="_blank" rel="noopener">http://www.a.com/script/b.js</a></td>
-<td style="text-align:center">同一域名下不同文件夹</td>
-<td style="text-align:center"><strong><code>允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com:8000/a.js" target="_blank" rel="noopener">http://www.a.com:8000/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
-<td style="text-align:center">同一域名，不同端口</td>
-<td style="text-align:center"><strong><code>不允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="https://www.a.com/b.js" target="_blank" rel="noopener">https://www.a.com/b.js</a></td>
-<td style="text-align:center">同一域名，不同协议</td>
-<td style="text-align:center"><strong><code>不允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://70.32.92.74/b.js" target="_blank" rel="noopener">http://70.32.92.74/b.js</a></td>
-<td style="text-align:center">域名和域名对应ip</td>
-<td style="text-align:center"><strong><code>不允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://script.a.com/b.js" target="_blank" rel="noopener">http://script.a.com/b.js</a></td>
-<td style="text-align:center">主域相同，子域不同</td>
-<td style="text-align:center"><strong><code>不允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://a.com/b.js" target="_blank" rel="noopener">http://a.com/b.js</a></td>
-<td style="text-align:center">同一域名，不同二级域名（同上）</td>
-<td style="text-align:center"><strong><code>不允许（cookie这种情况下也不允许访问）</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.cnblogs.com/a.js" target="_blank" rel="noopener">http://www.cnblogs.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
-<td style="text-align:center">不同域名</td>
-<td style="text-align:center"><strong><code>不允许</code></strong></td>
-</tr>
-</tbody>
-</table>
-<p>特别注意：</p>
-<p>第一，如果是协议和端口造成的跨域问题“前台”是无能为力的，</p>
-<p>第二：在跨域问题上，域仅仅是通过“URL的首部”来识别而不会去尝试判断相同的ip地址对应着两个域或两个域是否在同一个ip上。</p>
-<p>第三：跨域并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但是返回结果被浏览器拦截了。最好的例子是 crsf 跨站攻击原理，请求是发送到了后端服务器无论是否跨域！注意：有些浏览器不允许从HTTPS的域跨域访问HTTP，比如Chrome和Firefox，这些浏览器在请求还未发出的时候就会拦截请求，这是一个特例</p>
-<p>虾米是集中跨域方法总结：<br>
-        
-          <a class="article-more-a" href="/2016/08/10/JavaScript跨域浅谈.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/10/JavaScript跨域浅谈.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-聊一聊-运算符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/09/聊一聊-运算符.html">聊一聊==运算符</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/09/聊一聊-运算符.html" class="archive-article-date">
-  	<time datetime="2016-08-09T07:12:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Javascript中==是一种比较复杂的运算，他的运算规则容易让人犯错！</p>
-<p>在详细介绍前我们来复习一下JS中关于数据类型的知识：</p>
-<ol>
-<li>JS中的值有两种类型：基本类型、引用类型（对象类型）</li>
-<li>基本类型包括：Undefined、Null、Boolean、Number和String等五种类型</li>
-<li>Undefined类型和Null类型都只有一个值，即undefined和null；Boolean类有两个值：true和false；Number类型的值很多很多；String类型的值有无数个值(理论上)</li>
-<li>所有对象都有valueOf()和toString()方法，它们继承自Object，当然也可能被子类重写</li>
-</ol>
-<p>现在考虑表达式：</p>
-<pre><code>x == y
-</code></pre><p>其中x和y是六种类型中某一种类型的值。</p>
-<p>当x和y的类型相同时，x == y可以转化为x === y，而后者是很简单的(唯一需要注意的可能是NaN)，所以下面我们只考虑x和y的类型不同的情况。<br>
-        
-          <a class="article-more-a" href="/2016/08/09/聊一聊-运算符.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/09/聊一聊-运算符.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-生病！！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/04/生病！！.html">生病！！</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/04/生病！！.html" class="archive-article-date">
-  	<time datetime="2016-08-04T08:39:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>不知什么原因，昨晚学习到凌晨两点，今天竟然比闹铃醒的还早！到了公司后感觉浑身上下酸疼！冒虚汗 胃疼  浑身没劲 怎么待着怎么难受！只好在本地研究下git打包备份博客源文件的问题，看看一些帖子文章，js基础理论！ 暂时就不更新什么技术文章了！脑子沉得严重！今天一天都在解决各种坑！今晚看情况，如果能坚持就到十一二点，不能就早点休息！</p>
-<p>先简单说下从零开始，就是抛开一切js，从0开始学习js，所以我从js数据类型、DOM、BOM开始一步一个脚印的看！虽然有些乏味，但我觉得既然选择了从零开始就不怕乏味！从0到1的过程一点一点走，这样回味起来才有成就，扎实！</p>
-<p> 差不多了，坚持不住了！我要躺下了！明天也不更新了，不要以为我挂了，明天周五，要赶路回家！周一见！！！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/04/生病！！.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-github上免费搭建自己的博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/21/github上免费搭建自己的博客.html">说一说github上免费搭建自己的博客</a>
-    </h1>
-  
-
-        
-        <a href="/2016/07/21/github上免费搭建自己的博客.html" class="archive-article-date">
-  	<time datetime="2016-07-21T07:43:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>昨天是帝都发大水的日子，我为了上班徒步了半个多小时到公司，为的是不矿工，等到了下午公司人性化的发邮件，当天考勤异常不扣工资，4点下班，我对这么人性的公司说一句太好了，所以今天更新我在github上第一次文章《github搭建博客》</p>
-</blockquote>
-<p> 好了不废话了，下面开始我的搭建工作！</p>
-<p>  首先我们先要在本地搭环境：</p>
-<p><strong>1.安装Node（必须）</strong></p>
-<p><strong>2.安装Git（必须）</strong></p>
-<p><strong>3.申请GitHub（必须）</strong></p>
-<p>注：如上三步我就不做详细介绍怎么安装了，这都是程序猿的基本搭配，实在不会可以google，so一把！下面开始我们的搭建安装博客！（win下搭建）</p>
-<p>1）正式安装HEXO　</p>
-<p>   可以打开CMD或gitBash命令行执行如下<code>npm install -g hexo</code> 安装hexo</p>
-<p>2）初始化你的本地hexo项目<br>
-        
-          <a class="article-more-a" href="/2016/07/21/github上免费搭建自己的博客.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/博客//" class="article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/07/21/github上免费搭建自己的博客.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
-  
 
 
           </div>
@@ -933,10 +267,10 @@ let bubbleSort = (arr, cmp = compare) => {
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: false,
