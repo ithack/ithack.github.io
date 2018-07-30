@@ -186,6 +186,113 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-一道面试题引起的猜想" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/18/一道面试题引起的猜想.html">一道面试题引起的猜想</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/18/一道面试题引起的猜想.html" class="archive-article-date">
+  	<time datetime="2016-08-18T08:44:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前有一道面试题困惑我很久，后来在网上搜索了一下，貌似很多人都会进入误区，但到现在为止我还没有看到一个合理的解释这让我很郁闷！<br>面试题如下：</p>
+<pre>
+var foo={n:1};
+var bar=foo;
+foo.x=foo={n:2};
+console.log(foo.x) //输出？
+</pre>
+
+<p>答案是：</p>
+<pre>
+console.log(a.x); // undefined
+</pre>
+不知道各位有没有答对，至少我是答错了。
+
+遂借此机会好好看看JS连等赋值是怎么回事;在网上查了很多的资料，最后发现两个非常好的联等赋值的栗子（[栗子1](http://segmentfault.com/q/1010000002637728)，[栗子2](http://www.iteye.com/topic/785445)），最后看了一下[小小沧海](https://www.cnblogs.com/xxcanghai/p/4998076.html?utm_source=tuicool&utm_medium=referral)的文章，觉得可以和大家分享下；
+
+首先我们考虑一行代码：A=B=C;赋值语句的执行顺序是从右到左，所以我们猜想一下到底是：B=C;A=C;还是B=C;A=B;
+
+我们都知道若两个对象同时指向一个对象，那么对这个对象的修改是同步的，如：
+
+<pre>
+var a={n:1};
+var b=a;
+a.n=2;
+console.log(b);//Object {n: 2}
+</pre>
+
+<p>所以可以根据这个特性来测试连续赋值的顺序。<br>首先setter和getter是应用于变量名的，而不是变量真正储存的对象，如下：<br>
+        
+          <a class="article-more-a" href="/2016/08/18/一道面试题引起的猜想.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/18/一道面试题引起的猜想.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-常见的JS排序算法的实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -996,15 +1103,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1016,19 +1123,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1040,7 +1139,27 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Sortablejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">vue异步组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1049,10 +1168,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
              
               <li class="article-tag-list-item">
