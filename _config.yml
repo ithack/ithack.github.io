@@ -71,8 +71,8 @@ theme: yilia2.4
 deploy:
   type: git
   repository: 
-      github: git@github.com:ithack/ithack.github.io.git
-      coding: git@git.coding.net:ithack/ithack.coding.me.git
+      github: https://github.com/ithack/ithack.github.io.git
+      coding: https://git.coding.net/ithack/ithack.coding.me.git
   branch: master
 
 # sitemap

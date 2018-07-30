@@ -1,5 +1,5 @@
 ---
-title: vue拖拽组件，拖拽生成html问题记录
+title: vue拖拽组件vue可视化问题记录问题记录
 date: 2018-07-12 14:37:01
 tags: [vue,vuedraggable,拖拽]
 ---

@@ -4,11 +4,55 @@
 
     
   <url>
-    <loc>http://ithack.github.io//2018/07/12/vue%E6%8B%96%E6%8B%BD-%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html</loc>
-    <lastmod>2018-07-17T08:04:48.816Z</lastmod>
+    <loc>http://ithack.github.io//2018/07/30/vuedraggable-%E6%8B%96%E6%8B%BD%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html</loc>
+    <lastmod>2018-07-30T03:38:15.195Z</lastmod>
     <data>
         <display>
-        <title>vue拖拽组件，拖拽生成html问题记录</title>
+        <title>vuedraggable 拖拽异步组件问题记录</title>
+        <pubTime>2018-07-30T02:46:51.000Z</pubTime>
+        
+        <tag>vue</tag>
+         
+        <tag>vuedraggable</tag>
+         
+        <tag>Sortablejs</tag>
+         
+        <tag>vue异步组件</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ithack.github.io//2018/07/18/%E7%A7%BB%E5%8A%A8%E7%AB%AFpageshow-and-pagehide.html</loc>
+    <lastmod>2018-07-18T02:21:59.186Z</lastmod>
+    <data>
+        <display>
+        <title>移动端pageshow and pagehide</title>
+        <pubTime>2018-07-18T02:00:46.000Z</pubTime>
+        
+        <tag>移动端</tag>
+         
+        <tag>pageshow</tag>
+         
+        <tag>pagehide</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ithack.github.io//2018/07/12/vue%E6%8B%96%E6%8B%BD%E7%BB%84%E4%BB%B6vue%E5%8F%AF%E8%A7%86%E5%8C%96%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html</loc>
+    <lastmod>2018-07-18T01:52:35.606Z</lastmod>
+    <data>
+        <display>
+        <title>vue拖拽组件vue可视化问题记录问题记录</title>
         <pubTime>2018-07-12T06:37:01.000Z</pubTime>
         
         <tag>vue</tag>
