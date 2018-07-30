@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
 <meta property="og:description" content="最近一直在做可视化拖拽系统，一期基本功能已经完成，二期在完善系统，第一步就是把所有组件异步加载，这样有些组件不用的话不必要加载，js也就没那么大了，本来认为很简单一件事，但当异步组件遇上vuedrag就出了问题；研究了很长一段时间vuedraggable的实现方式，最终找到了问题，首先说一下问题 我们可视化系统拖拽组件，当把组件异步处理后会出现连续拖拽两个相同的异步组件会出现store里的JSON">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://ithack.github.io/Users/yangkai9/Desktop/project/ithack/source/images/vuedraggable拖拽异步组件问题记录/2.gif">
-<meta property="og:updated_time" content="2018-07-30T03:38:15.195Z">
+<meta property="og:image" content="http://ithack.github.io/images/vuedraggable拖拽异步组件问题记录/2.gif">
+<meta property="og:updated_time" content="2018-07-30T03:44:14.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuedraggable 拖拽异步组件问题记录">
 <meta name="twitter:description" content="最近一直在做可视化拖拽系统，一期基本功能已经完成，二期在完善系统，第一步就是把所有组件异步加载，这样有些组件不用的话不必要加载，js也就没那么大了，本来认为很简单一件事，但当异步组件遇上vuedrag就出了问题；研究了很长一段时间vuedraggable的实现方式，最终找到了问题，首先说一下问题 我们可视化系统拖拽组件，当把组件异步处理后会出现连续拖拽两个相同的异步组件会出现store里的JSON">
-<meta name="twitter:image" content="http://ithack.github.io/Users/yangkai9/Desktop/project/ithack/source/images/vuedraggable拖拽异步组件问题记录/2.gif">
+<meta name="twitter:image" content="http://ithack.github.io/images/vuedraggable拖拽异步组件问题记录/2.gif">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -213,7 +213,7 @@ var _hmt = _hmt || [];
 <p>在查找代码后发现，其实在draggable拖拽松手那一刻到add回到那一刻分别由vue和sortablejs执行了两个事件，一个是vue的input事件（也就是v-model用到的数据绑定）另一个是sortable里的change事件源码如下：</p>
 <a id="more"></a>
 <figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">……</span><br><span class="line">        <span class="attribute">emitChanges</span>: <span class="function"><span class="keyword">function</span> <span class="title">emitChanges</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">var</span> _this5 = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">this</span>.$nextTick(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            _this5.$emit(<span class="string">'change'</span>, evt);</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attribute">alterList</span>: <span class="function"><span class="keyword">function</span> <span class="title">alterList</span>(<span class="params">onList</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">if</span> (!!<span class="keyword">this</span>.list) &#123;</span><br><span class="line">            onList(<span class="keyword">this</span>.list);</span><br><span class="line">          &#125; <span class="title">else</span> &#123;</span><br><span class="line">            <span class="keyword">var</span> newList = [].concat(_toConsumableArray(<span class="keyword">this</span>.value));</span><br><span class="line">            onList(newList);</span><br><span class="line">            <span class="keyword">this</span>.$emit(<span class="string">'input'</span>, newList);</span><br><span class="line">          &#125;</span><br><span class="line">……</span><br><span class="line">        <span class="attribute">spliceList</span>: <span class="function"><span class="keyword">function</span> <span class="title">spliceList</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">var</span> _arguments = <span class="built_in">arguments</span>;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">var</span> spliceList = <span class="function"><span class="keyword">function</span> <span class="title">spliceList</span>(<span class="params">list</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">list</span>.splice.apply(<span class="built_in">list</span>, _arguments);</span><br><span class="line">          &#125;;</span><br><span class="line">          <span class="keyword">this</span>.alterList(spliceList);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attribute">updatePosition</span>: <span class="function"><span class="keyword">function</span> <span class="title">updatePosition</span>(<span class="params">oldIndex, newIndex</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">var</span> updatePosition = <span class="function"><span class="keyword">function</span> <span class="title">updatePosition</span>(<span class="params">list</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">list</span>.splice(newIndex, <span class="number">0</span>, <span class="built_in">list</span>.splice(oldIndex, <span class="number">1</span>)[<span class="number">0</span>]);</span><br><span class="line">          &#125;;</span><br><span class="line">          <span class="keyword">this</span>.alterList(updatePosition);</span><br><span class="line">……</span><br><span class="line">        <span class="attribute">onDragAdd</span>: <span class="function"><span class="keyword">function</span> <span class="title">onDragAdd</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">var</span> element = evt.item._underlying_vm_;</span><br><span class="line">          <span class="keyword">if</span> (element === <span class="literal">undefined</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          removeNode(evt.item);</span><br><span class="line">          <span class="keyword">var</span> newIndex = <span class="keyword">this</span>.getVmIndex(evt.newIndex);</span><br><span class="line">          <span class="keyword">this</span>.spliceList(newIndex, <span class="number">0</span>, element);</span><br><span class="line">          <span class="keyword">this</span>.computeIndexes();</span><br><span class="line">          <span class="keyword">var</span> added = &#123; <span class="attribute">element</span>: element, <span class="attribute">newIndex</span>: newIndex &#125;;</span><br><span class="line">          <span class="keyword">this</span>.emitChanges(&#123; <span class="attribute">added</span>: added &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attribute">onDragRemove</span>: <span class="function"><span class="keyword">function</span> <span class="title">onDragRemove</span>(<span class="params">evt</span>) </span>&#123;</span><br><span class="line">          insertNodeAt(<span class="keyword">this</span>.rootContainer, evt.item, evt.oldIndex);</span><br><span class="line">          <span class="keyword">if</span> (<span class="keyword">this</span>.isCloning) &#123;</span><br><span class="line">            removeNode(evt.clone);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">var</span> oldIndex = <span class="keyword">this</span>.context.index;</span><br><span class="line">          <span class="keyword">this</span>.spliceList(oldIndex, <span class="number">1</span>);</span><br><span class="line">          <span class="keyword">var</span> removed = &#123; <span class="attribute">element</span>: <span class="keyword">this</span>.context.element, <span class="attribute">oldIndex</span>: oldIndex &#125;;</span><br><span class="line">          <span class="keyword">this</span>.resetTransitionData(oldIndex);</span><br><span class="line">          <span class="keyword">this</span>.emitChanges(&#123; <span class="attribute">removed</span>: removed &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
-<p>上边代码名字可以看出在左边组件拖到可视区域松手那一刻，先出发了vue的input事件回调传参事事左侧的dom节点，而且这个newIndex的索引记录的事上一次松手时的位置，这就到这了第一次 从手我们json进入JSON Tree的第0个节点，而第二次json进入了上一次松手位置的索引节点位置，而在执行add添加真正组件的时候就导致了JSON Tree出现问题，如图：<img src="/Users/yangkai9/Desktop/project/ithack/source/images/vuedraggable拖拽异步组件问题记录/2.gif" alt="2"></p>
+<p>上边代码名字可以看出在左边组件拖到可视区域松手那一刻，先出发了vue的input事件回调传参事事左侧的dom节点，而且这个newIndex的索引记录的事上一次松手时的位置，这就到这了第一次 从手我们json进入JSON Tree的第0个节点，而第二次json进入了上一次松手位置的索引节点位置，而在执行add添加真正组件的时候就导致了JSON Tree出现问题，如图：<img src="/images/vuedraggable拖拽异步组件问题记录/2.gif" alt="2"></p>
 <p>通过vue开发工具我们可看到事件触发顺序input–&gt;change–&gt;add,通过log我们可以在三个事件中分别查看newIndex的索引数，我们第一次都是0，但第二次的时候input是上一次的拖拽位置索引，而从change开始就是当前索引，也就是结合代码可发现，其实在我们change之前input已经把未配置的JSON更新到JSON Tree里了，这样就会出现问题；</p>
 <p>好了问题找到了，下面解决问题就好说了，我们在input更新了JSON Tree，我们可以在add之前也就是change事件里记录一下input的的newIndex索引，然后在add回调事直接删掉这个没用的索引就可以了；代码如下：</p>
 <figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">……</span><br><span class="line">trueoninput(s)&#123;</span><br><span class="line">      s.<span class="built_in">map</span>((item,index)=&gt;&#123;</span><br><span class="line">        <span class="keyword">if</span>(item.placeholder)&#123;</span><br><span class="line">          console.<span class="built_in">log</span>(item,index)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    onchange(a)&#123;</span><br><span class="line">      <span class="keyword">this</span>.old=a.added.newIndex</span><br><span class="line">    &#125;,</span><br><span class="line">    onAdd (<span class="built_in">sort</span>) &#123;</span><br><span class="line">      console.<span class="built_in">log</span>(<span class="keyword">this</span>.old)</span><br><span class="line">      let &#123; item, newIndex&#125;=<span class="built_in">sort</span>;</span><br><span class="line">      <span class="keyword">this</span>.node.children.<span class="built_in">splice</span>(<span class="keyword">this</span>.old,<span class="number">1</span>)</span><br><span class="line">      ……</span><br><span class="line">    &#125;</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
@@ -494,15 +494,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,11 +514,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,14 +543,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vue异步组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
