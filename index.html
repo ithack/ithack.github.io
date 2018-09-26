@@ -186,6 +186,91 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Vue生命周期全解（vueRouter-keep-alive-生命周期）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/26/Vue生命周期全解（vueRouter-keep-alive-生命周期）.html">Vue生命周期全解（vueRouter,keep-alive,生命周期）</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/26/Vue生命周期全解（vueRouter-keep-alive-生命周期）.html" class="archive-article-date">
+  	<time datetime="2018-09-26T08:11:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在开发一个项目时我发现，关于Vue的钩子函数，可能很多人只停留在一些很简单常用的钩子(<code>created</code>,<code>mounted</code>)，并没有仔细的去研究过加入keep-alive,vue-router后的执行顺序等问题；</p>
+<h5 id="Vue-Router导航守卫"><a href="#Vue-Router导航守卫" class="headerlink" title="Vue-Router导航守卫"></a>Vue-Router导航守卫</h5><p>有的时候，我们需要通过路由来进行一些操作，比如最常见的登录权限验证，当用户满足条件时，才让其进入导航，否则就取消跳转，并跳到登录页面让其登录。</p>
+<p>为此我们有很多种方法可以植入路由的导航过程：<strong>全局的, 单个路由独享的, 或者组件级的</strong>,推荐优先阅读<a href="https://router.vuejs.org/zh/guide/advanced/navigation-guards.html" target="_blank" rel="noopener">路由文档</a></p>
+<h5 id="关于钩子的一些知识："><a href="#关于钩子的一些知识：" class="headerlink" title="关于钩子的一些知识："></a>关于钩子的一些知识：</h5><h6 id="路由钩子函数的错误捕获"><a href="#路由钩子函数的错误捕获" class="headerlink" title="路由钩子函数的错误捕获"></a>路由钩子函数的错误捕获</h6><p>如果我们在全局守卫/路由独享守卫/组件路由守卫的钩子函数中有错误，可以这样捕获：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">router.onError(<span class="function"><span class="params">callback</span> =&gt;</span> &#123; </span><br><span class="line"><span class="comment">// 2.4.0新增 并不常用，了解一下就可以了 </span></span><br><span class="line">  <span class="built_in">console</span>.log(callback, <span class="string">'callback'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在路由文档中还有更多的<a href="https://router.vuejs.org/zh/api/#router-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">实例方法</a>：动态添加路由等，有兴趣可以了解一下。</p>
+        
+          <a class="article-more-a" href="/2018/09/26/Vue生命周期全解（vueRouter-keep-alive-生命周期）.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">vue-router</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/26/Vue生命周期全解（vueRouter-keep-alive-生命周期）.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Vue奇淫技笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -939,85 +1024,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-实战react小记二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/30/实战react小记二.html">实战react小记二</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/30/实战react小记二.html" class="archive-article-date">
-  	<time datetime="2017-06-30T09:20:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​    上次说最近再开发项目用到了react开发，今天第一个迭代基本完成，已经在预发布阶段；</p>
-<p>​    现在闲下来继续记录一下react的一些看法；</p>
-<p>​    首先在这次迭代中用的react的功能不是太复杂，但是回顾起来却觉得代码很复杂；当回顾我的js文件发现好混乱啊，由于react是单数据流的开发模式，一开始想把每一个小的功能都单独做一个文件出来，但是我却发现一个很严重的问题，，如果想让子组件修改父组件的数据，只能通过父组件定义一个方法方法里用this.setState()的方法，把这个方法传子组件，在子组件中运行把数据传出来，这正方法很痛苦，目前还没有寻找便捷方法；</p>
-<p>​    第二个问题，现在目前发现对于执行事件还是有一定的局限性，比如我想在一个提交事件中调去某一个dom元素的onblur事件，这时想操作这个流程很复杂，目前还是没有客观的解决方案</p>
-<p>​    第三个问题，就mvvm的开发而言，我觉得react的可独行不是那么客观，可能之前写前端和vue习惯了，对于这种jsx的写法不太习惯，但目前来说传参，方法，事件，html，css，入参，state，props这些东东弄在了一个js里，如果没有一个很好的组件功能的前期规划，那么写完代码发现这个文件代码行数很多不说，可读性也不是那么好，就连我自己写完之后回顾我写的代码有时候都觉得乱，这个事件是父组件传来的，那个数据是父组件传来的，这是在给子组件传输数据，那个是在给父组件传输数据！整体代码的美观性也不是我想象的那么美，我想如果另外一个新人浏览代码的时候可能会花更多时间来查找一些事件和方法的关联性吧；</p>
-<p>​    目前来说我对react的了解还停留来表面，只是觉得react和vue相比，api少了很多，更像js的编码习惯，缺点也很明显，局限性很大，不想vue那样用个api就能实现，可能一个很小的事件需要写一坨代码来完成；react的坑都在深层，vue的坑都在表层；这是我目前遇到的一些react的坑，还在继续填坑中……或许我的理解和看法不对，希望看到小记的朋友可以批评指正；之后的react之路还在进行，更深入的东西还在挖掘，有兴趣的可以一起探讨交流，今天就先到这了，之后的填坑之路有时间会和大家分享交流！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/30/实战react小记二.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1119,6 +1125,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -1127,11 +1137,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1151,15 +1161,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Sortablejs</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vue异步组件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1187,11 +1197,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1200,10 +1214,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
