@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
 <meta property="og:description" content="​    vue可视化项目暂时告一段落了，后续整理项目结构会更新上来，今天闲来无事先更新一把vue一些奇淫笔记，之所以称之为奇淫，可能是因为觉得有意思，也可能是觉得比较好玩，并不一定建议开发中用，这些奇淫的技能有些可能透过代码熟悉vue的运行机制等问题； 奇淫笔记一：​    如果你只在子组件里面改变父组件的一个值，不妨试试 $emit(&amp;#39;input&amp;#39;),会直接改变 v-model">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-26T08:04:29.351Z">
+<meta property="og:updated_time" content="2018-09-26T08:07:37.688Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue奇淫技笔记">
 <meta name="twitter:description" content="​    vue可视化项目暂时告一段落了，后续整理项目结构会更新上来，今天闲来无事先更新一把vue一些奇淫笔记，之所以称之为奇淫，可能是因为觉得有意思，也可能是觉得比较好玩，并不一定建议开发中用，这些奇淫的技能有些可能透过代码熟悉vue的运行机制等问题； 奇淫笔记一：​    如果你只在子组件里面改变父组件的一个值，不妨试试 $emit(&amp;#39;input&amp;#39;),会直接改变 v-model">
@@ -209,6 +209,7 @@ var _hmt = _hmt || [];
         <p>​    vue可视化项目暂时告一段落了，后续整理项目结构会更新上来，今天闲来无事先更新一把vue一些奇淫笔记，之所以称之为奇淫，可能是因为觉得有意思，也可能是觉得比较好玩，并不一定建议开发中用，这些奇淫的技能有些可能透过代码熟悉vue的运行机制等问题；</p>
 <h5 id="奇淫笔记一："><a href="#奇淫笔记一：" class="headerlink" title="奇淫笔记一："></a>奇淫笔记一：</h5><p>​    如果你只在子组件里面改变父组件的一个值，不妨试试 <code>$emit(&#39;input&#39;)</code>,会直接改变 v-model<br>我们正常的父子组件通信是 父组件通过 props 传给子组件，子组件通过 <code>this.$emit(&#39;eventName&#39;,value)</code>通知父组件绑定在 @eventName 上的方法来做相应的处理。<br>​    但是这边有个特例，vue 默认会监听组件的 input 事件，而且会把子组件里面传出来的值，赋给当前绑定到 v-model 上的值<br><strong>正常用法 - 父组件</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;subComponent :data=<span class="string">"param"</span> @dataChange=<span class="string">"dataChangeHandler"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">subComponent</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script &gt;</span></span><br><span class="line"><span class="regexp">  export default &#123;</span></span><br><span class="line"><span class="regexp">    data () &#123;</span></span><br><span class="line"><span class="regexp">      return &#123;</span></span><br><span class="line"><span class="regexp">        param:'xxxxxx'</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    methods:&#123;</span></span><br><span class="line"><span class="regexp">      dataChangeHandler (newParam) &#123;</span></span><br><span class="line"><span class="regexp">        this.param = newParam</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p><strong>正常用法 - 子组件</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script &gt;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    methods:&#123;</span><br><span class="line">      updateData (newParam) &#123;</span><br><span class="line">        <span class="keyword">this</span>.$emit(<span class="string">'dataChange'</span>,newParam)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>利用默认 input 事件 - 父组件</strong></p>
@@ -508,10 +509,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -521,6 +518,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,15 +541,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Sortablejs</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vue异步组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -564,15 +565,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
              
               <li class="article-tag-list-item">
