@@ -17,7 +17,7 @@
 <meta property="og:description" content="最近在开发一个项目时我发现，关于Vue的钩子函数，可能很多人只停留在一些很简单常用的钩子(created,mounted)，并没有仔细的去研究过加入keep-alive,vue-router后的执行顺序等问题； Vue-Router导航守卫有的时候，我们需要通过路由来进行一些操作，比如最常见的登录权限验证，当用户满足条件时，才让其进入导航，否则就取消跳转，并跳到登录页面让其登录。 为此我们有很多种">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://ithack.github.io/images/vue生命周期全解/1.jpg">
-<meta property="og:updated_time" content="2018-09-26T08:50:05.802Z">
+<meta property="og:updated_time" content="2018-09-26T08:53:17.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue生命周期全解（vueRouter,keep-alive,生命周期）">
 <meta name="twitter:description" content="最近在开发一个项目时我发现，关于Vue的钩子函数，可能很多人只停留在一些很简单常用的钩子(created,mounted)，并没有仔细的去研究过加入keep-alive,vue-router后的执行顺序等问题； Vue-Router导航守卫有的时候，我们需要通过路由来进行一些操作，比如最常见的登录权限验证，当用户满足条件时，才让其进入导航，否则就取消跳转，并跳到登录页面让其登录。 为此我们有很多种">
@@ -310,10 +310,8 @@ var _hmt = _hmt || [];
 <h5 id="组件生命周期钩子"><a href="#组件生命周期钩子" class="headerlink" title="组件生命周期钩子"></a>组件生命周期钩子</h5><p><img src="/images/vue生命周期全解/1.jpg" alt=""></p>
 <p>这张图片已经讲得很清楚了，很多人这部分也很清楚了，大部分生命周期并不会用到，这里提一下几点：</p>
 <ol>
-<li><p><strong>ajax请求最好放在created里面</strong>，因为此时已经可以访问<code>this</code>了，请求到数据就可以直接放在<code>data</code>里面。</p>
-</li>
-<li><p>这里也碰到过几次，面试官问：ajax请求应该放在哪个生命周期。</p>
-</li>
+<li><strong>ajax请求最好放在created里面</strong>，因为此时已经可以访问<code>this</code>了，请求到数据就可以直接放在<code>data</code>里面。</li>
+<li>这里也碰到过几次，面试官问：ajax请求应该放在哪个生命周期。</li>
 <li><strong>关于dom的操作要放在mounted里面</strong>，在<code>mounted</code>前面访问dom会是<code>undefined</code>。</li>
 <li>每次进入/离开组件都要做一些事情，用什么钩子：</li>
 </ol>
@@ -616,11 +614,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -629,10 +631,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -672,15 +670,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
               </li>
              
               <li class="article-tag-list-item">
