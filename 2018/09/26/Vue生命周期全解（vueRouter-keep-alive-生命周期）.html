@@ -17,7 +17,7 @@
 <meta property="og:description" content="最近在开发一个项目时我发现，关于Vue的钩子函数，可能很多人只停留在一些很简单常用的钩子(created,mounted)，并没有仔细的去研究过加入keep-alive,vue-router后的执行顺序等问题； Vue-Router导航守卫有的时候，我们需要通过路由来进行一些操作，比如最常见的登录权限验证，当用户满足条件时，才让其进入导航，否则就取消跳转，并跳到登录页面让其登录。 为此我们有很多种">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://ithack.github.io/images/vue生命周期全解/1.jpg">
-<meta property="og:updated_time" content="2018-09-26T08:45:19.557Z">
+<meta property="og:updated_time" content="2018-09-26T08:50:05.802Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue生命周期全解（vueRouter,keep-alive,生命周期）">
 <meta name="twitter:description" content="最近在开发一个项目时我发现，关于Vue的钩子函数，可能很多人只停留在一些很简单常用的钩子(created,mounted)，并没有仔细的去研究过加入keep-alive,vue-router后的执行顺序等问题； Vue-Router导航守卫有的时候，我们需要通过路由来进行一些操作，比如最常见的登录权限验证，当用户满足条件时，才让其进入导航，否则就取消跳转，并跳到登录页面让其登录。 为此我们有很多种">
@@ -223,30 +223,18 @@ var _hmt = _hmt || [];
 <figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js 入口文件</span></span><br><span class="line">import router <span class="keyword">from</span> <span class="string">'./router'</span>; <span class="comment">// 引入路由</span></span><br><span class="line">router.afterEach((<span class="keyword">to</span>, <span class="keyword">from</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> (未登录 &amp;&amp; <span class="keyword">to</span>.<span class="built_in">name</span> !== <span class="string">'login'</span>) &#123;</span><br><span class="line">    router.push(&#123; <span class="built_in">name</span>: <span class="string">'login'</span> &#125;); <span class="comment">// 跳转login</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>额，通过router.beforeEach 也完全可以实现且更好，我就骚一下。</p>
 <h5 id="完整的路由导航解析流程-不包括其他生命周期-："><a href="#完整的路由导航解析流程-不包括其他生命周期-：" class="headerlink" title="完整的路由导航解析流程(不包括其他生命周期)："></a>完整的路由导航解析流程(不包括其他生命周期)：</h5><ol>
-<li><p>触发进入其他路由。</p>
-</li>
-<li><p>调用要离开路由的组件守卫<code>beforeRouteLeave</code></p>
-</li>
-<li><p>调用局前置守卫：<code>beforeEach</code></p>
-</li>
-<li><p>在重用的组件里调用 <code>beforeRouteUpdate</code></p>
-</li>
-<li><p>调用路由独享守卫 <code>beforeEnter</code>。</p>
-</li>
-<li><p>解析异步路由组件。</p>
-</li>
-<li><p>在将要进入的路由组件中调用<code>beforeRouteEnter</code></p>
-</li>
-<li><p>调用全局解析守卫 <code>beforeResolve</code></p>
-</li>
-<li><p>导航被确认。</p>
-</li>
-<li><p>调用全局后置钩子的 <code>afterEach</code> 钩子。</p>
-</li>
-<li><p>触发DOM更新(<code>mounted</code>)。</p>
-</li>
-<li><p>执行<code>beforeRouteEnter</code> 守卫中传给 next 的回调函数</p>
-</li>
+<li>触发进入其他路由。</li>
+<li>调用要离开路由的组件守卫<code>beforeRouteLeave</code></li>
+<li>调用局前置守卫：<code>beforeEach</code></li>
+<li>在重用的组件里调用 <code>beforeRouteUpdate</code></li>
+<li>调用路由独享守卫 <code>beforeEnter</code>。</li>
+<li>解析异步路由组件。</li>
+<li>在将要进入的路由组件中调用<code>beforeRouteEnter</code></li>
+<li>调用全局解析守卫 <code>beforeResolve</code></li>
+<li>导航被确认。</li>
+<li>调用全局后置钩子的 <code>afterEach</code> 钩子。</li>
+<li>触发DOM更新(<code>mounted</code>)。</li>
+<li>执行<code>beforeRouteEnter</code> 守卫中传给 next 的回调函数</li>
 </ol>
 <hr>
 <h5 id="你不知道的keep-alive-我猜你不知道"><a href="#你不知道的keep-alive-我猜你不知道" class="headerlink" title="你不知道的keep-alive[我猜你不知道]"></a>你不知道的keep-alive[我猜你不知道]</h5><p>在开发Vue项目的时候，大部分组件是没必要多次渲染的，所以Vue提供了一个内置组件<code>keep-alive</code>来<strong>缓存组件内部状态，避免重新渲染</strong>，<a href="https://cn.vuejs.org/v2/api/#keep-alive" target="_blank" rel="noopener">文档在这里</a>。</p>
@@ -276,19 +264,16 @@ var _hmt = _hmt || [];
 <p><strong>使用了keep-alive就不会调用beforeDestroy(组件销毁前钩子)和destroyed(组件销毁)，因为组件没被销毁，被缓存起来了</strong>。</p>
 <p>这个钩子可以看作<code>beforeDestroy</code>的替代，如果你缓存了组件，要在组件销毁的的时候做一些事情，你可以放在这个钩子里。</p>
 <p>如果你离开了路由，会依次触发：</p>
-<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">组件内的离开当前路由钩子beforeRouteLeave =&gt;  路由前置守卫 beforeEach =&gt;</span><br><span class="line">全局后置钩子afterEach =&gt; deactivated 离开缓存组件 =&gt; activated 进入缓存组件(如果你进入的也是缓存路由)</span><br><span class="line">// 如果离开的组件没有缓存的话 beforeDestroy会替换deactivated </span><br><span class="line">// 如果进入的路由也没有缓存的话  全局后置钩子afterEach=&gt;销毁 destroyed=&gt; beforeCreate等</span><br></pre></td></tr></table></figure>
+<p>组件内的离开当前路由钩子beforeRouteLeave =&gt;  路由前置守卫 beforeEach =&gt;<br>全局后置钩子afterEach =&gt; deactivated 离开缓存组件 =&gt; activated 进入缓存组件(如果你进入的也是缓存路由)<br>// 如果离开的组件没有缓存的话 beforeDestroy会替换deactivated<br>// 如果进入的路由也没有缓存的话  全局后置钩子afterEach=&gt;销毁 destroyed=&gt; beforeCreate等</p>
 <p>那么，如果我只是想缓存其中几个路由/组件，那该怎么做？</p>
 <h6 id="缓存你想缓存的路由："><a href="#缓存你想缓存的路由：" class="headerlink" title="缓存你想缓存的路由："></a>缓存你想缓存的路由：</h6><p><strong>Vue2.1.0之前:</strong></p>
 <p>想实现类似的操作，你可以：</p>
 <ol>
-<li><p>配置一下路由元信息</p>
-</li>
-<li><p>创建两个<code>keep-alive</code>标签</p>
-</li>
-<li><p>使用<code>v-if</code>通过路由元信息判断缓存哪些路由。</p>
-<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">router-view</span> <span class="attr">v-if</span>=<span class="string">"$route.meta.keepAlive"</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="comment">&lt;!--这里是会被缓存的路由--&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">router-view</span> <span class="attr">v-if</span>=<span class="string">"!$route.meta.keepAlive"</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!--因为用的是v-if 所以下面还要创建一个未缓存的路由视图出口--&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span></span><br><span class="line"><span class="xml">//router配置</span></span><br><span class="line"><span class="xml">new Router(</span><span class="template-variable">&#123;</span></span><br><span class="line"><span class="template-variable">  routes: [</span></span><br><span class="line"><span class="template-variable">    &#123;</span></span><br><span class="line"><span class="template-variable">      path: '/',</span></span><br><span class="line"><span class="template-variable">      name: 'home',</span></span><br><span class="line"><span class="template-variable">      component: Home,</span></span><br><span class="line"><span class="template-variable">      meta: &#123;</span></span><br><span class="line"><span class="template-variable">        keepAlive: true // 需要被缓存</span></span><br><span class="line"><span class="template-variable">      &#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    &#125;,</span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;</span></span><br><span class="line"><span class="template-variable">      path: '/:id',</span></span><br><span class="line"><span class="template-variable">      name: 'edit',</span></span><br><span class="line"><span class="template-variable">      component: Edit,</span></span><br><span class="line"><span class="template-variable">      meta: &#123;</span></span><br><span class="line"><span class="template-variable">        keepAlive: false // 不需要被缓存</span></span><br><span class="line"><span class="template-variable">      &#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  ]</span></span><br><span class="line"><span class="xml">&#125;);</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>配置一下路由元信息</li>
+<li>创建两个<code>keep-alive</code>标签</li>
+<li>使用<code>v-if</code>通过路由元信息判断缓存哪些路由。</li>
 </ol>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">router-view</span> <span class="attr">v-if</span>=<span class="string">"$route.meta.keepAlive"</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="comment">&lt;!--这里是会被缓存的路由--&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">router-view</span> <span class="attr">v-if</span>=<span class="string">"!$route.meta.keepAlive"</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!--因为用的是v-if 所以下面还要创建一个未缓存的路由视图出口--&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span></span><br><span class="line"><span class="xml">//router配置</span></span><br><span class="line"><span class="xml">new Router(</span><span class="template-variable">&#123;</span></span><br><span class="line"><span class="template-variable">  routes: [</span></span><br><span class="line"><span class="template-variable">    &#123;</span></span><br><span class="line"><span class="template-variable">      path: '/',</span></span><br><span class="line"><span class="template-variable">      name: 'home',</span></span><br><span class="line"><span class="template-variable">      component: Home,</span></span><br><span class="line"><span class="template-variable">      meta: &#123;</span></span><br><span class="line"><span class="template-variable">        keepAlive: true // 需要被缓存</span></span><br><span class="line"><span class="template-variable">      &#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    &#125;,</span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;</span></span><br><span class="line"><span class="template-variable">      path: '/:id',</span></span><br><span class="line"><span class="template-variable">      name: 'edit',</span></span><br><span class="line"><span class="template-variable">      component: Edit,</span></span><br><span class="line"><span class="template-variable">      meta: &#123;</span></span><br><span class="line"><span class="template-variable">        keepAlive: false // 不需要被缓存</span></span><br><span class="line"><span class="template-variable">      &#125;</span><span class="xml"></span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">  ]</span></span><br><span class="line"><span class="xml">&#125;);</span></span><br></pre></td></tr></table></figure>
 <p><strong> Vue2.1.0版本之后：</strong></p>
 <p>使用路由元信息的方式，要多创建一个<code>router-view</code>标签，并且每个路由都要配置一个元信息，是可以实现我们想要的效果，但是过于繁琐了点。</p>
 <p>幸运的是在Vue2.1.0之后，Vue新增了两个属性配合<code>keep-alive</code>来有条件地缓存 路由/组件。</p>
@@ -326,12 +311,11 @@ var _hmt = _hmt || [];
 <p>这张图片已经讲得很清楚了，很多人这部分也很清楚了，大部分生命周期并不会用到，这里提一下几点：</p>
 <ol>
 <li><p><strong>ajax请求最好放在created里面</strong>，因为此时已经可以访问<code>this</code>了，请求到数据就可以直接放在<code>data</code>里面。</p>
-<p>这里也碰到过几次，面试官问：ajax请求应该放在哪个生命周期。</p>
 </li>
-<li><p><strong>关于dom的操作要放在mounted里面</strong>，在<code>mounted</code>前面访问dom会是<code>undefined</code>。</p>
+<li><p>这里也碰到过几次，面试官问：ajax请求应该放在哪个生命周期。</p>
 </li>
-<li><p>每次进入/离开组件都要做一些事情，用什么钩子：</p>
-</li>
+<li><strong>关于dom的操作要放在mounted里面</strong>，在<code>mounted</code>前面访问dom会是<code>undefined</code>。</li>
+<li>每次进入/离开组件都要做一些事情，用什么钩子：</li>
 </ol>
 <ul>
 <li><p>不缓存：</p>
@@ -632,19 +616,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -656,15 +632,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -688,7 +672,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -704,27 +700,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -733,6 +713,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
