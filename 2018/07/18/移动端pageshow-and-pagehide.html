@@ -387,29 +387,40 @@ var _hmt = _hmt || [];
 
 
   
-  
-  
 
   
 
   
 
   
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
+  
+  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-var gitment = new Gitment({
-  id: "移动端pageshow and pagehide",
-  owner: 'ithack',
-  repo: 'myGitment',
-  oauth: {
-    client_id: '90e5e544e45855945cc8',
-    client_secret: '1373c1cefa6c3dd3af20366caae500e8962b3191',
-  },
-})
-gitment.render('gitment-ctn')
+  var notify = 'false' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  window.onload = function() {
+    new Valine({
+      el: '.comment',
+      notify: notify,
+      verify: verify,
+      app_id: "muiRoOrtUHprjUm08CdarBGI-gzGzoHsz",
+      app_key: "eQEhP9kqkEsV1WcX5GQDfhT3",
+      placeholder: "Just go go",
+      avatar:"/images/hidePro.png"
+    });
+  }
 </script>
+
+    </section>
   
 
 
@@ -507,15 +518,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
