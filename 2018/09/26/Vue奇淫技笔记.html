@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
 <meta property="og:description" content="​    vue可视化项目暂时告一段落了，后续整理项目结构会更新上来，今天闲来无事先更新一把vue一些奇淫笔记，之所以称之为奇淫，可能是因为觉得有意思，也可能是觉得比较好玩，并不一定建议开发中用，这些奇淫的技能有些可能透过代码熟悉vue的运行机制等问题； 奇淫笔记一：​    如果你只在子组件里面改变父组件的一个值，不妨试试 $emit(&amp;#39;input&amp;#39;),会直接改变 v-model">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-26T08:07:37.688Z">
+<meta property="og:updated_time" content="2018-10-17T09:52:20.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue奇淫技笔记">
 <meta name="twitter:description" content="​    vue可视化项目暂时告一段落了，后续整理项目结构会更新上来，今天闲来无事先更新一把vue一些奇淫笔记，之所以称之为奇淫，可能是因为觉得有意思，也可能是觉得比较好玩，并不一定建议开发中用，这些奇淫的技能有些可能透过代码熟悉vue的运行机制等问题； 奇淫笔记一：​    如果你只在子组件里面改变父组件的一个值，不妨试试 $emit(&amp;#39;input&amp;#39;),会直接改变 v-model">
@@ -229,6 +229,16 @@ var _hmt = _hmt || [];
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mounted()&#123;   </span><br><span class="line">   <span class="keyword">this</span>.bus.$on(<span class="string">'toChangeTitle'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">title</span>) </span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(title)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="奇淫笔记三："><a href="#奇淫笔记三：" class="headerlink" title="奇淫笔记三："></a>奇淫笔记三：</h5><p>vue中<code>@click=&quot;event()&quot;</code>，添加()与不添加()的区别应该是 Vue 对函数调用表达式额外用了一个函数做了层包装。加与不加括号的区别在于事件对象参数 event 的处理。不加括号时，函数第一个参数默认为 event；加了括号后，需要手动传入 $event 才能获得事件对象。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn-item"</span>&gt;</span><br><span class="line">        &lt;button <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-success"</span> @click=<span class="string">"sure($event)"</span>&gt;确定&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button class="btn btn-default" @click="quit"&gt;取消&lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span>&#123;</span><br><span class="line">      name:<span class="string">'test'</span>,</span><br><span class="line">      data()&#123;</span><br><span class="line">          <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      methods:&#123;</span><br><span class="line">          sure(e)&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(e.target);</span><br><span class="line">          &#125;,</span><br><span class="line">          quit(e)&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(e.target);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>======================华丽的分割线====================</strong></p>
+<p>//181017更新</p>
+<h5 id="奇淫笔记四："><a href="#奇淫笔记四：" class="headerlink" title="奇淫笔记四："></a>奇淫笔记四：</h5><p>vue单页路由跳转后scrollTop问题：当一个页面滚动了，点击页面上的路由调到下一个页面时，跳转后的页面也是滚动的，滚动条并不是在页面的顶部！</p>
+<p>可能有的小伙伴加上window.scrollTop(0,0);来解决问题，但是这个太繁琐了；</p>
+<p>又或者在入口加入：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.afterEach(<span class="function"><span class="keyword">function</span> (<span class="params">to</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>路由跳转后就不会出现滚动的问题了。但是这种做法是不友好的！我们可以使用scrollBehavior (to, from, savedPosition) {}来解决问题。</p>
+<p>在我们写路由的时候做个如下处理：</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line">Vue.use(Router);</span><br><span class="line"></span><br><span class="line">Vue.use(Router)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">  	……</span><br><span class="line">  ],</span><br><span class="line">  scrollBehavior (<span class="keyword">to</span>, <span class="keyword">from</span>, savedPosition) &#123;</span><br><span class="line">    <span class="keyword">if</span> (savedPosition) &#123;</span><br><span class="line">      <span class="keyword">return</span> savedPosition</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123; x: <span class="number">0</span>, y: <span class="number">0</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>scrollBehavior 方法接收 to 和 from 路由对象。第三个参数 savedPosition 当且仅当 popstate 导航 (通过浏览器的 前进/后退 按钮触发) 时才可用。它的使用有很多种，可以试试。</p>
 <p>//待更新</p>
 
       
@@ -386,7 +396,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记一："><span class="toc-number">1.</span> <span class="toc-text">奇淫笔记一：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记二："><span class="toc-number">2.</span> <span class="toc-text">奇淫笔记二：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记三："><span class="toc-number">3.</span> <span class="toc-text">奇淫笔记三：</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记一："><span class="toc-number">1.</span> <span class="toc-text">奇淫笔记一：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记二："><span class="toc-number">2.</span> <span class="toc-text">奇淫笔记二：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记三："><span class="toc-number">3.</span> <span class="toc-text">奇淫笔记三：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记四："><span class="toc-number">4.</span> <span class="toc-text">奇淫笔记四：</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -426,7 +436,7 @@ var _hmt = _hmt || [];
       app_id: "muiRoOrtUHprjUm08CdarBGI-gzGzoHsz",
       app_key: "eQEhP9kqkEsV1WcX5GQDfhT3",
       placeholder: "Just go go",
-      avatar:"/images/hidePro.png"
+      avatar:"mp"
     });
   }
 </script>
@@ -573,15 +583,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,15 +619,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">IOS兼容性</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
