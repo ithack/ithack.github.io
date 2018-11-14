@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://ithack.github.io">
-  <title>css实现正方形图片展示网格布局 | 不羁放纵爱自由的猿人</title>
+  <title>回顾React，几个why | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这两周手里的项目第一期0的阶段已经基本结束了，后边的迭代还没有开始，所以这两天闲来没事在梳理在做项目时遇到的问题和需要优化的点，昨天晚上加班点击做过的东西发现一个可优化的问题，之前没有做是因为时间紧任务重，所以用了一个比较暴力的方法暂时解决了，但是当时我思考中有一个思路觉得可以解决却没有用，所以就用了一点时间解决这个问题，下边就来说说场景： 在app里有个列表页和详情页，列表页大概就和朋友圈布局">
-<meta name="keywords" content="css,移动端">
+  <meta name="description" content="​      虽然react比Vue早一些，但是我还是先用了Vue；原因很简单当时看了一下React Native和React的API，觉得项目不需要这么复杂的东西，当时还是vue1.x时代，写了大概3个项目后，Vue2.x上线，之后的项目一直在用vue，从1.x到2.x一直踩坑，到目前可以说对Vue很熟练了也做了很多项目！其中也写过一个React，只是看了API，然后上手就写，感觉一直在皮毛的表">
+<meta name="keywords" content="react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css实现正方形图片展示网格布局">
-<meta property="og:url" content="http://ithack.github.io/2017/08/16/css实现正方形图片展示网格布局.html">
+<meta property="og:title" content="回顾React，几个why">
+<meta property="og:url" content="http://ithack.github.io/2018/10/23/回顾React，几个why.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="这两周手里的项目第一期0的阶段已经基本结束了，后边的迭代还没有开始，所以这两天闲来没事在梳理在做项目时遇到的问题和需要优化的点，昨天晚上加班点击做过的东西发现一个可优化的问题，之前没有做是因为时间紧任务重，所以用了一个比较暴力的方法暂时解决了，但是当时我思考中有一个思路觉得可以解决却没有用，所以就用了一点时间解决这个问题，下边就来说说场景： 在app里有个列表页和详情页，列表页大概就和朋友圈布局">
+<meta property="og:description" content="​      虽然react比Vue早一些，但是我还是先用了Vue；原因很简单当时看了一下React Native和React的API，觉得项目不需要这么复杂的东西，当时还是vue1.x时代，写了大概3个项目后，Vue2.x上线，之后的项目一直在用vue，从1.x到2.x一直踩坑，到目前可以说对Vue很熟练了也做了很多项目！其中也写过一个React，只是看了API，然后上手就写，感觉一直在皮毛的表">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://ithack.github.io/images/css正方形/1.png">
-<meta property="og:image" content="http://ithack.github.io/images/css正方形/2.png">
-<meta property="og:updated_time" content="2017-08-16T07:18:04.000Z">
+<meta property="og:updated_time" content="2018-11-14T02:38:58.681Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css实现正方形图片展示网格布局">
-<meta name="twitter:description" content="这两周手里的项目第一期0的阶段已经基本结束了，后边的迭代还没有开始，所以这两天闲来没事在梳理在做项目时遇到的问题和需要优化的点，昨天晚上加班点击做过的东西发现一个可优化的问题，之前没有做是因为时间紧任务重，所以用了一个比较暴力的方法暂时解决了，但是当时我思考中有一个思路觉得可以解决却没有用，所以就用了一点时间解决这个问题，下边就来说说场景： 在app里有个列表页和详情页，列表页大概就和朋友圈布局">
-<meta name="twitter:image" content="http://ithack.github.io/images/css正方形/1.png">
+<meta name="twitter:title" content="回顾React，几个why">
+<meta name="twitter:description" content="​      虽然react比Vue早一些，但是我还是先用了Vue；原因很简单当时看了一下React Native和React的API，觉得项目不需要这么复杂的东西，当时还是vue1.x时代，写了大概3个项目后，Vue2.x上线，之后的项目一直在用vue，从1.x到2.x一直踩坑，到目前可以说对Vue很熟练了也做了很多项目！其中也写过一个React，只是看了API，然后上手就写，感觉一直在皮毛的表">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -189,40 +186,51 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-css实现正方形图片展示网格布局" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-回顾React，几个why" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      css实现正方形图片展示网格布局
+      回顾React，几个why
     </h1>
   
 
         
-        <a href="/2017/08/16/css实现正方形图片展示网格布局.html" class="archive-article-date">
-  	<time datetime="2017-08-16T06:00:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-16</time>
+        <a href="/2018/10/23/回顾React，几个why.html" class="archive-article-date">
+  	<time datetime="2018-10-23T09:14:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> 这两周手里的项目第一期0的阶段已经基本结束了，后边的迭代还没有开始，所以这两天闲来没事在梳理在做项目时遇到的问题和需要优化的点，昨天晚上加班点击做过的东西发现一个可优化的问题，之前没有做是因为时间紧任务重，所以用了一个比较暴力的方法暂时解决了，但是当时我思考中有一个思路觉得可以解决却没有用，所以就用了一点时间解决这个问题，下边就来说说场景：</p>
-<p>在app里有个列表页和详情页，列表页大概就和朋友圈布局差不多，有内容和图片，详情页里只是多了个评论，列表的页面是原生的，详情页是h5的，下面问题来了，在原生里图片是正方形的，不管我上传什么样的图片都是正方形，看上去是图片裁剪，但实际上如果宽&gt;高这个正方形里展示的是图片高度100%，宽度截取然后展示平铺展示，这样看没有变形效果；我们在h5页面当时没有做太多想法，因为公司用的是七牛云的图片存贮，所以用了七牛云的API里的裁剪，直接硬生生的搞成了正方向，就变成了如下效果：</p>
-<p>app详情效果</p>
-<a id="more"></a>
-<p><img src="\images\css正方形\1.png" alt="1"></p>
-<p>h5详情页用七牛云裁剪后的效果</p>
-<p><img src="\images\css正方形\2.png" alt="2"></p>
-<p>有木有很丑，裁剪的很生硬，由于是移动端所以宽度是不固定的，发现这个问题时我第一个闪现的思路就是用flex布局，内部再给个据对定位，在用tranform做个居中显示，但是再细节一点没有多想，所以就用了七牛云的裁剪先上了，昨天想到这个问题，我就按照我的思路做了一个小demo，发现思路对了，但平铺不了还是有一点点不完美，所以有了之后的不断思考和常识，找到了最终完美的解决方案：</p>
-<p></p><p data-height="265" data-theme-id="0" data-slug-hash="BdmVLo" data-default-tab="result" data-user="it_hack" data-embed-version="2" data-pen-title="css 正方形图片布局" class="codepen">See the Pen <a href="https://codepen.io/it_hack/pen/BdmVLo/" target="_blank" rel="noopener">css 正方形图片布局</a> by kevin (<a href="https://codepen.io/it_hack" target="_blank" rel="noopener">@it_hack</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-<p>在这种布局下，每个容器的宽高比就越接近图片的真实宽高比，多数图片都能显示出其主要部分。</p>
-<p>这里用到了一个css不常见的属性object-fit；对于这个属性的具体用法推荐大家可以到张鑫旭大大的博客中学习查看，附上地址<a href="半深入理解CSS3 object-position/object-fit属性">半深入理解CSS3 object-position/object-fit属性</a></p>
-<p>目前还没发现我这个css实现移动端正方形图片显示有什么问题，还在为自己能解决这个问题而激动中……后续如果有问题或需要优化的希望大家可以提出建议，我发现问题的话也会随时更新问题和优化方案；</p>
+        <p>​      虽然react比Vue早一些，但是我还是先用了Vue；原因很简单当时看了一下React Native和React的API，觉得项目不需要这么复杂的东西，当时还是vue1.x时代，写了大概3个项目后，Vue2.x上线，之后的项目一直在用vue，从1.x到2.x一直踩坑，到目前可以说对Vue很熟练了也做了很多项目！其中也写过一个React，只是看了API，然后上手就写，感觉一直在皮毛的表层应用；</p>
+<p>​      最近项目不紧，闲来无事，就在想之前写的react项目，我不能只会用，只关注皮毛，还要多问一些为什么，所以有了今天这篇文章，通过‘十万个为什么’来让自己更加深入的学习了解react，以便自己更加了解react；</p>
+<p>​    好了，牢骚不多说，下面进入正题；</p>
+<h5 id="第一问：为什么用JSX？"><a href="#第一问：为什么用JSX？" class="headerlink" title="第一问：为什么用JSX？"></a>第一问：为什么用JSX？</h5><p>不需要为了React使用JSX，可以直接使用JavaScript，但建议使用 JSX 是因为它能精确，也是常用的定义包含属性的树状结构的语法</p>
+<p>1、没有 JSX 的 React：</p>
+<p>①　可以使用React.createElement()方法</p>
+<p>②　可以使用React.createFactory()方法（工厂方法）</p>
+<p>③　可以使用React.DOM.*（React为HTML标签提供的内置工厂方法）</p>
+<p>JSX 是一个看起来很像XML的JavaScript语法扩展。</p>
+<p>2、JSX的特点：</p>
+<p>①　JSX 不是必须用的，可以直接使用JavaScript；</p>
+<p>②　JSX 非常小；</p>
+<p>③　JSX 类似于HTML，但不完全一样，如HTML对大小写不敏感，JSX对大小写敏感；HTML中不强制要求标签闭合，但JSX要求标签一定要闭合；JSX的组件要以大写字母开头，以便与HTML标签区分。</p>
+<p>3、HTML标签 VS React组件</p>
+<p>在JSX语法中，遇到HTML标签（以&lt;开头）就用HTML规则解析，遇到代码块（以{开头）就用JavaScript规则解析。</p>
+<p>React可以渲染HTML标签或React组件类：要渲染HTML标签，只需在JSX里使用小写字母的标签名；要渲染React组件，只需创建一个大写字母开头的本地变量。即，JSX 使用大、小写来区分React组件类和HTML标签。</p>
+<p>注意：由于JSX就是JavaScript，class 和 for 等标识符不建议作为属性名，因此React DOM 使用 className 和 htmlFor作为相应的属性名。</p>
+<h5 id="第二问：为什么ReactJS组件名称必须以大写字母开头？"><a href="#第二问：为什么ReactJS组件名称必须以大写字母开头？" class="headerlink" title="第二问：为什么ReactJS组件名称必须以大写字母开头？"></a>第二问：为什么ReactJS组件名称必须以大写字母开头？</h5><p> 在JSX中，小写标签名称被认为是HTML标签。但是，带点（属性访问器）的小写标签名不是。</p>
+<p>查看<a href="https://facebook.github.io/react/docs/jsx-in-depth.html#html-tags-vs.-react-components" target="_blank" rel="noopener">HTML标记与React组件</a>。</p>
+<ul>
+<li><code>&lt;component /&gt;</code>编译为<code>React.createElement(&#39;component&#39;)</code>（html标签）</li>
+<li><code>&lt;Component /&gt;</code> 编译 <code>React.createElement(Component)</code></li>
+<li><code>&lt;obj.component /&gt;</code> 编译 <code>React.createElement(obj.component)</code></li>
+</ul>
+<p><strong><strong>待续……</strong></strong></p>
 
       
 
@@ -267,11 +275,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		
 		</ul>
@@ -327,7 +331,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://ithack.github.io/2017/08/16/css实现正方形图片展示网格布局.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://ithack.github.io/2018/10/23/回顾React，几个why.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -341,18 +345,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/10/18/Chrome inspect调试webview的强制开启方法.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Chrome inspect调试webview的强制开启方法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/12/实战记录：IOS新添加的DOM元素不支持-click的绑定方法.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">实战记录：IOS新添加的DOM元素不支持.click的绑定方法</div>
+    <a href="/2018/09/26/Vue生命周期全解（vueRouter-keep-alive-生命周期）.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue生命周期全解（vueRouter,keep-alive,生命周期）</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -379,7 +374,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#第一问：为什么用JSX？"><span class="toc-number">1.</span> <span class="toc-text">第一问：为什么用JSX？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#第二问：为什么ReactJS组件名称必须以大写字母开头？"><span class="toc-number">2.</span> <span class="toc-text">第二问：为什么ReactJS组件名称必须以大写字母开头？</span></a></li></ol>
                     </div>
                 </span>
             </div>

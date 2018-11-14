@@ -186,6 +186,104 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-回顾React，几个why" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/回顾React，几个why.html">回顾React，几个why</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/23/回顾React，几个why.html" class="archive-article-date">
+  	<time datetime="2018-10-23T09:14:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​      虽然react比Vue早一些，但是我还是先用了Vue；原因很简单当时看了一下React Native和React的API，觉得项目不需要这么复杂的东西，当时还是vue1.x时代，写了大概3个项目后，Vue2.x上线，之后的项目一直在用vue，从1.x到2.x一直踩坑，到目前可以说对Vue很熟练了也做了很多项目！其中也写过一个React，只是看了API，然后上手就写，感觉一直在皮毛的表层应用；</p>
+<p>​      最近项目不紧，闲来无事，就在想之前写的react项目，我不能只会用，只关注皮毛，还要多问一些为什么，所以有了今天这篇文章，通过‘十万个为什么’来让自己更加深入的学习了解react，以便自己更加了解react；</p>
+<p>​    好了，牢骚不多说，下面进入正题；</p>
+<h5 id="第一问：为什么用JSX？"><a href="#第一问：为什么用JSX？" class="headerlink" title="第一问：为什么用JSX？"></a>第一问：为什么用JSX？</h5><p>不需要为了React使用JSX，可以直接使用JavaScript，但建议使用 JSX 是因为它能精确，也是常用的定义包含属性的树状结构的语法</p>
+<p>1、没有 JSX 的 React：</p>
+<p>①　可以使用React.createElement()方法</p>
+<p>②　可以使用React.createFactory()方法（工厂方法）</p>
+<p>③　可以使用React.DOM.*（React为HTML标签提供的内置工厂方法）</p>
+<p>JSX 是一个看起来很像XML的JavaScript语法扩展。</p>
+<p>2、JSX的特点：</p>
+<p>①　JSX 不是必须用的，可以直接使用JavaScript；</p>
+<p>②　JSX 非常小；</p>
+<p>③　JSX 类似于HTML，但不完全一样，如HTML对大小写不敏感，JSX对大小写敏感；HTML中不强制要求标签闭合，但JSX要求标签一定要闭合；JSX的组件要以大写字母开头，以便与HTML标签区分。</p>
+<p>3、HTML标签 VS React组件</p>
+<p>在JSX语法中，遇到HTML标签（以&lt;开头）就用HTML规则解析，遇到代码块（以{开头）就用JavaScript规则解析。</p>
+<p>React可以渲染HTML标签或React组件类：要渲染HTML标签，只需在JSX里使用小写字母的标签名；要渲染React组件，只需创建一个大写字母开头的本地变量。即，JSX 使用大、小写来区分React组件类和HTML标签。</p>
+<p>注意：由于JSX就是JavaScript，class 和 for 等标识符不建议作为属性名，因此React DOM 使用 className 和 htmlFor作为相应的属性名。</p>
+<h5 id="第二问：为什么ReactJS组件名称必须以大写字母开头？"><a href="#第二问：为什么ReactJS组件名称必须以大写字母开头？" class="headerlink" title="第二问：为什么ReactJS组件名称必须以大写字母开头？"></a>第二问：为什么ReactJS组件名称必须以大写字母开头？</h5><p> 在JSX中，小写标签名称被认为是HTML标签。但是，带点（属性访问器）的小写标签名不是。</p>
+<p>查看<a href="https://facebook.github.io/react/docs/jsx-in-depth.html#html-tags-vs.-react-components" target="_blank" rel="noopener">HTML标记与React组件</a>。</p>
+<ul>
+<li><code>&lt;component /&gt;</code>编译为<code>React.createElement(&#39;component&#39;)</code>（html标签）</li>
+<li><code>&lt;Component /&gt;</code> 编译 <code>React.createElement(Component)</code></li>
+<li><code>&lt;obj.component /&gt;</code> 编译 <code>React.createElement(obj.component)</code></li>
+</ul>
+<p><strong><strong>待续……</strong></strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/23/回顾React，几个why.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Vue生命周期全解（vueRouter-keep-alive-生命周期）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -946,87 +1044,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-暴力关闭node占用的端口号" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/12/暴力关闭node占用的端口号.html">node报错‘listen EADDRINUSE’-暴力解决办法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/12/暴力关闭node占用的端口号.html" class="archive-article-date">
-  	<time datetime="2017-07-12T12:11:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有时候我们在开发环境用node运行本地项目的时候会爆出“Error: listen EADDRINUSE :::8080”这样的错误提示如下图：</p>
-<p><img src="\images\关闭node占用端口\1.png" alt="1"></p>
-<p>这种情况我们都知道是8080端口被占用了，也许我们有其他的项目在运行占用这个端口；但今天我之所以要暴力解决是因为我发现我其他项目并没有运行，也看不到哪个应用占用这个端口，这时候我们怎么办，貌似我们只有重启电脑这种办法，今天我来分享一个暴力敲码关闭占用这个端口的应用步骤如下（此处以8080端口为例）：
-        
-          <a class="article-more-a" href="/2017/07/12/暴力关闭node占用的端口号.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/12/暴力关闭node占用的端口号.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1113,7 +1133,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1125,15 +1145,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1149,7 +1173,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1165,7 +1189,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1193,7 +1217,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1206,10 +1230,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
