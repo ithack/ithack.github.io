@@ -289,27 +289,9 @@ var _hmt = _hmt || [];
 <p>​    好了，牢骚不多说，下面进入正题；</p>
 <h5 id="第一问：为什么用JSX？"><a href="#第一问：为什么用JSX？" class="headerlink" title="第一问：为什么用JSX？"></a>第一问：为什么用JSX？</h5><p>不需要为了React使用JSX，可以直接使用JavaScript，但建议使用 JSX 是因为它能精确，也是常用的定义包含属性的树状结构的语法</p>
 <p>1、没有 JSX 的 React：</p>
-<p>①　可以使用React.createElement()方法</p>
-<p>②　可以使用React.createFactory()方法（工厂方法）</p>
-<p>③　可以使用React.DOM.*（React为HTML标签提供的内置工厂方法）</p>
-<p>JSX 是一个看起来很像XML的JavaScript语法扩展。</p>
-<p>2、JSX的特点：</p>
-<p>①　JSX 不是必须用的，可以直接使用JavaScript；</p>
-<p>②　JSX 非常小；</p>
-<p>③　JSX 类似于HTML，但不完全一样，如HTML对大小写不敏感，JSX对大小写敏感；HTML中不强制要求标签闭合，但JSX要求标签一定要闭合；JSX的组件要以大写字母开头，以便与HTML标签区分。</p>
-<p>3、HTML标签 VS React组件</p>
-<p>在JSX语法中，遇到HTML标签（以&lt;开头）就用HTML规则解析，遇到代码块（以{开头）就用JavaScript规则解析。</p>
-<p>React可以渲染HTML标签或React组件类：要渲染HTML标签，只需在JSX里使用小写字母的标签名；要渲染React组件，只需创建一个大写字母开头的本地变量。即，JSX 使用大、小写来区分React组件类和HTML标签。</p>
-<p>注意：由于JSX就是JavaScript，class 和 for 等标识符不建议作为属性名，因此React DOM 使用 className 和 htmlFor作为相应的属性名。</p>
-<h5 id="第二问：为什么ReactJS组件名称必须以大写字母开头？"><a href="#第二问：为什么ReactJS组件名称必须以大写字母开头？" class="headerlink" title="第二问：为什么ReactJS组件名称必须以大写字母开头？"></a>第二问：为什么ReactJS组件名称必须以大写字母开头？</h5><p> 在JSX中，小写标签名称被认为是HTML标签。但是，带点（属性访问器）的小写标签名不是。</p>
-<p>查看<a href="https://facebook.github.io/react/docs/jsx-in-depth.html#html-tags-vs.-react-components" target="_blank" rel="noopener">HTML标记与React组件</a>。</p>
-<ul>
-<li><code>&lt;component /&gt;</code>编译为<code>React.createElement(&#39;component&#39;)</code>（html标签）</li>
-<li><code>&lt;Component /&gt;</code> 编译 <code>React.createElement(Component)</code></li>
-<li><code>&lt;obj.component /&gt;</code> 编译 <code>React.createElement(obj.component)</code></li>
-</ul>
-<p><strong><strong>待续……</strong></strong></p>
-
+        
+          <a class="article-more-a" href="/2018/10/23/回顾React，几个why.html#more">more >></a>
+        
       
 
       
@@ -1133,15 +1115,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1153,11 +1131,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1185,15 +1167,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
               </li>
              
               <li class="article-tag-list-item">
