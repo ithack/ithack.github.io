@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://ithack.github.io">
-  <title>Vue奇淫技笔记 | 不羁放纵爱自由的猿人</title>
+  <title>2018我的年度总结 | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="​    vue可视化项目暂时告一段落了，后续整理项目结构会更新上来，今天闲来无事先更新一把vue一些奇淫笔记，之所以称之为奇淫，可能是因为觉得有意思，也可能是觉得比较好玩，并不一定建议开发中用，这些奇淫的技能有些可能透过代码熟悉vue的运行机制等问题； 奇淫笔记一：​    如果你只在子组件里面改变父组件的一个值，不妨试试 $emit(&amp;#39;input&amp;#39;),会直接改变 v-model">
-<meta name="keywords" content="随笔,vue">
+  <meta name="description" content="前言​    之前一直在QQ空间做年度总结和来年计划，今年掘金和sf等各大网站看到好多大牛都出来年度总结，异常火爆，由于文采很菜，就不拿去献丑，就在自己的blog里来一篇关于职业上的年度总结吧，可能如下内容会写成流水账形式，也可能会稍微好一点，我会尽量控制在我自己以后回头看时不吐的程度，尽量有阅读性和客观性！如你看到此总结可以尽情吐槽，我会吸收并改正！ 回顾1818年我觉得在工作方面要分为上半年和">
+<meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue奇淫技笔记">
-<meta property="og:url" content="http://ithack.github.io/2018/09/26/Vue奇淫技笔记.html">
+<meta property="og:title" content="2018我的年度总结">
+<meta property="og:url" content="http://ithack.github.io/2019/01/15/2018我的年度总结.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="​    vue可视化项目暂时告一段落了，后续整理项目结构会更新上来，今天闲来无事先更新一把vue一些奇淫笔记，之所以称之为奇淫，可能是因为觉得有意思，也可能是觉得比较好玩，并不一定建议开发中用，这些奇淫的技能有些可能透过代码熟悉vue的运行机制等问题； 奇淫笔记一：​    如果你只在子组件里面改变父组件的一个值，不妨试试 $emit(&amp;#39;input&amp;#39;),会直接改变 v-model">
+<meta property="og:description" content="前言​    之前一直在QQ空间做年度总结和来年计划，今年掘金和sf等各大网站看到好多大牛都出来年度总结，异常火爆，由于文采很菜，就不拿去献丑，就在自己的blog里来一篇关于职业上的年度总结吧，可能如下内容会写成流水账形式，也可能会稍微好一点，我会尽量控制在我自己以后回头看时不吐的程度，尽量有阅读性和客观性！如你看到此总结可以尽情吐槽，我会吸收并改正！ 回顾1818年我觉得在工作方面要分为上半年和">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-19T09:43:08.664Z">
+<meta property="og:updated_time" content="2019-01-16T03:33:25.752Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue奇淫技笔记">
-<meta name="twitter:description" content="​    vue可视化项目暂时告一段落了，后续整理项目结构会更新上来，今天闲来无事先更新一把vue一些奇淫笔记，之所以称之为奇淫，可能是因为觉得有意思，也可能是觉得比较好玩，并不一定建议开发中用，这些奇淫的技能有些可能透过代码熟悉vue的运行机制等问题； 奇淫笔记一：​    如果你只在子组件里面改变父组件的一个值，不妨试试 $emit(&amp;#39;input&amp;#39;),会直接改变 v-model">
+<meta name="twitter:title" content="2018我的年度总结">
+<meta name="twitter:description" content="前言​    之前一直在QQ空间做年度总结和来年计划，今年掘金和sf等各大网站看到好多大牛都出来年度总结，异常火爆，由于文采很菜，就不拿去献丑，就在自己的blog里来一篇关于职业上的年度总结吧，可能如下内容会写成流水账形式，也可能会稍微好一点，我会尽量控制在我自己以后回头看时不吐的程度，尽量有阅读性和客观性！如你看到此总结可以尽情吐槽，我会吸收并改正！ 回顾1818年我觉得在工作方面要分为上半年和">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -186,65 +186,46 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Vue奇淫技笔记" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-2018我的年度总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Vue奇淫技笔记
+      2018我的年度总结
     </h1>
   
 
         
-        <a href="/2018/09/26/Vue奇淫技笔记.html" class="archive-article-date">
-  	<time datetime="2018-09-26T07:43:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-26</time>
+        <a href="/2019/01/15/2018我的年度总结.html" class="archive-article-date">
+  	<time datetime="2019-01-15T10:13:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>​    vue可视化项目暂时告一段落了，后续整理项目结构会更新上来，今天闲来无事先更新一把vue一些奇淫笔记，之所以称之为奇淫，可能是因为觉得有意思，也可能是觉得比较好玩，并不一定建议开发中用，这些奇淫的技能有些可能透过代码熟悉vue的运行机制等问题；</p>
-<h5 id="奇淫笔记一："><a href="#奇淫笔记一：" class="headerlink" title="奇淫笔记一："></a>奇淫笔记一：</h5><p>​    如果你只在子组件里面改变父组件的一个值，不妨试试 <code>$emit(&#39;input&#39;)</code>,会直接改变 v-model<br>我们正常的父子组件通信是 父组件通过 props 传给子组件，子组件通过 <code>this.$emit(&#39;eventName&#39;,value)</code>通知父组件绑定在 @eventName 上的方法来做相应的处理。<br>​    但是这边有个特例，vue 默认会监听组件的 input 事件，而且会把子组件里面传出来的值，赋给当前绑定到 v-model 上的值<br><strong>正常用法 - 父组件</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;subComponent :data=<span class="string">"param"</span> @dataChange=<span class="string">"dataChangeHandler"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">subComponent</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script &gt;</span></span><br><span class="line"><span class="regexp">  export default &#123;</span></span><br><span class="line"><span class="regexp">    data () &#123;</span></span><br><span class="line"><span class="regexp">      return &#123;</span></span><br><span class="line"><span class="regexp">        param:'xxxxxx'</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    methods:&#123;</span></span><br><span class="line"><span class="regexp">      dataChangeHandler (newParam) &#123;</span></span><br><span class="line"><span class="regexp">        this.param = newParam</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p><strong>正常用法 - 子组件</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script &gt;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    methods:&#123;</span><br><span class="line">      updateData (newParam) &#123;</span><br><span class="line">        <span class="keyword">this</span>.$emit(<span class="string">'dataChange'</span>,newParam)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>利用默认 input 事件 - 父组件</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;subComponent  v-model=<span class="string">"param"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">subComponent</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>利用默认 input 事件 - 子组件</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script &gt;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    methods:&#123;</span><br><span class="line">      updateData (newParam) &#123;</span><br><span class="line">        <span class="keyword">this</span>.$emit(<span class="string">'input'</span>,newParam)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这样，我们就能省掉父组件上的一列席处理代码，vue 会自动帮你处理好</p>
-<p>这种方法只适用于改变单个值的情况，且子组件对父组件只需简单的传值，不需要其他附加操作(如更新列表)的情况。</p>
-<p>补充一个 <code>this.$emit(&#39;update:fidldName&#39;,value)</code>方法</p>
-<p>具体用法如下:<br>父组件<br><code>&lt;subComponent field1.sync=&quot;param1&quot; field2.sync=&quot;param2&quot;&gt;&lt;/subComponent&gt;</code></p>
-<p>子组件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script &gt;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    methods:&#123;</span><br><span class="line">      updateData1 (newValue) &#123;</span><br><span class="line">        <span class="keyword">this</span>.$emit(<span class="string">'update:field1'</span>,newValue)</span><br><span class="line">      &#125;,</span><br><span class="line">      updateData2 (newValue) &#123;</span><br><span class="line">        <span class="keyword">this</span>.$emit(<span class="string">'update:field2'</span>,newValue)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p>该方法,个人认为比较适用于 要更新的数据不能绑定在 v-model 的情况下,或者要双向通信的数据大于 1 个(1个也可以用,但我个人更推荐 input 的方式, 看个人喜好吧),但又不会很多的情况下.</p>
-<h5 id="奇淫笔记二："><a href="#奇淫笔记二：" class="headerlink" title="奇淫笔记二："></a>奇淫笔记二：</h5><p>非父子组件传递数据；通过使用一个空的Vue实例作为中央事件总线。<strong>index.js</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> bus = <span class="keyword">new</span> Vue()</span><br><span class="line">Vue.prototype.bus = bus;</span><br></pre></td></tr></table></figure>
-<p>相邻组件1,通过$emit()传递数据<br><code>this.bus.$emit(&quot;toChangeTitle&quot;,&quot;首页&quot;);</code><br>相邻组件2，通过$on()接收数据</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mounted()&#123;   </span><br><span class="line">   <span class="keyword">this</span>.bus.$on(<span class="string">'toChangeTitle'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">title</span>) </span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(title)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="奇淫笔记三："><a href="#奇淫笔记三：" class="headerlink" title="奇淫笔记三："></a>奇淫笔记三：</h5><p>vue中<code>@click=&quot;event()&quot;</code>，添加()与不添加()的区别应该是 Vue 对函数调用表达式额外用了一个函数做了层包装。加与不加括号的区别在于事件对象参数 event 的处理。不加括号时，函数第一个参数默认为 event；加了括号后，需要手动传入 $event 才能获得事件对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn-item"</span>&gt;</span><br><span class="line">        &lt;button <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-success"</span> @click=<span class="string">"sure($event)"</span>&gt;确定&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">        &lt;button class="btn btn-default" @click="quit"&gt;取消&lt;/</span>button&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">export</span> <span class="keyword">default</span>&#123;</span><br><span class="line">      name:<span class="string">'test'</span>,</span><br><span class="line">      data()&#123;</span><br><span class="line">          <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      methods:&#123;</span><br><span class="line">          sure(e)&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(e.target);</span><br><span class="line">          &#125;,</span><br><span class="line">          quit(e)&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(e.target);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>======================华丽的分割线====================</strong></p>
-<p>//181017更新</p>
-<h5 id="奇淫笔记四："><a href="#奇淫笔记四：" class="headerlink" title="奇淫笔记四："></a>奇淫笔记四：</h5><p>vue单页路由跳转后scrollTop问题：当一个页面滚动了，点击页面上的路由调到下一个页面时，跳转后的页面也是滚动的，滚动条并不是在页面的顶部！</p>
-<p>可能有的小伙伴加上window.scrollTop(0,0);来解决问题，但是这个太繁琐了；</p>
-<p>又或者在入口加入：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.afterEach(<span class="function"><span class="keyword">function</span> (<span class="params">to</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>路由跳转后就不会出现滚动的问题了。但是这种做法是不友好的！我们可以使用scrollBehavior (to, from, savedPosition) {}来解决问题。</p>
-<p>在我们写路由的时候做个如下处理：</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Router <span class="keyword">from</span> <span class="string">'vue-router'</span></span><br><span class="line">Vue.use(Router);</span><br><span class="line"></span><br><span class="line">Vue.use(Router)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">  	……</span><br><span class="line">  ],</span><br><span class="line">  scrollBehavior (<span class="keyword">to</span>, <span class="keyword">from</span>, savedPosition) &#123;</span><br><span class="line">    <span class="keyword">if</span> (savedPosition) &#123;</span><br><span class="line">      <span class="keyword">return</span> savedPosition</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> &#123; x: <span class="number">0</span>, y: <span class="number">0</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>scrollBehavior 方法接收 to 和 from 路由对象。第三个参数 savedPosition 当且仅当 popstate 导航 (通过浏览器的 前进/后退 按钮触发) 时才可用。它的使用有很多种，可以试试。</p>
-<h5 id="奇淫笔记五"><a href="#奇淫笔记五" class="headerlink" title="奇淫笔记五"></a>奇淫笔记五</h5><p>深度作用选择器,场景：scoped的样式，希望影响到子组件的默认样式；</p>
-<p>在样式中设置完scoped在浏览器解析为如下图这样，a是个div，a div里面包含一个组件里面解析完了div的样式名字为b，想在父组件影响到子组件的默认样式。</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> data-v-fcaef538 <span class="built_in">class</span>=<span class="string">"a"</span>&gt;</span><br><span class="line">true&lt;<span class="keyword">div</span> data-v<span class="number">-35</span>b15bcb <span class="built_in">class</span>=<span class="string">"b"</span>&gt;&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure>
-<p>解决办法：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.a</span> &gt;&gt;&gt; <span class="selector-class">.b</span> &#123; <span class="comment">/* ... */</span> &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    //有些像Sass之类的预处理器无法正确解析&gt;&gt;&gt;。这种情况下你可以使用/deep/操作符取而代之- - - -这是一个&gt;&gt;&gt;的别名，同样可以正常工作。</span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span> <span class="attr">lang</span>=<span class="string">“scss”</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    .a /deep/ .b &#123; /* ... */ &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>//待更新</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​    之前一直在QQ空间做年度总结和来年计划，今年掘金和sf等各大网站看到好多大牛都出来年度总结，异常火爆，由于文采很菜，就不拿去献丑，就在自己的blog里来一篇关于职业上的年度总结吧，可能如下内容会写成流水账形式，也可能会稍微好一点，我会尽量控制在我自己以后回头看时不吐的程度，尽量有阅读性和客观性！如你看到此总结可以尽情吐槽，我会吸收并改正！</p>
+<h3 id="回顾18"><a href="#回顾18" class="headerlink" title="回顾18"></a>回顾18</h3><p>18年我觉得在工作方面要分为上半年和下半年；首先说一下我是17年11.1来的现在的公司，有些事缘分来了挡都挡不住，我17年心心念念的现公司，17年都是按照自己的规划走的；可是到了18年貌似就不是了；</p>
+<p>从上半年说起，上半年我主要负责两个项目，一个是接手过来的，代码比较老套，都没有钱后端分离；另一个是一个新项目，是一个可视化搭建页面的项目；当时接老项目时打算重构，但是推进难度大，之后有新项目启动，又是我一个人搞前端，所以老项目就没有重构；新项目可以说从项目启动—&gt;架构雏形—&gt;架构实现—&gt;第一版上线，完全自己一个人把前端的项目搭建起来，中间虽然遇到过几次问题，尤其前期考虑架构和实现方式时都已经开始怀疑人生了，之后成功的感觉那不能用一个“爽”字能表达的！这里放上<a href="https://github.com/ithack/vueCMS" target="_blank" rel="noopener">项目代码</a>，删除了公司的一些标示和接口，项目后期并没有优化成可复用的代码，只是放出来作为大家以后做类似项目时一个开发思路参考参考！本来想用这个项目打开leader的大门，可是后来，就没有后来了！<a id="more"></a></p>
+<p>到了下半年，公司组织架构调整；之前做的新项目作废，然后慢慢的手里的业务线都被划出去；再然后就感觉自己貌似没啥事情做了，虽然老大没变，但我的方向变了，再也不是可以胜任leader的人了；这时我迷茫了一阵，我在想我的问题出在哪里，我需要怎样调整；自己技术崛起必须有一个能体现技术的项目，所以我开始做脚手架，推动组内分享等等一系例能想到的事；一直到年底公司人员优化，然后又接手了两个其他项目，一个是VUE的单页面，一个是React的后台项目，vue项目自然不用说，我是从vue1.x开始手写敲码的，所以对vue那一套非常熟悉，简单的看了下代码结构和思路已经可以完美上手了（当然还是这个vue搭建作者的结构和思路很清晰，所以才这么快熟悉，这也是值得我学习的地方）；关于React的项目接手过来，由于之前写React项目不多，就那么一两次，再加上写码风格和思路不一样，所以我接过代码后仔细学习了一下，里边有我可以吸取和借鉴的地方，也有不好的地方，再接下来的需求中我会把代码进行优化和可阅读性提高！</p>
+<p>仔细回想18年这一年其实在编程方面成长并不是很多，为什么呢？我自己觉得是这一年手里项目并不多，遇到问题也少，这可能是原因之一；另一个我觉得不靠谱的原因是我工作经验这么长，不可能再遇到那么多问题了（你个糟老头子，我信你个鬼～）！在这一年中算是半个leader吧，带了几个人，期间算下这方面还是有一点自己的心得的，在管理方面还是要反省一下自己的，作为一个小leader要想办法提高整个团队的技术能力和产出，凝聚团队力量来提高公司和部门的工作效率！这里只是简单的说一下我自己的一点心得，并不代表一定对，只能保证不会错吧；关于管理这块自己还需要更多时间和经验来磨练！目前我在团队内推行分享的方式来提高大家的技术能力；其实之前公司有些是强制分享轮流制，当时我还不是太理解这样的意义，因为强制分享有的人是为了分享而分享，现在的我不这么认为了，或许分享者无意，但听者或许能打开新的思路和想法！<strong>生活中不缺乏有心人</strong> 因为其实每个人都有每个人的经历和经验，我们或许我没有遇到过的问题，其他人遇到过，或许我不知道有这样一个技术，其他小伙伴知道，分享并不一定是高深莫测的技术；</p>
+<h3 id="展望19"><a href="#展望19" class="headerlink" title="展望19"></a>展望19</h3><p>在展望前我想唠叨两句（那股劲儿上来了，唠叨唠叨），其实在16年开始我就一直在问自己“我将来的路该如何走”，这几年也一直在摸索，表面上可能好像顺了，但我心里还是有意思不安，这几年圈内环境不是很好（不是一般的亚历山大）；网上都说什么发展副业，目前还真么有（说到这里更悲哀，让我哭会儿～～）！</p>
+<p>不唠叨了，鼻涕一把泪一把的！还是展望一下19年吧，虽然18年环境不好，自己也不是很好，但我想说的是19年也不会好转，最近看了一些文章和经济专家（骗子）的文章都说是破釜沉舟的一年；我还是要展望19，我要升职加薪、当上总经理、出任CEO、迎娶白富美、走上人生巅峰，想想还有点小激动，好了不做梦了；说了这么多貌似还是在唠叨，下面进入正题，之前QQ空间的展望一直都是设定目标，并没有想为了这个目标努力需要做什么，今天在这里我来罗列一下自己为了19年的目标要做的事情：</p>
+<ol>
+<li>读和购买如下类别书籍<ol>
+<li>大前端类技术书籍如：nodejs  javascript  pwa 小程序</li>
+<li>关于经济类书籍如：薛兆丰经济学讲义</li>
+<li>关于沟通管理类书籍</li>
+</ol>
+</li>
+<li>投资自己选择一个自己喜欢的项目深入学习如：健身，娱乐项目等</li>
+<li>提高自己写作水平和能力</li>
+</ol>
+<p>也许有人看到如上计划会觉得懵，我这是要干啥？我的目标是啥？我想说我的目标就是自身前端技术为主线，多元化扩展之际知识面和基本能力，提高自身脑知识，以备不时之需！</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>此文仅作为职业发展和工作上的一些总结（仔细看看还是有流水账的感觉～对不起广大人民群众），这里强烈控制住槽点，欢迎所有想沟通交流的程序媛前来交流（程序猿也可以，优先级略低）</p>
+<p>虽然文采不好但经验确实不少（傲娇的我自认为）如上仅作为作者本人构思和回忆，如有雷同纯属巧合（那肯定不能有雷同）</p>
 
       
 
@@ -290,10 +271,6 @@ var _hmt = _hmt || [];
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -349,7 +326,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://ithack.github.io/2018/09/26/Vue奇淫技笔记.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://ithack.github.io/2019/01/15/2018我的年度总结.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -363,18 +340,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/09/26/Vue生命周期全解（vueRouter-keep-alive-生命周期）.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Vue生命周期全解（vueRouter,keep-alive,生命周期）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vuedraggable 拖拽异步组件问题记录</div>
+    <a href="/2018/10/23/回顾React，几个why.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">回顾React，几个why</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -401,7 +369,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记一："><span class="toc-number">1.</span> <span class="toc-text">奇淫笔记一：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记二："><span class="toc-number">2.</span> <span class="toc-text">奇淫笔记二：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记三："><span class="toc-number">3.</span> <span class="toc-text">奇淫笔记三：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记四："><span class="toc-number">4.</span> <span class="toc-text">奇淫笔记四：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#奇淫笔记五"><span class="toc-number">5.</span> <span class="toc-text">奇淫笔记五</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#回顾18"><span class="toc-number">2.</span> <span class="toc-text">回顾18</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#展望19"><span class="toc-number">3.</span> <span class="toc-text">展望19</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
