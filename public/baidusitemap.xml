@@ -4,8 +4,99 @@
 
     
   <url>
+    <loc>http://ithack.github.io//2019/01/15/2018%E6%88%91%E7%9A%84%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93.html</loc>
+    <lastmod>2019-01-16T03:33:25.752Z</lastmod>
+    <data>
+        <display>
+        <title>2018我的年度总结</title>
+        <pubTime>2019-01-15T10:13:38.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ithack.github.io//2016/08/12/CSS3%E5%AE%9E%E7%8E%B0%E5%85%B3%E9%97%ADX%E6%8C%89%E9%92%AE.html</loc>
+    <lastmod>2018-12-25T01:27:59.151Z</lastmod>
+    <data>
+        <display>
+        <title>CSS3实现关闭X按钮</title>
+        <pubTime>2016-08-12T02:11:01.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+        <tag>CSS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ithack.github.io//2018/10/23/%E5%9B%9E%E9%A1%BEReact%EF%BC%8C%E5%87%A0%E4%B8%AAwhy.html</loc>
+    <lastmod>2018-11-14T02:38:58.681Z</lastmod>
+    <data>
+        <display>
+        <title>回顾React，几个why</title>
+        <pubTime>2018-10-23T09:14:01.000Z</pubTime>
+        
+        <tag>react</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ithack.github.io//2018/09/26/Vue%E5%A5%87%E6%B7%AB%E6%8A%80%E7%AC%94%E8%AE%B0.html</loc>
+    <lastmod>2018-10-19T09:43:08.664Z</lastmod>
+    <data>
+        <display>
+        <title>Vue奇淫技笔记</title>
+        <pubTime>2018-09-26T07:43:22.000Z</pubTime>
+        
+        <tag>随笔</tag>
+         
+        <tag>vue</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://ithack.github.io//2018/09/26/Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%85%A8%E8%A7%A3%EF%BC%88vueRouter-keep-alive-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%EF%BC%89.html</loc>
+    <lastmod>2018-09-26T08:53:17.070Z</lastmod>
+    <data>
+        <display>
+        <title>Vue生命周期全解（vueRouter,keep-alive,生命周期）</title>
+        <pubTime>2018-09-26T08:11:17.000Z</pubTime>
+        
+        <tag>vue</tag>
+         
+        <tag>vue-router</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://ithack.github.io//2018/07/30/vuedraggable-%E6%8B%96%E6%8B%BD%E5%BC%82%E6%AD%A5%E7%BB%84%E4%BB%B6%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95.html</loc>
-    <lastmod>2018-07-30T03:38:15.195Z</lastmod>
+    <lastmod>2018-07-30T03:44:14.625Z</lastmod>
     <data>
         <display>
         <title>vuedraggable 拖拽异步组件问题记录</title>
@@ -281,25 +372,6 @@
         <tag>Javascript</tag>
          
         <tag>面试题</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://ithack.github.io//2016/08/12/CSS3%E5%AE%9E%E7%8E%B0%E5%85%B3%E9%97%ADX%E6%8C%89%E9%92%AE.html</loc>
-    <lastmod>2017-04-27T08:30:28.000Z</lastmod>
-    <data>
-        <display>
-        <title>CSS3实现关闭X按钮</title>
-        <pubTime>2016-08-12T02:11:01.000Z</pubTime>
-        
-        <tag>随笔</tag>
-         
-        <tag>CSS</tag>
          
          
            

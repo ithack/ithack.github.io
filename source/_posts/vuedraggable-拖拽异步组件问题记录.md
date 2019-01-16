@@ -72,7 +72,7 @@ tags: [vue,vuedraggable,Sortablejs,vue异步组件]
 
 ```
 
-上边代码名字可以看出在左边组件拖到可视区域松手那一刻，先出发了vue的input事件回调传参事事左侧的dom节点，而且这个newIndex的索引记录的事上一次松手时的位置，这就到这了第一次 从手我们json进入JSON Tree的第0个节点，而第二次json进入了上一次松手位置的索引节点位置，而在执行add添加真正组件的时候就导致了JSON Tree出现问题，如图：![2](/Users/yangkai9/Desktop/project/ithack/source/images/vuedraggable拖拽异步组件问题记录/2.gif)
+上边代码名字可以看出在左边组件拖到可视区域松手那一刻，先出发了vue的input事件回调传参事事左侧的dom节点，而且这个newIndex的索引记录的事上一次松手时的位置，这就到这了第一次 从手我们json进入JSON Tree的第0个节点，而第二次json进入了上一次松手位置的索引节点位置，而在执行add添加真正组件的时候就导致了JSON Tree出现问题，如图：![2](/images/vuedraggable拖拽异步组件问题记录/2.gif)
 
 通过vue开发工具我们可看到事件触发顺序input-->change-->add,通过log我们可以在三个事件中分别查看newIndex的索引数，我们第一次都是0，但第二次的时候input是上一次的拖拽位置索引，而从change开始就是当前索引，也就是结合代码可发现，其实在我们change之前input已经把未配置的JSON更新到JSON Tree里了，这样就会出现问题；
 

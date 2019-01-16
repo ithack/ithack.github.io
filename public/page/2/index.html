@@ -22,7 +22,7 @@
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://oap59rfi2.bkt.clouddn.com/favicon-20170427050949517.ico">
+    <link rel="icon" href="/images/个人信息/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.507b3a.css">
   <style type="text/css">
@@ -69,7 +69,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="false" class="profilepic">
-			<img src="http://oap59rfi2.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720160722111113.jpg" class="js-avatar">
+			<img src="/images/个人信息/my_proto.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="false">kevin,杨凯</a></h1>
@@ -127,7 +127,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://oap59rfi2.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720160722111113.jpg" class="js-avatar">
+				<img src="/images/个人信息/my_proto.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">kevin,杨凯</h1>
@@ -185,6 +185,332 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/10/实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input.html">实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/10/实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input.html" class="archive-article-date">
+  	<time datetime="2017-08-10T08:23:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    最近忙的暗无天日的节奏，不过收获很多很开心能同时3个项目的从0到1的过程，今天开始项目已经进入优化迭代阶段，基础功能和东西都已经弄好了，再也不用早九晚十一周七天的工作节奏了，说实话突然弄完了可以喘口气了还有点不那么适应了；</p>
+<p>​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个是vue+nuxt+公司node架构搭建中间成做的后台系统，vue对于我来说没什么挑战性分配给我的工作早早就解决了，之后主要工作就是一直带一个校招新手做一个h5页面，嵌套在APP中的一个项目，由于这个新手没做过项目所以基本手把手教，之前在大数字也带过一个校招研究生两个对比还是大数字的校招基础扎实一点，没带多久基本就已经出师了；现在这个貌似带了这一整个项目进步也不是很大，主要是基础不扎实，很多东西都不了解；主要在这个项目中遇到很多坑，主要内部的node框架用了<a href="http://www.xidea.org/lite/index.html" target="_blank" rel="noopener">lite</a>模版，这个模版之前从未听过有一些不太习惯；不过在做这个h5项目中还是有一点收获的，仔细想来最大的收获是在教的过程中发现自己的不足；感觉在做项目的时候遇到很多问题都像闯关一样，每过一关都觉得好爽；</p>
+<p>​    好了废话不多说，进入主题，不知道谁遇到过，反正我遇到了，（我的应用场景：在一个详情页最下边有一个发布评论的div，这个div是fixed的，里边有个input和submit按钮，在详情的content里有一个评论的click事件，点击后我会让这个fixed里的input聚焦，在APP里会唤起键盘，做完后发现安卓没有问题，在IOS里可以唤起键盘但是fixed这个div会被键盘遮挡住，体验不好，所以需要解决这个问题，就有了之后的一切摸索过程……）之前没遇到过第一次遇到我 首先百度原因，各种说法都有如下是查到的两个比较靠谱的评论链接，或许你也回遇到相同的问题，希望对你有所帮助：</p>
+        
+          <a class="article-more-a" href="/2017/08/10/实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/10/实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-暴力关闭node占用的端口号" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/12/暴力关闭node占用的端口号.html">node报错‘listen EADDRINUSE’-暴力解决办法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/12/暴力关闭node占用的端口号.html" class="archive-article-date">
+  	<time datetime="2017-07-12T12:11:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有时候我们在开发环境用node运行本地项目的时候会爆出“Error: listen EADDRINUSE :::8080”这样的错误提示如下图：</p>
+<p><img src="\images\关闭node占用端口\1.png" alt="1"></p>
+<p>这种情况我们都知道是8080端口被占用了，也许我们有其他的项目在运行占用这个端口；但今天我之所以要暴力解决是因为我发现我其他项目并没有运行，也看不到哪个应用占用这个端口，这时候我们怎么办，貌似我们只有重启电脑这种办法，今天我来分享一个暴力敲码关闭占用这个端口的应用步骤如下（此处以8080端口为例）：
+        
+          <a class="article-more-a" href="/2017/07/12/暴力关闭node占用的端口号.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/12/暴力关闭node占用的端口号.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-实战react小记二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/30/实战react小记二.html">实战react小记二</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/30/实战react小记二.html" class="archive-article-date">
+  	<time datetime="2017-06-30T09:20:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    上次说最近再开发项目用到了react开发，今天第一个迭代基本完成，已经在预发布阶段；</p>
+<p>​    现在闲下来继续记录一下react的一些看法；</p>
+<p>​    首先在这次迭代中用的react的功能不是太复杂，但是回顾起来却觉得代码很复杂；当回顾我的js文件发现好混乱啊，由于react是单数据流的开发模式，一开始想把每一个小的功能都单独做一个文件出来，但是我却发现一个很严重的问题，，如果想让子组件修改父组件的数据，只能通过父组件定义一个方法方法里用this.setState()的方法，把这个方法传子组件，在子组件中运行把数据传出来，这正方法很痛苦，目前还没有寻找便捷方法；</p>
+<p>​    第二个问题，现在目前发现对于执行事件还是有一定的局限性，比如我想在一个提交事件中调去某一个dom元素的onblur事件，这时想操作这个流程很复杂，目前还是没有客观的解决方案</p>
+<p>​    第三个问题，就mvvm的开发而言，我觉得react的可独行不是那么客观，可能之前写前端和vue习惯了，对于这种jsx的写法不太习惯，但目前来说传参，方法，事件，html，css，入参，state，props这些东东弄在了一个js里，如果没有一个很好的组件功能的前期规划，那么写完代码发现这个文件代码行数很多不说，可读性也不是那么好，就连我自己写完之后回顾我写的代码有时候都觉得乱，这个事件是父组件传来的，那个数据是父组件传来的，这是在给子组件传输数据，那个是在给父组件传输数据！整体代码的美观性也不是我想象的那么美，我想如果另外一个新人浏览代码的时候可能会花更多时间来查找一些事件和方法的关联性吧；</p>
+<p>​    目前来说我对react的了解还停留来表面，只是觉得react和vue相比，api少了很多，更像js的编码习惯，缺点也很明显，局限性很大，不想vue那样用个api就能实现，可能一个很小的事件需要写一坨代码来完成；react的坑都在深层，vue的坑都在表层；这是我目前遇到的一些react的坑，还在继续填坑中……或许我的理解和看法不对，希望看到小记的朋友可以批评指正；之后的react之路还在进行，更深入的东西还在挖掘，有兴趣的可以一起探讨交流，今天就先到这了，之后的填坑之路有时间会和大家分享交流！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/30/实战react小记二.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-实战react小记一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/19/实战react小记一.html">实战react小记一</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/19/实战react小记一.html" class="archive-article-date">
+  	<time datetime="2017-06-19T09:13:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    最近公司调整，我有机会从0开始做一个项目感觉很爽；下面简单说一下我们的技术选型：</p>
+<p>​    1.前端展示页选用公司自己的nodejs框架搭建前端页面</p>
+<p>​    2.后台系统用react作为框架搭建后台页面</p>
+<p>​    3.后台系统是用nodejs作为中间层接收后端接口数据后渲染模版传给客户端（浏览器）</p>
+<p>​    之前一直在看react的demo和API从来没有在项目中用过，之前看demo和api时觉得react的写法上实在让我这个纯前端觉得高大上同时望而却步的感觉，这次有机会用react在实际项目中使用内心却有那么一点的小激动；好了废话不多说，下面就说说react吧（由于第一次用，记录不对的地方还请看官大大批评指正）</p>
+<p>​    由于是实战小记，这里就不说react是什么，react解决了什么等问题了，这些问题可以在搜索引擎搜到一堆大大们的文章学习，今天以实战经历为主；我们用了（<a href="https://ant.design/" target="_blank" rel="noopener">antDesign</a>）这个前端框架的，先说说react创建组件的ES5和ES6两种方法：</p>
+<p>ES5：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> reactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="comment">/*子组件*/</span></span><br><span class="line"><span class="keyword">var</span> Hello = React.createClass(&#123;</span><br><span class="line">  getIntialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//初始化组件状态</span></span><br><span class="line">  getDefaultProps： <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//初始化组件的默认属性</span></span><br><span class="line">  </span><br><span class="line">  propTypes: &#123;&#125;, <span class="comment">//规定属性的存在性和类型</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//一些生命周期相关函数</span></span><br><span class="line">  componentWillMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被嵌入之前触发</span></span><br><span class="line">  componentDidMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被嵌入之后触发</span></span><br><span class="line">  componentWillReceiveProps: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//当props有改变时触发</span></span><br><span class="line">  componentWillUnmount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被注销之前触发</span></span><br><span class="line">  <span class="comment">//渲染函数，不能省略    </span></span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span> ;     </span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hello</span><br><span class="line"><span class="comment">/*父组件*/</span></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Hello name=<span class="string">"John"</span> /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'App'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/06/19/实战react小记一.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/19/实战react小记一.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-Nodejs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -702,387 +1028,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-基础面试锦集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/16/基础面试锦集.html">基础面试锦集</a>
-    </h1>
-  
-
-        
-        <a href="/2017/03/16/基础面试锦集.html" class="archive-article-date">
-  	<time datetime="2017-03-16T08:22:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前端还是一个年轻的行业，新的行业标准， 框架， 库都不断在更新和新增，正如赫门在2015深JS大会上的《前端服务化之路》主题演讲中说的一句话：“每18至24个月，前端都会难一倍”，这些变化使前端的能力更加丰富、创造的应用也会更加完美。所以关注各种前端技术，跟上快速变化的节奏，也是身为一个前端程序员必备的技能之一。</p>
-<ol>
-<li><p>面试题目： 根据你的等级和职位的变化，入门级到专家级，广度和深度都会有所增加。</p>
-</li>
-<li><p>题目类型： 理论知识、算法、项目细节、技术视野、开放性题、工作案例。</p>
-</li>
-<li><p>细节追问： 可以确保问到你开始不懂或面试官开始不懂为止，这样可以大大延展题目的区分度和深度，知道你的实际能力。因为这种知识关联是长时期的学习，临时抱佛脚绝对是记不住的。</p>
-</li>
-<li><p>回答问题再棒，面试官（可能是你面试职位的直接领导），会考虑我要不要这个人做我的同事？所以态度很重要、除了能做事，还要会做人。（感觉更像是相亲( •̣̣̣̣̣̥́௰•̣̣̣̣̣̥̀ )）</p>
-</li>
-<li><p>资深的前端开发能把absolute和relative弄混，这样的人不要也罢，因为团队需要的是：你这个人具有可以依靠的才能（靠谱）。</p>
-</li>
-</ol>
-<p><strong>前端开发知识点：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">HTML&amp;CSS：</span><br><span class="line">    对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级、</span><br><span class="line">    HTML5、CSS3、Flexbox</span><br><span class="line"></span><br><span class="line">JavaScript：</span><br><span class="line">    数据类型、运算、对象、<span class="built_in">Function</span>、继承、闭包、作用域、原型链、事件、<span class="built_in">RegExp</span>、<span class="built_in">JSON</span>、Ajax、</span><br><span class="line">    DOM、BOM、内存泄漏、跨域、异步装载、模板引擎、前端MVC、路由、模块化、Canvas、ECMAScript <span class="number">6</span>、Nodejs</span><br><span class="line"></span><br><span class="line">其他：</span><br><span class="line">    移动端、响应式、自动化构建、HTTP、离线存储、WEB安全、优化、重构、团队协作、可维护、易用性、SEO、UED、架构、职业生涯、快速学习能力</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong> 作为一名前端工程师，无论工作年头长短都应该掌握的知识点： </strong></p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">1</span>、DOM结构 —— 两个节点之间可能存在哪些关系以及如何在节点之间任意移动。</span><br><span class="line"></span><br><span class="line"><span class="number">2</span>、DOM操作 —— 如何添加、移除、移动、复制、创建和查找节点等。</span><br><span class="line"></span><br><span class="line"><span class="number">3</span>、事件 —— 如何使用事件，以及IE和标准DOM事件模型之间存在的差别。</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>、XMLHttpRequest —— 这是什么、怎样完整地执行一次GET请求、怎样检测错误。</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>、严格模式与混杂模式 —— 如何触发这两种模式，区分它们有何意义。</span><br><span class="line"></span><br><span class="line"><span class="number">6</span>、盒模型 —— 外边距、内边距和边框之间的关系，及IE8以下版本的浏览器中的盒模型</span><br><span class="line"></span><br><span class="line"><span class="number">7</span>、块级元素与行内元素 —— 怎么用CSS控制它们、以及如何合理的使用它们</span><br><span class="line"></span><br><span class="line"><span class="number">8</span>、浮动元素 —— 怎么使用它们、它们有什么问题以及怎么解决这些问题。</span><br><span class="line"></span><br><span class="line"><span class="number">9</span>、HTML与XHTML —— 二者有什么区别，你觉得应该使用哪一个并说出理由。</span><br><span class="line"></span><br><span class="line"><span class="number">10</span>、JSON —— 作用、用途、设计结构。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/03/16/基础面试锦集.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/16/基础面试锦集.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-很久没好好更新了" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/28/很久没好好更新了.html">很久没好好更新了</a>
-    </h1>
-  
-
-        
-        <a href="/2016/09/28/很久没好好更新了.html" class="archive-article-date">
-  	<time datetime="2016-09-28T04:14:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-09-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>很久没有更新了，今天趁着中午吃饭前先来说说最近忙的事情，简单说下流水账，得空时把项目放到博客里做个demo，做个纪念！</p>
-<p>最近一直在忙这单页面这方面的事情，之前一直没有好的项目练手！现在终于让我抓到了练手的了！先是有个内部数据后台用了angularjs,后有一个VUE单页面活动应用！</p>
-<p>首先这两个东东都是现成的，都是其他部门后端开发的！我只是负责修改一下用到我们自己的项目中！但是从这两个已经完成的项目中我学到了很多！首先在网上所有的资料没有一个完整项目！都是零碎的，而且只有在我们自己项目中遇到的问题才是最好的老师！</p>
-<p>由于这两个已有的现成的东东基本都算是后端开发！所有这两个项目中有很多在网上学不到的思想！</p>
-<p>首先，项目中的所有页面全是模块</p>
-<p>其次，项目中完全没用后端语言，所有数据全是通过接口解决，而整个项目不过用了三四个接口来做，只是修改下请求的参数就可返回当前页面想要的数据
-        
-          <a class="article-more-a" href="/2016/09/28/很久没好好更新了.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/09/28/很久没好好更新了.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-今天简单聊一下js的深拷贝" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/24/今天简单聊一下js的深拷贝.html">今天简单聊一下js的深拷贝（deepClone）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/24/今天简单聊一下js的深拷贝.html" class="archive-article-date">
-  	<time datetime="2016-08-24T08:24:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>javascript深拷贝是初学者甚至有经验的开发者，都会经常遇到问题，有时候面试也回问道这个问题；今天我就来聊一聊这个深拷贝；</p>
-<h1 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h1><p>有深拷贝自然就有浅拷贝，很人在接触这个概念的时候，是很懵逼的。</p>
-<p><strong>我们为什么要用深拷贝？</strong></p>
-<p>在很多情况下，我们都需要给变量赋值，给内存地址赋予一个值，但是在赋值引用值类型的时候，只是共享一个内存区域，导致赋值的时候，还跟之前的值保持一直性。<br>栗子：</p>
-<pre>
-// 给test赋值了一个对象
-var test = {
-    a: 'a',
-    b: 'b'
-};
-// 将test赋值给test2
-// 此时test和test2是共享了同一块内存对象，这也就是浅拷贝
-var test2 = test;
-test2.a = 'a2';
-test.a === 'a2'// 为true
-</pre>
-        
-          <a class="article-more-a" href="/2016/08/24/今天简单聊一下js的深拷贝.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">深拷贝</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/24/今天简单聊一下js的深拷贝.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于translate会使内容变得模糊的问题-实战小记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/22/关于translate会使内容变得模糊的问题-实战小记.html">关于translate会使内容变得模糊的问题--实战小记</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/22/关于translate会使内容变得模糊的问题-实战小记.html" class="archive-article-date">
-  	<time datetime="2016-08-22T09:31:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>刚刚，在调试一个vue的单页面应用时发现一个字体模糊问题！现在来说说问题！</p>
-<p>具体页面是这样的，有一个弹框，这个弹框需要水平垂直居中！其实一般情况我们首先想到的是：transform的translate方法!具体方法如：</p>
-<pre>
-.main{
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);//或transform: translate3d(-50%, -50%,0)
-}
-</pre>
-这样main这个div就会居中显示了！但是如我一开始说的，这样做这个div里的文字会变得模糊，具体原因我还没了解(需要等这个项目忙完去研究下，很快就这一两天的事！)，所以我们需要改变一下我们的方式这里先说下其中一个也是用CSS3实现的方法，就是比较麻烦，要在main这个div外层再加个div，这个div的class为prant，css如下：
-<pre>
-.prant{
-  height:100%;
-  width:100%;position:absolute;z-index:10002;top:0;left:0;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center; 
-}
-</pre>
-        
-          <a class="article-more-a" href="/2016/08/22/关于translate会使内容变得模糊的问题-实战小记.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CSS3</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">transform</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">translate</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/22/关于translate会使内容变得模糊的问题-实战小记.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -1094,7 +1042,7 @@ test.a === 'a2'// 为true
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 kevin,杨凯
+    		&copy; 2019 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1169,15 +1117,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1189,7 +1137,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1198,6 +1146,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1213,19 +1173,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1234,6 +1182,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1328,7 +1280,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;span&gt;从事前端工作四年，喜欢挑战！打算组建个威信前端群，欢迎加我好友&lt;/span&gt;&lt;span&gt;&lt;img src=&quot;/images/ipay/my.jpg&quot;&gt;&lt;/span&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;span&gt;从事前端工作七年，喜欢挑战！&lt;/span&gt;</div>
   	  	
     	</section>
     

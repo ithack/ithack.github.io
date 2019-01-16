@@ -16,18 +16,18 @@
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
 <meta property="og:description" content="昨天做一个小的页面时用到了弹框，一般弹框都有close按钮，有时我们为了偷懒直接用个X来做关闭按钮！但这种情况基本很难看，所以我们需要UI给我设计一个关闭按钮，或者我们要用font-face来做这个关闭，这样做起来美观，但是却有一点麻烦！之前我无意间发现一个好玩的方法，简单好用,今天分享一下； 用CSS3设计出来的样式来呈现出关闭按钮的样子，这样以后想设计简单的对话框，就不需要求美工来帮忙画按钮的">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://oap59rfi2.bkt.clouddn.com/2716.png">
-<meta property="og:image" content="http://oap59rfi2.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160812110840.png">
-<meta property="og:updated_time" content="2017-04-27T08:30:28.000Z">
+<meta property="og:image" content="http://ithack.github.io/images/CSS3实现关闭X按钮/2716.png">
+<meta property="og:image" content="http://ithack.github.io/images/CSS3实现关闭X按钮/close.png">
+<meta property="og:updated_time" content="2018-12-25T01:27:59.151Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3实现关闭X按钮">
 <meta name="twitter:description" content="昨天做一个小的页面时用到了弹框，一般弹框都有close按钮，有时我们为了偷懒直接用个X来做关闭按钮！但这种情况基本很难看，所以我们需要UI给我设计一个关闭按钮，或者我们要用font-face来做这个关闭，这样做起来美观，但是却有一点麻烦！之前我无意间发现一个好玩的方法，简单好用,今天分享一下； 用CSS3设计出来的样式来呈现出关闭按钮的样子，这样以后想设计简单的对话框，就不需要求美工来帮忙画按钮的">
-<meta name="twitter:image" content="http://oap59rfi2.bkt.clouddn.com/2716.png">
+<meta name="twitter:image" content="http://ithack.github.io/images/CSS3实现关闭X按钮/2716.png">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://oap59rfi2.bkt.clouddn.com/favicon-20170427050949517.ico">
+    <link rel="icon" href="/images/个人信息/favicon.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.507b3a.css">
   <style type="text/css">
@@ -74,7 +74,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="false" class="profilepic">
-			<img src="http://oap59rfi2.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720160722111113.jpg" class="js-avatar">
+			<img src="/images/个人信息/my_proto.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="false">kevin,杨凯</a></h1>
@@ -132,7 +132,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://oap59rfi2.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720160722111113.jpg" class="js-avatar">
+				<img src="/images/个人信息/my_proto.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">kevin,杨凯</h1>
@@ -224,7 +224,7 @@ var _hmt = _hmt || [];
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><img src="http://oap59rfi2.bkt.clouddn.com/2716.png" alt=""></td>
+<td style="text-align:center"><img src="\images\CSS3实现关闭X按钮\2716.png" alt=""></td>
 <td style="text-align:center">\2716</td>
 <td style="text-align:center">粗体乘法</td>
 </tr>
@@ -262,7 +262,7 @@ var _hmt = _hmt || [];
 </table>
 <p>只是使用了不同字符后，可能居中位置会有偏差需要重新调整。</p>
 <p>再结合JavaScript和CSS3的gradient，就能完成一个看起来还不错的对话框了。效果如下图：</p>
-<p><img src="http://oap59rfi2.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160812110840.png" alt=""></p>
+<p><img src="\images\CSS3实现关闭X按钮\close.png" alt=""></p>
 <p>其实我们可以完全用字符编码解决关闭X按钮的美观问题，上面是一种不用美工不用font-face的解决方案，在这个基础上我们也可以发散思维，用另一种方法解决，这里这是做一个简单的介绍，我们可以利用css3的旋转属性，父级有个边框，子级有个边框，把子级旋转九十度，和父级交叉，把父级旋转45°这样也是一个关闭X按钮！</p>
 <p>如果大家还有什么好的建议和想法，欢迎留言分享！</p>
 
@@ -433,29 +433,40 @@ var _hmt = _hmt || [];
 
 
   
-  
-  
 
   
 
   
 
   
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
+  
+  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-var gitment = new Gitment({
-  id: "CSS3实现关闭X按钮",
-  owner: 'ithack',
-  repo: 'myGitment',
-  oauth: {
-    client_id: '90e5e544e45855945cc8',
-    client_secret: '1373c1cefa6c3dd3af20366caae500e8962b3191',
-  },
-})
-gitment.render('gitment-ctn')
+  var notify = 'false' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  window.onload = function() {
+    new Valine({
+      el: '.comment',
+      notify: notify,
+      verify: verify,
+      app_id: "muiRoOrtUHprjUm08CdarBGI-gzGzoHsz",
+      app_key: "eQEhP9kqkEsV1WcX5GQDfhT3",
+      placeholder: "Just go go",
+      avatar:"mp"
+    });
+  }
 </script>
+
+    </section>
   
 
 
@@ -466,7 +477,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 kevin,杨凯
+    		&copy; 2019 kevin,杨凯
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -541,15 +552,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -561,7 +572,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,6 +581,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,19 +608,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,6 +617,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -700,7 +715,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;span&gt;从事前端工作四年，喜欢挑战！打算组建个威信前端群，欢迎加我好友&lt;/span&gt;&lt;span&gt;&lt;img src=&quot;/images/ipay/my.jpg&quot;&gt;&lt;/span&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;span&gt;从事前端工作七年，喜欢挑战！&lt;/span&gt;</div>
   	  	
     	</section>
     
