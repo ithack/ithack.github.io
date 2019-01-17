@@ -186,6 +186,103 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-前端面试题分享（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/21/前端面试题分享（一）.html">前端面试题分享（一）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/21/前端面试题分享（一）.html" class="archive-article-date">
+  	<time datetime="2017-03-21T03:30:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>很久没来更新文章了，因为我从大数字离开了，现在才刚刚稳定一点吧，今天开始不定期和大家分享一些我面试遇到的一些问题，可能有些问题我都忘了，但一些比较经典，比较基础的问题还记住了一些；</p>
+<p>其实前段时间面试发现，前端面试基本上离不开那几个知识点，对象继承、闭包、数组、作用域等等这些js基础只是，关于其他的框架问题不外乎就是最近比较流行的vuejs，webpack，react，gulp，nodejs等等这些东西，但不同公司侧重点不同，因为公司有的用vue，有用react的等等；其实面试还是靠自己的基础知识是否扎实，这几年前端面试比较稳了没有以前那么简单和粗糙了，这两年的前端都比较看重个人的基础和发展空间等多方面因素；</p>
+<p>好了闲话不多说，先来说说今天的一个比较基础的js题；</p>
+<pre>
+    var z = 10;
+    function foo(){
+            console.log(z);
+    }
+    (function(funArg){
+            var z = 20;
+            funArg();
+    })(foo);
+</pre>
+
+<p>有人说这题很基础啊，但是也有一部分人会被迷惑；这里说一下两种作用域；</p>
+<p>作用域”我们知道是一套规则，用来管理引擎如何在当前作用域以及嵌套的子作用域中根据标识符名称进行变量查找。</p>
+<p>作用域有两种主要工作模型：词法作用域和动态作用域。</p>
+<p>大多数语言采用的都是词法作用域，少数语言采用动态作用域（例如 Bash 脚本），这里我们主要讨论词法作用域。<br>
+        
+          <a class="article-more-a" href="/2017/03/21/前端面试题分享（一）.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/21/前端面试题分享（一）.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-基础面试锦集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1127,97 +1224,6 @@ let bubbleSort = (arr, cmp = compare) => {
 
 
   
-    <article id="post-聊一聊-运算符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/09/聊一聊-运算符.html">聊一聊==运算符</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/09/聊一聊-运算符.html" class="archive-article-date">
-  	<time datetime="2016-08-09T07:12:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Javascript中==是一种比较复杂的运算，他的运算规则容易让人犯错！</p>
-<p>在详细介绍前我们来复习一下JS中关于数据类型的知识：</p>
-<ol>
-<li>JS中的值有两种类型：基本类型、引用类型（对象类型）</li>
-<li>基本类型包括：Undefined、Null、Boolean、Number和String等五种类型</li>
-<li>Undefined类型和Null类型都只有一个值，即undefined和null；Boolean类有两个值：true和false；Number类型的值很多很多；String类型的值有无数个值(理论上)</li>
-<li>所有对象都有valueOf()和toString()方法，它们继承自Object，当然也可能被子类重写</li>
-</ol>
-<p>现在考虑表达式：</p>
-<pre><code>x == y
-</code></pre><p>其中x和y是六种类型中某一种类型的值。</p>
-<p>当x和y的类型相同时，x == y可以转化为x === y，而后者是很简单的(唯一需要注意的可能是NaN)，所以下面我们只考虑x和y的类型不同的情况。<br>
-        
-          <a class="article-more-a" href="/2016/08/09/聊一聊-运算符.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/09/聊一聊-运算符.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1363,15 +1369,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1420,6 +1426,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pagehide</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">toast</a>
               </li>
             
             <div class="clearfix"></div>
