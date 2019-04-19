@@ -186,6 +186,182 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue中Swipe插件在data的值更新后为什么不会重新更新dom？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/08/vue中Swipe插件在data的值更新后为什么不会重新更新dom？.html">vue中Swipe插件在data的值更新后为什么不会重新更新dom？</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/08/vue中Swipe插件在data的值更新后为什么不会重新更新dom？.html" class="archive-article-date">
+  	<time datetime="2017-05-08T09:59:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 今天记录个随笔，希望大家在应用vue各种插件构成中少踩一些坑；</p>
+<p>上周做公司内部一个累死数据看板的页面，在原来vue的后台中加了一个组件；这个组件其实就是一个轮播效果其他的没什么太多东西，本来以为是so easy的事，谁想到遇到了个问题，一开始没想明白，用了一天时间我基本搞明白问题，今天记录下来，希望亲们有遇到相同问题时先考虑是不是我这次踩的坑；</p>
+<p>我在vue轮播组件式选用了<a href="https://surmon-china.github.io/vue-awesome-swiper/" target="_blank" rel="noopener">vue-awesome-swiper</a>,这个vuejs组件是基于<a href="http://www.swiper.com.cn/" target="_blank" rel="noopener">swiper</a>开发的；至于这个组件是怎么用的可到github上查看这里不做详细介绍，下面上我的代码</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">&lt;span&gt;&#123;&#123;activeIndex&#125;&#125;---&#123;&#123;<span class="keyword">in</span>&#125;&#125;&lt;/span&gt;</span><br><span class="line">   &lt;swiper :options=<span class="string">"swiperOption"</span> <span class="keyword">class</span>=<span class="string">"swiperbox"</span> :<span class="keyword">class</span>=<span class="string">"&#123;swiper2:activeIndex==1,swiper3:activeIndex==2&#125;"</span>&gt;</span><br><span class="line">        &lt;swiper-slide <span class="keyword">class</span>=<span class="string">"swiperItem"</span> v-<span class="keyword">for</span>=<span class="string">"(keyP,itemBox) in swiperTitle"</span>&gt;&#123;&#123;activeIndex&#125;&#125;---&#123;&#123;<span class="keyword">in</span>&#125;&#125;</span><br><span class="line">        &lt;/swiper-slide&gt; </span><br><span class="line">       &lt;div <span class="keyword">class</span>=<span class="string">"swiper-pagination"</span> slot=<span class="string">"pagination"</span>&gt;&lt;/div&gt;</span><br><span class="line">   &lt;/swiper&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">       swiperOption: &#123;</span><br><span class="line">         height: <span class="number">300</span>,</span><br><span class="line">         autoplay: <span class="literal">false</span>,<span class="comment">//20000</span></span><br><span class="line">         loop : <span class="literal">true</span>,</span><br><span class="line">         autoplayDisableOnInteraction : <span class="literal">false</span>,</span><br><span class="line">         setWrapperSize :<span class="literal">true</span>,</span><br><span class="line">         pagination : <span class="string">'.swiper-pagination'</span>,</span><br><span class="line">         paginationClickable :<span class="literal">true</span>,</span><br><span class="line">         mousewheelControl : <span class="literal">true</span>,</span><br><span class="line">         observer:<span class="literal">true</span>,</span><br><span class="line">         observeParents:<span class="literal">true</span>,</span><br><span class="line">         onSlideChangeStart: function(swiper)&#123;</span><br><span class="line">           vm.activeIndex=swiper.realIndex;</span><br><span class="line">           vm.<span class="keyword">in</span>=swiper.activeIndex;</span><br><span class="line">           console.log(vm.activeIndex,vm.<span class="keyword">in</span>)</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;,</span><br><span class="line">       activeIndex:<span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段轮播看上去没什么问题，假如我们有3个slide索引分别是：0=&gt;1=&gt;2，我们手动切换会发现0=&gt;1=&gt;2正序切换怎么切都ok，当我们从0=&gt;2时出问题了，在onSlideChangeStart回调中activeIndex和in控制台是更新了索引的，但是在dom中swiper-slide里的dom数据是未更新的，而swiper外的dom是更新的，这是怎么回事呢？我google后发现<a href="https://segmentfault.com/q/1010000009147101/a-1020000009309928" target="_blank" rel="noopener">segmentfault</a>有相同的问题，有人回答说要配置swiper的观察者模式为true，我想说这是分情况的，这是针对组件数据是异步进去时开启观察者管用，但我这个情况是不起作用的，经过多方考证发现这是swiper的loop问题，开启了loop的话，swiper只是自己在dom上自己复制了两个节点进去，但是vm是不知道这个节点状态的，所以导致在0=&gt;2时出现不更新dom的问题，我最后的解决办法是舍弃了loop这个功能，反正开了自动轮播，手动切换就关了loop吧；</p>
+<p>希望大家在vue中用swiper时注意一下这个loop问题，尽量绕开loop;</p>
+<p>如上文章有点潦草，还望谅解；有问题随时艾特本人；</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/08/vue中Swipe插件在data的值更新后为什么不会重新更新dom？.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-说一说第一次用vuejs闯关记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/27/说一说第一次用vuejs闯关记录.html">说一说第一次用vuejs闯关记录</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/27/说一说第一次用vuejs闯关记录.html" class="archive-article-date">
+  	<time datetime="2017-04-27T08:03:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="VUE1-0记录"><a href="#VUE1-0记录" class="headerlink" title="VUE1.0记录"></a>VUE1.0记录</h1><h2 id="场景介绍"><a href="#场景介绍" class="headerlink" title="场景介绍"></a>场景介绍</h2><p>16年在大数字总有一些需求，把一些原生的页面改用H5来做，其中有几大块（个人中心、抽奖中心）等一些集合型比较强的页面，当时如果一个页面一个页面做的话，需要制作好几十个html页面然后用两三个ajax接口请求数据然后渲染页面，所以考虑用vue的双向绑定、组件和路由来解决不断copy的尴尬过程！</p>
+<p>当时vue2还在测试阶段，所以先用的vue1做的第一个项目，下面是我当时遇到的一些问题，如果用法和理解上有错误还希望各位看官给个建议意见和指正；</p>
+<h2 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h2><p><img src="\images\说一说第一次用vuejs闯关记录\vue1-1.png" alt="vue1-1"></p>
+<p>由于一开始用vue我是直接上手，上手前就大概看了一样vue的api，所以当时想了一个问题，为什么我在入口文件里已经引入了vue，在接口用到vue时还要在引用一次呢？现在其实我了解了，不知道这么解释对不，入口文件也只是一个引入，只有在组件里用到vue可以不用引入，接口文件的js如果需要用vue还是需要引用的，入口文件这个简单理解为是个模块，当在其他js文件需要用这个模块时也是需要引入使用的！</p>
+<h2 id="问题2"><a href="#问题2" class="headerlink" title="问题2"></a>问题2</h2><p><img src="\images\说一说第一次用vuejs闯关记录\vue1-2.png" alt="vue1-2"></p>
+<p>这其实不算个问题，只是当时没有详细查看时间绑定api，绑定方法时可以访问原生 DOM 事件。可以用特殊变量 <code>$event</code> 把它传入方法:</p>
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;button v-on:click=<span class="string">"say('</span>hello!<span class="string">', $event)"</span>&gt;Submit&lt;/button&gt;</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">methods: &#123;</span><br><span class="line">  say: <span class="function"><span class="keyword">function</span> <span class="params">(msg, event)</span> &#123;</span></span><br><span class="line">    <span class="comment">// 现在我们可以访问原生事件对象</span></span><br><span class="line">    event.preventDefault()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="问题3"><a href="#问题3" class="headerlink" title="问题3"></a>问题3</h2><p>​       由于安卓端需要获取页面一个a函数作为回调，这个a必须在全局下，所以这里遇到vue问题，钩子的问题！这个问题我一直研究到晚上十一点才算解决，问题场景如下：</p>
+<p>在项目里又一个index.vue和silder.vue,在index里我
+        
+          <a class="article-more-a" href="/2017/04/27/说一说第一次用vuejs闯关记录.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/27/说一说第一次用vuejs闯关记录.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-前端面试题分享（一）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1001,229 +1177,6 @@ let bubbleSort = (arr, cmp = compare) => {
 
 
   
-    <article id="post-简单说下this对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/10/简单说下this对象.html">简单说下this对象</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/10/简单说下this对象.html" class="archive-article-date">
-  	<time datetime="2016-08-10T10:37:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>快下班了，闲来无事就说说this对象把！<br>在JavaScript中，this关键字是动态绑定的，或称为运行期绑定，这极大地增强的我们程序的灵活性，同时也给初学者带来了很多困惑。本文总结了this的几个使用场景和常见误区。</p>
-<p>#全局环境#<br>在全局环境中使用 this ，它会指向全局对象。</p>
-<p><pre><br>    console.log(this);          // window对象<br>    alert(this === window);    // true<br></pre></p>
-<p>#函数调用#<br>当作为普通函数被调用时，函数内部的的 this 也会指向全局对象。</p>
-<p><pre><br>var obj= “window”;<br>function Test(){<br>    var obj = “fun”;<br>    alert(this.obj);<br>}<br>sayName();    // “window”<br></pre></p>
-<p>#作为对象的方法调用#<br>当作为对象内部的方法被调用时，这里 this 指向这个方法所在的对象
-        
-          <a class="article-more-a" href="/2016/08/10/简单说下this对象.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/10/简单说下this对象.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JavaScript跨域浅谈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/10/JavaScript跨域浅谈.html">浅谈JavaScript跨域和总结</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/10/JavaScript跨域浅谈.html" class="archive-article-date">
-  	<time datetime="2016-08-10T06:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天无事，聊一聊javascript跨域，面试经常会问到关于跨域的问题，今天我来聊一聊关于跨域的小知识！</p>
-<p>JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦;</p>
-<h3 id="先来说一说什么是跨域"><a href="#先来说一说什么是跨域" class="headerlink" title="先来说一说什么是跨域"></a>先来说一说什么是跨域</h3><p>简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更详细的说明可以看下表：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">URL</th>
-<th style="text-align:center">说明</th>
-<th style="text-align:center">是否允许通信</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
-<td style="text-align:center">同一域名下</td>
-<td style="text-align:center"><strong><code>允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/lab/a.js" target="_blank" rel="noopener">http://www.a.com/lab/a.js</a><br><a href="http://www.a.com/script/b.js" target="_blank" rel="noopener">http://www.a.com/script/b.js</a></td>
-<td style="text-align:center">同一域名下不同文件夹</td>
-<td style="text-align:center"><strong><code>允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com:8000/a.js" target="_blank" rel="noopener">http://www.a.com:8000/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
-<td style="text-align:center">同一域名，不同端口</td>
-<td style="text-align:center"><strong><code>不允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="https://www.a.com/b.js" target="_blank" rel="noopener">https://www.a.com/b.js</a></td>
-<td style="text-align:center">同一域名，不同协议</td>
-<td style="text-align:center"><strong><code>不允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://70.32.92.74/b.js" target="_blank" rel="noopener">http://70.32.92.74/b.js</a></td>
-<td style="text-align:center">域名和域名对应ip</td>
-<td style="text-align:center"><strong><code>不允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://script.a.com/b.js" target="_blank" rel="noopener">http://script.a.com/b.js</a></td>
-<td style="text-align:center">主域相同，子域不同</td>
-<td style="text-align:center"><strong><code>不允许</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://a.com/b.js" target="_blank" rel="noopener">http://a.com/b.js</a></td>
-<td style="text-align:center">同一域名，不同二级域名（同上）</td>
-<td style="text-align:center"><strong><code>不允许（cookie这种情况下也不允许访问）</code></strong></td>
-</tr>
-<tr>
-<td style="text-align:center"><a href="http://www.cnblogs.com/a.js" target="_blank" rel="noopener">http://www.cnblogs.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
-<td style="text-align:center">不同域名</td>
-<td style="text-align:center"><strong><code>不允许</code></strong></td>
-</tr>
-</tbody>
-</table>
-<p>特别注意：</p>
-<p>第一，如果是协议和端口造成的跨域问题“前台”是无能为力的，</p>
-<p>第二：在跨域问题上，域仅仅是通过“URL的首部”来识别而不会去尝试判断相同的ip地址对应着两个域或两个域是否在同一个ip上。</p>
-<p>第三：跨域并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但是返回结果被浏览器拦截了。最好的例子是 crsf 跨站攻击原理，请求是发送到了后端服务器无论是否跨域！注意：有些浏览器不允许从HTTPS的域跨域访问HTTP，比如Chrome和Firefox，这些浏览器在请求还未发出的时候就会拦截请求，这是一个特例</p>
-<p>虾米是集中跨域方法总结：<br>
-        
-          <a class="article-more-a" href="/2016/08/10/JavaScript跨域浅谈.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/10/JavaScript跨域浅谈.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1321,6 +1274,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
               </li>
              
@@ -1338,10 +1303,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1369,15 +1330,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">封装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1398,10 +1367,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">

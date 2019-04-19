@@ -186,6 +186,229 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-简单说下this对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/10/简单说下this对象.html">简单说下this对象</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/10/简单说下this对象.html" class="archive-article-date">
+  	<time datetime="2016-08-10T10:37:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>快下班了，闲来无事就说说this对象把！<br>在JavaScript中，this关键字是动态绑定的，或称为运行期绑定，这极大地增强的我们程序的灵活性，同时也给初学者带来了很多困惑。本文总结了this的几个使用场景和常见误区。</p>
+<p>#全局环境#<br>在全局环境中使用 this ，它会指向全局对象。</p>
+<p><pre><br>    console.log(this);          // window对象<br>    alert(this === window);    // true<br></pre></p>
+<p>#函数调用#<br>当作为普通函数被调用时，函数内部的的 this 也会指向全局对象。</p>
+<p><pre><br>var obj= “window”;<br>function Test(){<br>    var obj = “fun”;<br>    alert(this.obj);<br>}<br>sayName();    // “window”<br></pre></p>
+<p>#作为对象的方法调用#<br>当作为对象内部的方法被调用时，这里 this 指向这个方法所在的对象
+        
+          <a class="article-more-a" href="/2016/08/10/简单说下this对象.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/10/简单说下this对象.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-JavaScript跨域浅谈" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/10/JavaScript跨域浅谈.html">浅谈JavaScript跨域和总结</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/10/JavaScript跨域浅谈.html" class="archive-article-date">
+  	<time datetime="2016-08-10T06:20:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天无事，聊一聊javascript跨域，面试经常会问到关于跨域的问题，今天我来聊一聊关于跨域的小知识！</p>
+<p>JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦;</p>
+<h3 id="先来说一说什么是跨域"><a href="#先来说一说什么是跨域" class="headerlink" title="先来说一说什么是跨域"></a>先来说一说什么是跨域</h3><p>简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更详细的说明可以看下表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">URL</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:center">是否允许通信</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
+<td style="text-align:center">同一域名下</td>
+<td style="text-align:center"><strong><code>允许</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://www.a.com/lab/a.js" target="_blank" rel="noopener">http://www.a.com/lab/a.js</a><br><a href="http://www.a.com/script/b.js" target="_blank" rel="noopener">http://www.a.com/script/b.js</a></td>
+<td style="text-align:center">同一域名下不同文件夹</td>
+<td style="text-align:center"><strong><code>允许</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://www.a.com:8000/a.js" target="_blank" rel="noopener">http://www.a.com:8000/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
+<td style="text-align:center">同一域名，不同端口</td>
+<td style="text-align:center"><strong><code>不允许</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="https://www.a.com/b.js" target="_blank" rel="noopener">https://www.a.com/b.js</a></td>
+<td style="text-align:center">同一域名，不同协议</td>
+<td style="text-align:center"><strong><code>不允许</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://70.32.92.74/b.js" target="_blank" rel="noopener">http://70.32.92.74/b.js</a></td>
+<td style="text-align:center">域名和域名对应ip</td>
+<td style="text-align:center"><strong><code>不允许</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://script.a.com/b.js" target="_blank" rel="noopener">http://script.a.com/b.js</a></td>
+<td style="text-align:center">主域相同，子域不同</td>
+<td style="text-align:center"><strong><code>不允许</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://www.a.com/a.js" target="_blank" rel="noopener">http://www.a.com/a.js</a><br><a href="http://a.com/b.js" target="_blank" rel="noopener">http://a.com/b.js</a></td>
+<td style="text-align:center">同一域名，不同二级域名（同上）</td>
+<td style="text-align:center"><strong><code>不允许（cookie这种情况下也不允许访问）</code></strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><a href="http://www.cnblogs.com/a.js" target="_blank" rel="noopener">http://www.cnblogs.com/a.js</a><br><a href="http://www.a.com/b.js" target="_blank" rel="noopener">http://www.a.com/b.js</a></td>
+<td style="text-align:center">不同域名</td>
+<td style="text-align:center"><strong><code>不允许</code></strong></td>
+</tr>
+</tbody>
+</table>
+<p>特别注意：</p>
+<p>第一，如果是协议和端口造成的跨域问题“前台”是无能为力的，</p>
+<p>第二：在跨域问题上，域仅仅是通过“URL的首部”来识别而不会去尝试判断相同的ip地址对应着两个域或两个域是否在同一个ip上。</p>
+<p>第三：跨域并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但是返回结果被浏览器拦截了。最好的例子是 crsf 跨站攻击原理，请求是发送到了后端服务器无论是否跨域！注意：有些浏览器不允许从HTTPS的域跨域访问HTTP，比如Chrome和Firefox，这些浏览器在请求还未发出的时候就会拦截请求，这是一个特例</p>
+<p>虾米是集中跨域方法总结：<br>
+        
+          <a class="article-more-a" href="/2016/08/10/JavaScript跨域浅谈.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/10/JavaScript跨域浅谈.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-聊一聊-运算符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -548,6 +771,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
               </li>
              
@@ -565,10 +800,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,15 +827,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">封装</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -625,10 +864,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
