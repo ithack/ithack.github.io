@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://ithack.github.io//2019/04/19/%E5%86%8D%E8%B0%88vue3x%E5%92%8CelementUI%E5%AE%9E%E6%93%8D%E8%AE%B0%E5%BD%95.html</loc>
-    <lastmod>2019-04-19T11:14:57.692Z</lastmod>
+    <lastmod>2019-04-19T11:20:20.055Z</lastmod>
     <data>
         <display>
         <title>再谈vue3x和elementUI实操记录</title>
@@ -127,9 +127,9 @@
         <title>Vue奇淫技笔记</title>
         <pubTime>2018-09-26T07:43:22.000Z</pubTime>
         
-        <tag>随笔</tag>
-         
         <tag>vue</tag>
+         
+        <tag>随笔</tag>
          
          
            
@@ -340,9 +340,9 @@
         <title>实战react小记一</title>
         <pubTime>2017-06-19T09:13:04.000Z</pubTime>
         
-        <tag>随笔</tag>
-         
         <tag>react</tag>
+         
+        <tag>随笔</tag>
          
          
            
@@ -411,9 +411,9 @@
         <title>vue中Swipe插件在data的值更新后为什么不会重新更新dom？</title>
         <pubTime>2017-05-08T09:59:33.000Z</pubTime>
         
-        <tag>随笔</tag>
-         
         <tag>vue</tag>
+         
+        <tag>随笔</tag>
          
          
            

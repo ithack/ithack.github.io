@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
 <meta property="og:description" content="前言​    不得不说最近很忙，996，996ICU非常火爆（当然我说的忙也是忙搬砖），然而我大JD也几乎每天都上头条，站在风口浪尖被吐槽！这里我就不说啥了，每个公司其实都不好过，就好像每个程序员都不好过一样；对于996我一直以来都觉得如果非要按时间来要求员工来工作的话那真没什么意义，有意义的事情就算公司不要求你996我想你也会去加班加点搞还毫无怨言；但如果你根本没那么多事情可做，但单位要求你99">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-19T11:14:57.692Z">
+<meta property="og:updated_time" content="2019-04-19T11:20:20.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="再谈vue3x和elementUI实操记录">
 <meta name="twitter:description" content="前言​    不得不说最近很忙，996，996ICU非常火爆（当然我说的忙也是忙搬砖），然而我大JD也几乎每天都上头条，站在风口浪尖被吐槽！这里我就不说啥了，每个公司其实都不好过，就好像每个程序员都不好过一样；对于996我一直以来都觉得如果非要按时间来要求员工来工作的话那真没什么意义，有意义的事情就算公司不要求你996我想你也会去加班加点搞还毫无怨言；但如果你根本没那么多事情可做，但单位要求你99">
@@ -255,8 +255,8 @@ var _hmt = _hmt || [];
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;el-<span class="keyword">form</span>-item</span><br><span class="line">true:<span class="keyword">label</span>=<span class="string">"item.name"</span></span><br><span class="line">  :<span class="keyword">prop</span>=<span class="string">"'.value'"</span></span><br><span class="line">  :rules=<span class="string">"Validate(&#123; required: item.required, type: attrType[item.attributeType] &#125;)"</span></span><br><span class="line">  &gt;</span><br><span class="line">   &lt;el-<span class="keyword">input</span> v-<span class="keyword">if</span>=<span class="string">"attrType[item.attributeType] == 'input'"</span> v-model=<span class="string">"item.value"</span> /&gt;</span><br><span class="line">  &lt;/el-<span class="keyword">form</span>-item&gt;</span><br></pre></td></tr></table></figure>
 <p>其中item就是从后端返回的json对象，这个item会告诉我需要渲染成input还是其他的控件/默认值/校验等即可实现每一个都按照后端给的渲染和校验了</p>
 <p>如上所有问题和vue框架都已上传githua，欢迎访问交流：</p>
-<p>项目包：<a href="https://github.com/fe-cli/vue3.0-template" target="_blank" rel="noopener">https://github.com/fe-cli/vue3.0-template</a></p>
-<p>Demo: <a href="https://ithack.github.io/demo/vue3xTemplate/index.html">https://ithack.github.io/demo/vue3xTemplate/index.html</a></p>
+<p><a href="https://github.com/fe-cli/vue3.0-template" target="_blank" rel="noopener">项目包</a></p>
+<p><a href="https://ithack.github.io/demo/vue3xTemplate/index.html#/test">Demo</a></p>
 
       
 
@@ -539,14 +539,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">eslint</a>
               </li>
              
@@ -559,7 +551,19 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">APP调试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -571,15 +575,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,6 +584,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,18 +611,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">封装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
              
@@ -636,6 +624,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">封装</a>
               </li>
              
               <li class="article-tag-list-item">
