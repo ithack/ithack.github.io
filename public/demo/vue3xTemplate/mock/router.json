@@ -1,0 +1,74 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "name": "优惠券资源",
+      "pathName": "coupon",
+      "children": [
+        {
+          "name": "下发路由测试",
+          "pathName": "test"
+        },
+        {
+          "name": "优惠券楼层池",
+          "pathName": "couponPool"
+        },
+        {
+          "name": "优惠券资源列表",
+          "pathName": "couponList"
+        },
+        {
+          "name": "优惠券规则",
+          "pathName": "couponRule"
+        }
+      ]
+    },
+    {
+      "name": "京豆",
+      "pathName": "beans",
+      "children": [
+        {
+          "name": "京豆楼层池",
+          "pathName": "beansPool"
+        },
+        {
+          "name": "京豆资源列表",
+          "pathName": "beansList"
+        },
+        {
+          "name": "京豆规则",
+          "pathName": "beansRule"
+        }
+      ]
+    },
+    {
+      "name": "福利资源",
+      "pathName": "welfare",
+      "children": [
+        {
+          "name": "福利楼层池",
+          "pathName": "welfarePool"
+        },
+        {
+          "name": "福利资源列表",
+          "pathName": "welfareList"
+        },
+        {
+          "name": "福利规则",
+          "pathName": "welfareRule"
+        }
+      ]
+    },
+    {
+      "name": "百宝箱二级页面配置",
+      "pathName": "pageManag",
+      "children": [
+        {
+          "name": "摇一摇配置",
+          "pathName": "shakePage"
+        }
+      ]
+    }
+  ],
+  "success": true
+}

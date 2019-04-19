@@ -16,6 +16,8 @@ tags: [react]
 
 1、没有 JSX 的 React：
 
+<!--more-->
+
 ①　可以使用React.createElement()方法
 
 ②　可以使用React.createFactory()方法（工厂方法）
