@@ -186,6 +186,109 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="3-redux和vuex的区别"><a href="#3-redux和vuex的区别" class="headerlink" title="3. redux和vuex的区别"></a>3. redux和vuex的区别</h3><ul>
+<li>redux 是 flux 的一种实现，redux 不单单可以用在 react 上面。</li>
+<li>vuex 是 redux 的基础上进行改变，对仓库的管理更加明确。</li>
+<li>数据流向不一样，vuex 的同异步有不同的流向，而 redux 的同异步是一样的。</li>
+<li>redux 使用的是不可变的数据，而 vuex 的数据是可变的，redux 每次修改更新数据，其实就是用新的数据替换旧的数据，而 vuex 是直接修改原数据。</li>
+</ul>
+<h3 id="4-react-和-vue-的-diff-过程有什么区别"><a href="#4-react-和-vue-的-diff-过程有什么区别" class="headerlink" title="4.react 和 vue 的 diff 过程有什么区别"></a>4.react 和 vue 的 diff 过程有什么区别</h3><p>React 是这么干的：你给我一个数据，我根据这个数据生成一个全新的 Virtual DOM，然后跟我上一次生成的 Virtual DOM 去 diff，得到一个 Patch，然后把这个 Patch 打到浏览器的 DOM 上去。完事。并且这里的 Patch 显然不是完整的 Virtual DOM，而是新的 Virtual DOM 和上一次的 Virtual DOM 经过 diff 后的差异化的部分。</p>
+<p>Vue 在渲染过程中，会跟踪每一个组件的依赖关系，不需要重新渲染整个组件树。</p>
+<p>React 每当应用的状态被改变时，全部子组件都会重新渲染。 这可以通过 shouldComponentUpdate 这个生命周期方法来进行控制。</p>
+<p>React diff的是 Dom，而 Vue diff 的是数据。</p>
+<h3 id="5-输入url后的加载过程"><a href="#5-输入url后的加载过程" class="headerlink" title="5. 输入url后的加载过程"></a>5. 输入url后的加载过程</h3><p>简要回答出 域名解析，返回资源，浏览器渲染，重排重绘概念等即可。</p>
+<p>推荐 <code>浪里行舟</code> 文章<a href="https://juejin.im/post/5bf3ad55f265da61682afc9b" target="_blank" rel="noopener">从URL输入到页面展现到底发生什么？</a></p>
+<h3 id="6-缓存"><a href="#6-缓存" class="headerlink" title="6. 缓存"></a>6. 缓存</h3><p>分为 强缓存 和 协商缓存， 各自的标识要记住。</p>
+<p>推荐 <code>黑金团队</code>的文章 <a href="https://juejin.im/post/5c136bd16fb9a049d37efc47" target="_blank" rel="noopener">前端缓存最佳实践</a></p>
+<p>推荐<code>名扬</code>的文章 <a href="https://link.juejin.im/?target=%E6%B5%85%E8%A7%A3%E5%BC%BA%E7%BC%93%E5%AD%98%E5%92%8C%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98" target="_blank" rel="noopener">浅解强缓存和协商缓存</a></p>
+<h3 id="7-HTTP中GET与POST的区别"><a href="#7-HTTP中GET与POST的区别" class="headerlink" title="7.HTTP中GET与POST的区别"></a>7.HTTP中GET与POST的区别</h3><p>一个“标准答案”：</p>
+<blockquote>
+<ul>
+<li>GET在浏览器回退时是无害的，而POST会再次提交请求。</li>
+</ul>
+<ul>
+<li>GET产生的URL地址可以被Bookmark，而POST不可以。</li>
+</ul>
+<ul>
+<li>GET请求会被浏览器主动cache，而POST不会，除非手动设置。</li>
+</ul>
+<ul>
+<li>GET请求只能进行url编码，而POST支持多种编码方式。</li>
+</ul>
+<ul>
+<li>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。</li>
+</ul>
+<ul>
+<li>GET请求在URL中传送的参数是有长度限制的，而POST么有。</li>
+</ul>
+<ul>
+<li>对参数的数据类型，GET只接受ASCII字符，而POST没有限制。</li>
+</ul>
+<ul>
+<li>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。</li>
+</ul>
+<ul>
+<li>GET参数通过URL传递，POST放在Request body中。</li>
+</ul>
+<p>（本标准答案参考自w3schools）</p>
+</blockquote>
+<p>GET和POST还有一个重大区别，简单的说：</p>
+<p>GET产生一个TCP数据包；POST产生两个TCP数据包。</p>
+<p>长的说：</p>
+<p>对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；</p>
+<p>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</p>
+<p>也就是说，GET只需要汽车跑一趟就把货送到了，而POST得跑两趟，第一趟，先去和服务器打个招呼“嗨，我等下要送一批货来，你们打开门迎接我”，然后再回头把货送过去。</p>
+<p>因为POST需要两步，时间上消耗的要多一点，看起来GET比POST更有效。因此Yahoo团队有推荐用GET替换POST来优化网站性能。但这是一个坑！跳入需谨慎。为什么？</p>
+<p>\1. GET与POST都有自己的语义，不能随便混用。</p>
+<p>\2. 据研究，在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。</p>
+<p>\3. 并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/16/学习笔记.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-再谈vue3x和elementUI实操记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -743,11 +846,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -963,91 +1066,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-vue拖拽组件vue可视化问题记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/12/vue拖拽组件vue可视化问题记录.html">vue拖拽组件vue可视化问题记录问题记录</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/12/vue拖拽组件vue可视化问题记录.html" class="archive-article-date">
-  	<time datetime="2018-07-12T06:37:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>已经停更一年了，平时不是没时间更新，就是不知道记录什么！平时遇到的问题和解决思路都简单的弄了个list作为文章更新点，今天忙里抽闲，在单位的电脑装上blog环境，开始更新一个从零到一纯手动搭建的关于<a href="https://github.com/ithack/vueCMS" target="_blank" rel="noopener">vue可视化系统，组件拼接页面</a></p>
-<p>，从开始的毫无头绪，到目前的一步步踩坑经历了从绝望看到希望，感觉自己变牛逼了（其实并没有）！好了废话不多说，内容比较多和杂，一步一步来；
-        
-          <a class="article-more-a" href="/2018/07/12/vue拖拽组件vue可视化问题记录.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vuedraggable</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">拖拽</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/12/vue拖拽组件vue可视化问题记录.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1137,18 +1155,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -1161,10 +1167,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -1173,7 +1175,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1213,6 +1231,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">CSS3</a>
               </li>
              
@@ -1222,10 +1244,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1249,11 +1267,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
