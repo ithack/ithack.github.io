@@ -186,86 +186,6 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-css变量与calc()方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/09/css变量与calc()方法.html">css变量与calc()方法简单入门demo</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/09/css变量与calc()方法.html" class="archive-article-date">
-  	<time datetime="2017-05-09T02:31:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>CSS变量应该称之为 CSS 自定义属性 ，不过下文为了好理解都称之为 CSS 变量。</p>
-<p>一直以来我们都知道，CSS 中是没有变量而言的，要使用 CSS 变量，只能借助 SASS 或者 LESS 这类预编译器。</p>
-<p>这个重要的 CSS 新功能，所有主要浏览器已经都支持了。本文主要介绍如何使用它，我们发现css如此强大，这是一个令人激动的革新，下面写个简单的demo来感受下CSS变量的强悍：</p>
-<p></p><p data-height="265" data-theme-id="dark" data-slug-hash="eWyeoZ" data-default-tab="html" data-user="it_hack" data-embed-version="2" data-pen-title="css变量 " class="codepen">See the Pen <a href="https://codepen.io/it_hack/pen/eWyeoZ/" target="_blank" rel="noopener">css变量 </a> by kevin (<a href="http://codepen.io/it_hack" target="_blank" rel="noopener">@it_hack</a>) on <a href="http://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-        
-          <a class="article-more-a" href="/2017/05/09/css变量与calc()方法.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/09/css变量与calc()方法.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-vue中Swipe插件在data的值更新后为什么不会重新更新dom？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1124,6 +1044,139 @@ let bubbleSort = (arr, cmp = compare) => {
 
 
   
+    <article id="post-CSS3实现关闭X按钮" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/12/CSS3实现关闭X按钮.html">CSS3实现关闭X按钮</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/12/CSS3实现关闭X按钮.html" class="archive-article-date">
+  	<time datetime="2016-08-12T02:11:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天做一个小的页面时用到了弹框，一般弹框都有close按钮，有时我们为了偷懒直接用个X来做关闭按钮！但这种情况基本很难看，所以我们需要UI给我设计一个关闭按钮，或者我们要用font-face来做这个关闭，这样做起来美观，但是却有一点麻烦！之前我无意间发现一个好玩的方法，简单好用,今天分享一下；</p>
+<p>用CSS3设计出来的样式来呈现出关闭按钮的样子，这样以后想设计简单的对话框，就不需要求美工来帮忙画按钮的图片了。先来看看样式:</p>
+<p><pre><br>/<em> basic style </em>/<br>.close {<br>    background: orange;<br>    color: red;<br>    border-radius: 12px;<br>    line-height: 20px;<br>    text-align: center;<br>    height: 20px;<br>    width: 20px;<br>    font-size: 18px;<br>    padding: 1px;<br>}<br>/<em> use cross as close button </em>/<br>.close::before {<br>    content: “\2716”;<br>}<br>/<em> place the button on top-right </em>/<br>.close {<br>    top: -10px;<br>    right: -10px;<br>    position: absolute;<br>}<br></pre><br>然后直接把它加到HTML元素上就可以看到效果了：</p>
+<p><pre><br>&lt;div style=”height: 100px; width: 100px; border: 1px solid black; position: relative;”&gt;<span class="close"></span>&lt;/div&gt;<br></pre><br>这主要是利用了在CSS的::before伪属性可以直接添加内容的特点，这样就可以直接设置样式在class上而不用做其它操作。当然这里用::after效果也是一样的。唯一要注意的是如果要指定关闭按钮在特定位置，就需要使用到position:absolut;，相应的其父元素就不能是默认的position:static;。像上边的示例中就使用的是position:relative;以保证按钮呈现在正确的位置上。</p>
+<p>对于按钮中的叉按钮，用的是Unicode中的一种标识，以下这些也可以使用：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标识</th>
+<th style="text-align:center">编码(16进制)</th>
+<th style="text-align:center">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="\images\CSS3实现关闭X按钮\2716.png" alt=""></td>
+<td style="text-align:center">\2716</td>
+<td style="text-align:center">粗体乘法</td>
+</tr>
+<tr>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">\2717</td>
+<td style="text-align:center">交叉</td>
+</tr>
+<tr>
+<td style="text-align:center">✘</td>
+<td style="text-align:center">\2718</td>
+<td style="text-align:center">粗体交叉</td>
+</tr>
+<tr>
+<td style="text-align:center">×</td>
+<td style="text-align:center">\00D7</td>
+<td style="text-align:center">乘法符号</td>
+</tr>
+<tr>
+<td style="text-align:center">⨯</td>
+<td style="text-align:center">\2A2F</td>
+<td style="text-align:center">向量乘积</td>
+</tr>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:center">\78</td>
+<td style="text-align:center">小写字母</td>
+</tr>
+<tr>
+<td style="text-align:center">X</td>
+<td style="text-align:center">\58</td>
+<td style="text-align:center">大写字母</td>
+</tr>
+</tbody>
+</table>
+<p>只是使用了不同字符后，可能居中位置会有偏差需要重新调整。</p>
+<p>再结合JavaScript和CSS3的gradient，就能完成一个看起来还不错的对话框了。效果如下图：</p>
+<p><img src="\images\CSS3实现关闭X按钮\close.png" alt=""></p>
+<p>其实我们可以完全用字符编码解决关闭X按钮的美观问题，上面是一种不用美工不用font-face的解决方案，在这个基础上我们也可以发散思维，用另一种方法解决，这里这是做一个简单的介绍，我们可以利用css3的旋转属性，父级有个边框，子级有个边框，把子级旋转九十度，和父级交叉，把父级旋转45°这样也是一个关闭X按钮！</p>
+<p>如果大家还有什么好的建议和想法，欢迎留言分享！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/12/CSS3实现关闭X按钮.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1225,14 +1278,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">eslint</a>
               </li>
              
@@ -1245,11 +1290,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1258,10 +1315,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1277,11 +1330,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1289,7 +1338,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">面试题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1325,11 +1378,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
