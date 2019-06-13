@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://ithack.github.io">
-  <title>Tag: pagehide | 不羁放纵爱自由的猿人</title>
+  <title>vue项目如何刷新当前页面-经验总结 | 不羁放纵爱自由的猿人</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="web前端,前端工程师,前端程序猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="不羁放纵爱自由的猿人">
-<meta property="og:url" content="http://ithack.github.io/tag/pagehide/index.html">
+  <meta name="description" content="前言很久没有更新了，今天这个题目更多的可能是一点灵感，在最近项目中有一个刷新当前页面需求，但通过思考也并不是刷新当前页面，这样做固然简单，但对于用户体验并不是很完美，其实只需要刷新当前路由组件，而页面中整体框架不需要重新渲染，所以就考虑有没有办法只重新加载某一个组件，这样用户只会看到数据或某一块的刷新，有点像ajax的方式进行局部刷新，会提高一下用户体验； 正文vue项目刷新当前页面，可能这已经不">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue项目如何刷新当前页面-经验总结">
+<meta property="og:url" content="http://ithack.github.io/2019/06/13/vue项目如何刷新当前页面-经验总结.html">
 <meta property="og:site_name" content="不羁放纵爱自由的猿人">
-<meta property="og:description" content="web前端,前端工程师,前端程序猿">
+<meta property="og:description" content="前言很久没有更新了，今天这个题目更多的可能是一点灵感，在最近项目中有一个刷新当前页面需求，但通过思考也并不是刷新当前页面，这样做固然简单，但对于用户体验并不是很完美，其实只需要刷新当前路由组件，而页面中整体框架不需要重新渲染，所以就考虑有没有办法只重新加载某一个组件，这样用户只会看到数据或某一块的刷新，有点像ajax的方式进行局部刷新，会提高一下用户体验； 正文vue项目刷新当前页面，可能这已经不">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://ithack.github.io/images/2019/59399155-93d82300-8dc5-11e9-94ab-a23a5e0c8b3e.png">
+<meta property="og:updated_time" content="2019-06-13T02:46:50.247Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不羁放纵爱自由的猿人">
-<meta name="twitter:description" content="web前端,前端工程师,前端程序猿">
+<meta name="twitter:title" content="vue项目如何刷新当前页面-经验总结">
+<meta name="twitter:description" content="前言很久没有更新了，今天这个题目更多的可能是一点灵感，在最近项目中有一个刷新当前页面需求，但通过思考也并不是刷新当前页面，这样做固然简单，但对于用户体验并不是很完美，其实只需要刷新当前路由组件，而页面中整体框架不需要重新渲染，所以就考虑有没有办法只重新加载某一个组件，这样用户只会看到数据或某一块的刷新，有点像ajax的方式进行局部刷新，会提高一下用户体验； 正文vue项目刷新当前页面，可能这已经不">
+<meta name="twitter:image" content="http://ithack.github.io/images/2019/59399155-93d82300-8dc5-11e9-94ab-a23a5e0c8b3e.png">
   
     <link rel="alternative" href="/atom.xml" title="不羁放纵爱自由的猿人" type="application/atom+xml">
   
@@ -184,68 +188,224 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue项目如何刷新当前页面-经验总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/18/移动端pageshow-and-pagehide.html" class="archive-article-date">
-  	<time datetime="2018-07-18T02:00:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/18/移动端pageshow-and-pagehide.html">移动端pageshow and pagehide</a>
+    <h1 class="article-title" itemprop="name">
+      vue项目如何刷新当前页面-经验总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/06/13/vue项目如何刷新当前页面-经验总结.html" class="archive-article-date">
+  	<time datetime="2019-06-13T02:35:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很久没有更新了，今天这个题目更多的可能是一点灵感，在最近项目中有一个刷新当前页面需求，但通过思考也并不是刷新当前页面，这样做固然简单，但对于用户体验并不是很完美，其实只需要刷新当前路由组件，而页面中整体框架不需要重新渲染，所以就考虑有没有办法只重新加载某一个组件，这样用户只会看到数据或某一块的刷新，有点像ajax的方式进行局部刷新，会提高一下用户体验；</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>vue项目刷新当前页面，可能这已经不是个问题，目前大家知道的有应该最少有两种解决方案：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">localhost.reload<span class="comment">()</span> </span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">this.$router.go<span class="comment">(0)</span></span><br></pre></td></tr></table></figure>
+<p>如上是在遇到刷新时最直接能想到的方法，但是这个方法有个弊端就是刷新页面会导致空白页面的出现，这样的用户体验很不好；<br><img src="/images/2019/59399155-93d82300-8dc5-11e9-94ab-a23a5e0c8b3e.png" alt="image"></p>
+<a id="more"></a>如上这样一个布局我们只需要重新让“main”区域组件进行重新reload，这时恰巧这个区域是一个router-view组件进行渲染的，那么我们提高一下用户体现可以用如下方法实现：<br><br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    <span class="symbol">&lt;el-container&gt;</span></span><br><span class="line">      <span class="symbol">&lt;el-header&gt;</span></span><br><span class="line">        <span class="symbol">&lt;Header&gt;</span>&lt;/Header&gt;</span><br><span class="line">      &lt;/<span class="keyword">el</span>-header&gt;</span><br><span class="line">      &lt;<span class="keyword">el</span>-row :gutter=<span class="string">"20"</span> class=<span class="string">"zvip-cont"</span>&gt;</span><br><span class="line">        &lt;<span class="keyword">el</span>-<span class="keyword">col</span> :span=<span class="string">"4"</span> class=<span class="string">"zvip-left"</span>&gt;</span><br><span class="line">          &lt;Aside /&gt;</span><br><span class="line">        &lt;/<span class="keyword">el</span>-<span class="keyword">col</span>&gt;</span><br><span class="line">        &lt;<span class="keyword">el</span>-<span class="keyword">col</span> :span=<span class="string">"20"</span> class=<span class="string">"zvip-right"</span>&gt;</span><br><span class="line">          &lt;router-<span class="keyword">view</span> v-<span class="keyword">if</span>=<span class="string">"isReload"</span>&gt;&lt;/router-<span class="keyword">view</span>&gt; //此处进行判断渲染</span><br><span class="line">        &lt;/<span class="keyword">el</span>-<span class="keyword">col</span>&gt;</span><br><span class="line">      &lt;/<span class="keyword">el</span>-row&gt;</span><br><span class="line">    &lt;/<span class="keyword">el</span>-container&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">provide() &#123; // 利用vue的provide方法</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      reload: this.reload</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      isReload: true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">method<span class="variable">s:</span> &#123;</span><br><span class="line">    reload() &#123;</span><br><span class="line">      this.isReload = false</span><br><span class="line">      this.$nextTick(<span class="function"><span class="keyword">function</span><span class="params">()</span> &#123;</span></span><br><span class="line">        this.isReload = true</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>然后在需要当前页面刷新的页面中注入App.vue组件提供（provide）的 reload 依赖，然后直接用this.reload来调用就行</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span><span class="built_in"> default </span>&#123;</span><br><span class="line">  inject: [<span class="string">"reload"</span>],</span><br><span class="line">  methods: &#123;</span><br><span class="line">    routerReload(val) &#123;</span><br><span class="line">      this.reload()</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在众多刷新的方法里这个方法目前是个人觉得体验最好的一种，当然可能还有其他的方式，但目前我还没有想到到，欢迎交流！！</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>有钱没钱捧个场<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/ipay/ap.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/ipay/wx.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pageshow</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pagehide</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://ithack.github.io/2019/06/13/vue项目如何刷新当前页面-经验总结.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/04/19/再谈vue3x和elementUI实操记录.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">再谈vue3x和elementUI实操记录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
   
 
-    
+  
+
+  
+
+  
+
+  
+  
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'false' == true ? true : false;
+  var verify = 'false' == true ? true : false;
+  window.onload = function() {
+    new Valine({
+      el: '.comment',
+      notify: notify,
+      verify: verify,
+      app_id: "muiRoOrtUHprjUm08CdarBGI-gzGzoHsz",
+      app_key: "eQEhP9kqkEsV1WcX5GQDfhT3",
+      placeholder: "Just go go",
+      avatar:"mp"
+    });
+  }
+</script>
+
+    </section>
+  
 
 
           </div>
@@ -268,9 +428,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: false,
