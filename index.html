@@ -186,6 +186,127 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-npm-install安装本地or私有git源包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/28/npm-install安装本地or私有git源包.html">npm install安装本地/私有git源包</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/28/npm-install安装本地or私有git源包.html" class="archive-article-date">
+  	<time datetime="2019-06-28T06:03:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>​    之所以是总结关于npm install的问题，是因为之前在组织组内的一次分享会上我问了小伙伴们一个问题；当时有一个M移动端项目，用到了公司的私有源上的分享插件，而每个人在执行npm install的时候默认淘宝或npm源中下载，所以导致我们自己的私有源要单独用nrm切换到私有源再次npm install一次；当然我们的私有源也很强大基本上的npm源上的包都有，我们可以直接切换到公司镜像源然后npm install一下，这样私有源和npm源的包都能安装，但在极端情况万一npm源某些个别包，公司的源上没有同步上来呢？这种情况我们是不是来回切换？还有之前和后端JAVA合作，JAVA有一个种dubbo接口，这种接口就是输出git包的形式，这种情况我们不能吧dubbo接口的包文件放到公司源里去；</p>
+<p>​    其实在package里是支持输入本地包或git 源包的，so 接下来我来梳理总结一下npm install 依赖包安装！</p>
+<h4 id="package定义"><a href="#package定义" class="headerlink" title="package定义"></a>package定义</h4><p>我们都知道要手动安装一个包时，执行 <code>npm install &lt;package&gt;</code> 命令即可。这里的第三个参数 package 通常就是我们所要安装的包名，默认配置下 npm 会从默认的源 (Registry) 中查找该包名对应的包地址，并下载安装。但在 npm 的世界里，除了简单的指定包名, package 还可以是一个指向有效包名的 http url/git url/文件夹路径。</p>
+<p>阅读 <a href="https://docs.npmjs.com/about-packages-and-modules" target="_blank" rel="noopener">npm的文档</a>， 我们会发现package 准确的定义，只要符合以下其中之一条件，就是一个 package:</p>
+<table>
+<thead>
+<tr>
+<th><strong>说明</strong></th>
+<th><strong>例子</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一个包含了程序和描述该程序的 package.json 文件 的 <strong>文件夹</strong></td>
+<td>./local-module/</td>
+</tr>
+<tr>
+<td>一个包含了 (a) 的 <strong>gzip 压缩文件</strong></td>
+<td>./module.tar.gz</td>
+</tr>
+<tr>
+<td>一个可以下载得到 (b) 资源的 <strong>url</strong> (通常是 http(s) url)</td>
+<td><a href="https://registry.npmjs.org/webpack/-/webpack-3.0.0.tgz" target="_blank" rel="noopener">https://registry.npmjs.org/webpack/-/webpack-3.0.0.tgz</a></td>
+</tr>
+<tr>
+<td>一个格式为 <code>&lt;name&gt;@&lt;version&gt;</code> 的字符串，可指向 npm 源(通常是官方源 npmjs.org)上已发布的可访问 url，且该 url 满足条件 (c)</td>
+<td><a href="mailto:webpack@3.0.0" target="_blank" rel="noopener">webpack@3.0.0</a></td>
+</tr>
+<tr>
+<td>一个格式为 <code>&lt;name&gt;@&lt;tag&gt;</code> 的字符串，在 npm 源上该<code>&lt;tag&gt;</code>指向某 <code>&lt;version&gt;</code> 得到 <code>&lt;name&gt;@&lt;version&gt;</code>，后者满足条件 (d)</td>
+<td>webpack@latest</td>
+</tr>
+<tr>
+<td>一个格式为 <code>&lt;name&gt;</code> 的字符串，默认添加 <code>latest</code> 标签所得到的 <code>&lt;name&gt;@latest</code> 满足条件 (e)</td>
+<td>webpack</td>
+</tr>
+<tr>
+<td>一个 <strong>git url</strong>, 该 url 所指向的代码库满足条件 (a)</td>
+<td><a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:webpack/webpack.git</td>
+</tr>
+</tbody>
+</table>
+        
+          <a class="article-more-a" href="/2019/06/28/npm-install安装本地or私有git源包.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">package</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/28/npm-install安装本地or私有git源包.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue项目如何刷新当前页面-经验总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -956,92 +1077,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-移动端pageshow-and-pagehide" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/移动端pageshow-and-pagehide.html">移动端pageshow and pagehide</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/18/移动端pageshow-and-pagehide.html" class="archive-article-date">
-  	<time datetime="2018-07-18T02:00:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>很早之前申请的域名和服务器到期，一直没把文章移过来；现在把文章全部转移到github上来，今天线上第一篇：移动端的pageshow和pagehide；</p>
-<p>文章最后更新一把最新遇到的问题与解决思路！</p>
-<p>手机上的浏览器有一个特性，名叫“往返缓存”（back-forward cache，或bfcache），可以在用户使用浏览器的“后退”和“前进”按钮时加快页面的转换速度。这个缓存中不仅保存着页面数据，还保存了DOM和JavaScript的状态；实际上是将整个页面都保存在了内存里。如果页面位于bfcache中，那么再次打开该页面就不会触发load事件。尽管由于内存中保存了整个页面的状态，不触发load事件也不应该会导致什么问题，但为了更形象地说明bfcache的行为，Firefox还是提供了一些新事件。   第一个事件就是pageshow，这个事件在页面显示时触发，无论页面是否来自bfcache。在重新加载页面中，pageshow会在load事件触发后触发；而对于bfcache中的页面，pageshow会在页面状态完全恢复的那一刻触发。
-        
-          <a class="article-more-a" href="/2018/07/18/移动端pageshow-and-pagehide.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pageshow</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pagehide</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/18/移动端pageshow-and-pagehide.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1175,6 +1210,22 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">package</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vuedraggable</a>
               </li>
              
@@ -1184,14 +1235,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">vue异步组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1223,6 +1266,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
               </li>
              
@@ -1231,19 +1278,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">IOS兼容性</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
