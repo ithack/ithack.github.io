@@ -186,6 +186,96 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vuedraggable-拖拽异步组件问题记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html">vuedraggable 拖拽异步组件问题记录</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html" class="archive-article-date">
+  	<time datetime="2018-07-30T02:46:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近一直在做<a href="https://github.com/ithack/vueCMS" target="_blank" rel="noopener">可视化拖拽系统</a>，一期基本功能已经完成，二期在完善系统，第一步就是把所有组件异步加载，这样有些组件不用的话不必要加载，js也就没那么大了，本来认为很简单一件事，但当异步组件遇上vuedrag就出了问题；研究了很长一段时间vuedraggable的实现方式，最终找到了问题，首先说一下问题</p>
+<p>我们可视化系统拖拽组件，当把组件异步处理后会出现连续拖拽两个相同的异步组件会出现store里的JSON Tree多出一个非DOM节点，这个DOM节点是在component组件名进入前已经把左边组件DOM放到了这个JSON Tree里，这样就出现DOM树结构解析出现问题，我查了一下vuedraggable的API，发现并没有任何一个执行顺序可以控制add的插入节点字符串，这样就导致了后边再拖拽就会导致component解析问题；</p>
+<p>在查找代码后发现，其实在draggable拖拽松手那一刻到add回到那一刻分别由vue和sortablejs执行了两个事件，一个是vue的input事件（也就是v-model用到的数据绑定）另一个是sortable里的change事件源码如下：</p>
+        
+          <a class="article-more-a" href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vuedraggable</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Sortablejs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue异步组件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-移动端pageshow-and-pagehide" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -933,89 +1023,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-Nodejs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/24/Nodejs.html">nodeJs+mongodb，nodejs的实战小demo</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/24/Nodejs.html" class="archive-article-date">
-  	<time datetime="2017-05-24T07:38:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>上周没事深入了解了下node的运行机制和原理，并在内部做了个小分享，今天拿出来整理下分享出来！之前配置了<a href="https://ithack.github.io/2017/05/11/MongoDB%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%92%8C%E5%90%AF%E5%8A%A8.html">mongodb</a>，所以最后用node+mongodb做了个小<a href="https://github.com/ithack/nodeJsMongodb-demo" target="_blank" rel="noopener">demo</a>，简单易理解！好了下面进入正题！</p>
-<p>首先我们一定要记住一点：nodejs本身不是开发语言，它是一个工具或者平台，在服务器端解释、运行javascript；nodejs利用Google V8引擎来解释运行javascript，但是系统真正执行的代码是用C++写的。javascript做的只是调用这些API而已。</p>
-<h2 id="NodeJS的三大特点"><a href="#NodeJS的三大特点" class="headerlink" title="NodeJS的三大特点"></a>NodeJS的三大特点</h2><ul>
-<li><strong>单线程</strong></li>
-<li><strong>异步I/O(非阻塞)</strong></li>
-<li><strong>事件驱动</strong></li>
-</ul>
-<h2 id="运行机制解析"><a href="#运行机制解析" class="headerlink" title="运行机制解析"></a>运行机制解析</h2><p>在 Java 和 PHP 这类语言中，每个连接都会生成一个新线程，理论上最大的并发连接数量是 4,000 个用户。随着您的客户群的增长，如果希望您的 Web 应用程序支持更多用户，那么，您必须添加更多服务器。所以在传统的后台开发中，整个 Web 应用程序架构（包括流量、处理器速度和内存速度）中的瓶颈是：服务器能够处理的并发连接的最大数量。这个不同的架构承载的并发数量是不一致的。<br>而Node的出现就是为了解决这个问题：更改连接到服务器的方式。在Node 声称它不允许使用锁，它不会直接阻塞 I/O 调用。Node在每个连接发射一个在 Node 引擎的进程中运行的事件，而不是为每个连接生成一个新的线程
-        
-          <a class="article-more-a" href="/2017/05/24/Nodejs.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodeJs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/24/Nodejs.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1121,14 +1128,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">eslint</a>
               </li>
              
@@ -1138,6 +1137,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1154,6 +1161,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3.x</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">DllPlugin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1177,14 +1196,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -1193,15 +1204,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">封装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1214,6 +1217,22 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">封装</a>
               </li>
              
               <li class="article-tag-list-item">

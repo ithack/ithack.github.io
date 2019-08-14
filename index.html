@@ -186,6 +186,95 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue3.x配置优化DllPlugin 和 DllReferencePlugin" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/14/vue3.x配置优化DllPlugin 和 DllReferencePlugin.html">vue3配置优化DllPlugin 和 DllReferencePlugin</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/14/vue3.x配置优化DllPlugin 和 DllReferencePlugin.html" class="archive-article-date">
+  	<time datetime="2019-08-14T02:03:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>目前在做的项目是我从0到1一手搭建起来的，所以比较在整体结构和对架构的优化上思考并实践了很多，每一次的开发需求都先用一部分时间思考项目的打包和搭建怎么样才能更加方便通用化，今天就记录一下在越来愈多的需求和组件写完后怎么才能提高webpack的build速度，可能百度会有很多方案，今天我就来针对当前vue-cli3.x搭建的项目dll文件抽离配置</p>
+<h4 id="什么是DllPlugin-和-DllReferencePlugin"><a href="#什么是DllPlugin-和-DllReferencePlugin" class="headerlink" title="什么是DllPlugin 和 DllReferencePlugin"></a><strong>什么是DllPlugin 和 DllReferencePlugin</strong></h4><p>在使用webpack进行打包时候，对于依赖的第三方库，比如vue，vuex等这些不会修改的依赖，我们可以让它和我们自己编写的代码分开打包，这样做的好处是每次更改我本地代码的文件的时候，webpack只需要打包我项目本身的文件代码，而不会再去编译第三方库，那么第三方库在第一次打包的时候只打包一次，以后只要我们不升级第三方包的时候，那么webpack就不会对这些库去打包，这样的可以快速的提高打包的速度。因此为了解决这个问题，DllPlugin 和 DllReferencePlugin插件就产生了。</p>
+        
+          <a class="article-more-a" href="/2019/08/14/vue3.x配置优化DllPlugin 和 DllReferencePlugin.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue3.x</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">DllPlugin</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/14/vue3.x配置优化DllPlugin 和 DllReferencePlugin.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-npm-install安装本地or私有git源包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -987,96 +1076,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-vuedraggable-拖拽异步组件问题记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html">vuedraggable 拖拽异步组件问题记录</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html" class="archive-article-date">
-  	<time datetime="2018-07-30T02:46:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近一直在做<a href="https://github.com/ithack/vueCMS" target="_blank" rel="noopener">可视化拖拽系统</a>，一期基本功能已经完成，二期在完善系统，第一步就是把所有组件异步加载，这样有些组件不用的话不必要加载，js也就没那么大了，本来认为很简单一件事，但当异步组件遇上vuedrag就出了问题；研究了很长一段时间vuedraggable的实现方式，最终找到了问题，首先说一下问题</p>
-<p>我们可视化系统拖拽组件，当把组件异步处理后会出现连续拖拽两个相同的异步组件会出现store里的JSON Tree多出一个非DOM节点，这个DOM节点是在component组件名进入前已经把左边组件DOM放到了这个JSON Tree里，这样就出现DOM树结构解析出现问题，我查了一下vuedraggable的API，发现并没有任何一个执行顺序可以控制add的插入节点字符串，这样就导致了后边再拖拽就会导致component解析问题；</p>
-<p>在查找代码后发现，其实在draggable拖拽松手那一刻到add回到那一刻分别由vue和sortablejs执行了两个事件，一个是vue的input事件（也就是v-model用到的数据绑定）另一个是sortable里的change事件源码如下：</p>
-        
-          <a class="article-more-a" href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vuedraggable</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Sortablejs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue异步组件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1182,14 +1181,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">eslint</a>
               </li>
              
@@ -1199,6 +1190,14 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1215,6 +1214,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vue3.x</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">DllPlugin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1238,14 +1249,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
              
@@ -1254,15 +1257,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">封装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color4">深拷贝</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1275,6 +1270,22 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">translate</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">封装</a>
               </li>
              
               <li class="article-tag-list-item">
