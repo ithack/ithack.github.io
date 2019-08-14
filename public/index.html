@@ -186,6 +186,295 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue3.x配置优化DllPlugin 和 DllReferencePlugin" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/14/vue3.x配置优化DllPlugin 和 DllReferencePlugin.html">vue3配置优化DllPlugin 和 DllReferencePlugin</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/14/vue3.x配置优化DllPlugin 和 DllReferencePlugin.html" class="archive-article-date">
+  	<time datetime="2019-08-14T02:03:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>目前在做的项目是我从0到1一手搭建起来的，所以比较在整体结构和对架构的优化上思考并实践了很多，每一次的开发需求都先用一部分时间思考项目的打包和搭建怎么样才能更加方便通用化，今天就记录一下在越来愈多的需求和组件写完后怎么才能提高webpack的build速度，可能百度会有很多方案，今天我就来针对当前vue-cli3.x搭建的项目dll文件抽离配置</p>
+<h4 id="什么是DllPlugin-和-DllReferencePlugin"><a href="#什么是DllPlugin-和-DllReferencePlugin" class="headerlink" title="什么是DllPlugin 和 DllReferencePlugin"></a><strong>什么是DllPlugin 和 DllReferencePlugin</strong></h4><p>在使用webpack进行打包时候，对于依赖的第三方库，比如vue，vuex等这些不会修改的依赖，我们可以让它和我们自己编写的代码分开打包，这样做的好处是每次更改我本地代码的文件的时候，webpack只需要打包我项目本身的文件代码，而不会再去编译第三方库，那么第三方库在第一次打包的时候只打包一次，以后只要我们不升级第三方包的时候，那么webpack就不会对这些库去打包，这样的可以快速的提高打包的速度。因此为了解决这个问题，DllPlugin 和 DllReferencePlugin插件就产生了。</p>
+        
+          <a class="article-more-a" href="/2019/08/14/vue3.x配置优化DllPlugin 和 DllReferencePlugin.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vue3.x</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">DllPlugin</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/14/vue3.x配置优化DllPlugin 和 DllReferencePlugin.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-npm-install安装本地or私有git源包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/28/npm-install安装本地or私有git源包.html">npm install安装本地/私有git源包</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/28/npm-install安装本地or私有git源包.html" class="archive-article-date">
+  	<time datetime="2019-06-28T06:03:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>​    之所以是总结关于npm install的问题，是因为之前在组织组内的一次分享会上我问了小伙伴们一个问题；当时有一个M移动端项目，用到了公司的私有源上的分享插件，而每个人在执行npm install的时候默认淘宝或npm源中下载，所以导致我们自己的私有源要单独用nrm切换到私有源再次npm install一次；当然我们的私有源也很强大基本上的npm源上的包都有，我们可以直接切换到公司镜像源然后npm install一下，这样私有源和npm源的包都能安装，但在极端情况万一npm源某些个别包，公司的源上没有同步上来呢？这种情况我们是不是来回切换？还有之前和后端JAVA合作，JAVA有一个种dubbo接口，这种接口就是输出git包的形式，这种情况我们不能吧dubbo接口的包文件放到公司源里去；</p>
+<p>​    其实在package里是支持输入本地包或git 源包的，so 接下来我来梳理总结一下npm install 依赖包安装！</p>
+<h4 id="package定义"><a href="#package定义" class="headerlink" title="package定义"></a>package定义</h4><p>我们都知道要手动安装一个包时，执行 <code>npm install &lt;package&gt;</code> 命令即可。这里的第三个参数 package 通常就是我们所要安装的包名，默认配置下 npm 会从默认的源 (Registry) 中查找该包名对应的包地址，并下载安装。但在 npm 的世界里，除了简单的指定包名, package 还可以是一个指向有效包名的 http url/git url/文件夹路径。</p>
+<p>阅读 <a href="https://docs.npmjs.com/about-packages-and-modules" target="_blank" rel="noopener">npm的文档</a>， 我们会发现package 准确的定义，只要符合以下其中之一条件，就是一个 package:</p>
+<table>
+<thead>
+<tr>
+<th><strong>说明</strong></th>
+<th><strong>例子</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一个包含了程序和描述该程序的 package.json 文件 的 <strong>文件夹</strong></td>
+<td>./local-module/</td>
+</tr>
+<tr>
+<td>一个包含了 (a) 的 <strong>gzip 压缩文件</strong></td>
+<td>./module.tar.gz</td>
+</tr>
+<tr>
+<td>一个可以下载得到 (b) 资源的 <strong>url</strong> (通常是 http(s) url)</td>
+<td><a href="https://registry.npmjs.org/webpack/-/webpack-3.0.0.tgz" target="_blank" rel="noopener">https://registry.npmjs.org/webpack/-/webpack-3.0.0.tgz</a></td>
+</tr>
+<tr>
+<td>一个格式为 <code>&lt;name&gt;@&lt;version&gt;</code> 的字符串，可指向 npm 源(通常是官方源 npmjs.org)上已发布的可访问 url，且该 url 满足条件 (c)</td>
+<td><a href="mailto:webpack@3.0.0" target="_blank" rel="noopener">webpack@3.0.0</a></td>
+</tr>
+<tr>
+<td>一个格式为 <code>&lt;name&gt;@&lt;tag&gt;</code> 的字符串，在 npm 源上该<code>&lt;tag&gt;</code>指向某 <code>&lt;version&gt;</code> 得到 <code>&lt;name&gt;@&lt;version&gt;</code>，后者满足条件 (d)</td>
+<td>webpack@latest</td>
+</tr>
+<tr>
+<td>一个格式为 <code>&lt;name&gt;</code> 的字符串，默认添加 <code>latest</code> 标签所得到的 <code>&lt;name&gt;@latest</code> 满足条件 (e)</td>
+<td>webpack</td>
+</tr>
+<tr>
+<td>一个 <strong>git url</strong>, 该 url 所指向的代码库满足条件 (a)</td>
+<td><a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:webpack/webpack.git</td>
+</tr>
+</tbody>
+</table>
+        
+          <a class="article-more-a" href="/2019/06/28/npm-install安装本地or私有git源包.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">package</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/28/npm-install安装本地or私有git源包.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue项目如何刷新当前页面-经验总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/13/vue项目如何刷新当前页面-经验总结.html">vue项目如何刷新当前页面-经验总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/13/vue项目如何刷新当前页面-经验总结.html" class="archive-article-date">
+  	<time datetime="2019-06-13T02:35:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>很久没有更新了，今天这个题目更多的可能是一点灵感，在最近项目中有一个刷新当前页面需求，但通过思考也并不是刷新当前页面，这样做固然简单，但对于用户体验并不是很完美，其实只需要刷新当前路由组件，而页面中整体框架不需要重新渲染，所以就考虑有没有办法只重新加载某一个组件，这样用户只会看到数据或某一块的刷新，有点像ajax的方式进行局部刷新，会提高一下用户体验；</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>vue项目刷新当前页面，可能这已经不是个问题，目前大家知道的有应该最少有两种解决方案：</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">localhost.reload<span class="comment">()</span> </span><br><span class="line"></span><br><span class="line">或</span><br><span class="line"></span><br><span class="line">this.$router.go<span class="comment">(0)</span></span><br></pre></td></tr></table></figure>
+<p>如上是在遇到刷新时最直接能想到的方法，但是这个方法有个弊端就是刷新页面会导致空白页面的出现，这样的用户体验很不好；<br><img src="/images/2019/59399155-93d82300-8dc5-11e9-94ab-a23a5e0c8b3e.png" alt="image"></p>
+        
+          <a class="article-more-a" href="/2019/06/13/vue项目如何刷新当前页面-经验总结.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/13/vue项目如何刷新当前页面-经验总结.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-再谈vue3x和elementUI实操记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -743,11 +1032,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -758,267 +1047,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/09/26/Vue奇淫技笔记.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vuedraggable-拖拽异步组件问题记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html">vuedraggable 拖拽异步组件问题记录</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html" class="archive-article-date">
-  	<time datetime="2018-07-30T02:46:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近一直在做<a href="https://github.com/ithack/vueCMS" target="_blank" rel="noopener">可视化拖拽系统</a>，一期基本功能已经完成，二期在完善系统，第一步就是把所有组件异步加载，这样有些组件不用的话不必要加载，js也就没那么大了，本来认为很简单一件事，但当异步组件遇上vuedrag就出了问题；研究了很长一段时间vuedraggable的实现方式，最终找到了问题，首先说一下问题</p>
-<p>我们可视化系统拖拽组件，当把组件异步处理后会出现连续拖拽两个相同的异步组件会出现store里的JSON Tree多出一个非DOM节点，这个DOM节点是在component组件名进入前已经把左边组件DOM放到了这个JSON Tree里，这样就出现DOM树结构解析出现问题，我查了一下vuedraggable的API，发现并没有任何一个执行顺序可以控制add的插入节点字符串，这样就导致了后边再拖拽就会导致component解析问题；</p>
-<p>在查找代码后发现，其实在draggable拖拽松手那一刻到add回到那一刻分别由vue和sortablejs执行了两个事件，一个是vue的input事件（也就是v-model用到的数据绑定）另一个是sortable里的change事件源码如下：</p>
-        
-          <a class="article-more-a" href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vuedraggable</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Sortablejs</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue异步组件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动端pageshow-and-pagehide" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/移动端pageshow-and-pagehide.html">移动端pageshow and pagehide</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/18/移动端pageshow-and-pagehide.html" class="archive-article-date">
-  	<time datetime="2018-07-18T02:00:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>很早之前申请的域名和服务器到期，一直没把文章移过来；现在把文章全部转移到github上来，今天线上第一篇：移动端的pageshow和pagehide；</p>
-<p>文章最后更新一把最新遇到的问题与解决思路！</p>
-<p>手机上的浏览器有一个特性，名叫“往返缓存”（back-forward cache，或bfcache），可以在用户使用浏览器的“后退”和“前进”按钮时加快页面的转换速度。这个缓存中不仅保存着页面数据，还保存了DOM和JavaScript的状态；实际上是将整个页面都保存在了内存里。如果页面位于bfcache中，那么再次打开该页面就不会触发load事件。尽管由于内存中保存了整个页面的状态，不触发load事件也不应该会导致什么问题，但为了更形象地说明bfcache的行为，Firefox还是提供了一些新事件。   第一个事件就是pageshow，这个事件在页面显示时触发，无论页面是否来自bfcache。在重新加载页面中，pageshow会在load事件触发后触发；而对于bfcache中的页面，pageshow会在页面状态完全恢复的那一刻触发。
-        
-          <a class="article-more-a" href="/2018/07/18/移动端pageshow-and-pagehide.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pageshow</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pagehide</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/18/移动端pageshow-and-pagehide.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue拖拽组件vue可视化问题记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/12/vue拖拽组件vue可视化问题记录.html">vue拖拽组件vue可视化问题记录问题记录</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/12/vue拖拽组件vue可视化问题记录.html" class="archive-article-date">
-  	<time datetime="2018-07-12T06:37:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>已经停更一年了，平时不是没时间更新，就是不知道记录什么！平时遇到的问题和解决思路都简单的弄了个list作为文章更新点，今天忙里抽闲，在单位的电脑装上blog环境，开始更新一个从零到一纯手动搭建的关于<a href="https://github.com/ithack/vueCMS" target="_blank" rel="noopener">vue可视化系统，组件拼接页面</a></p>
-<p>，从开始的毫无头绪，到目前的一步步踩坑经历了从绝望看到希望，感觉自己变牛逼了（其实并没有）！好了废话不多说，内容比较多和杂，一步一步来；
-        
-          <a class="article-more-a" href="/2018/07/12/vue拖拽组件vue可视化问题记录.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vuedraggable</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">拖拽</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/12/vue拖拽组件vue可视化问题记录.html">展开全文 >></a>
         </p>
       
 
@@ -1137,18 +1165,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -1165,6 +1181,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -1177,6 +1205,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -1185,7 +1217,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue3.x</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">DllPlugin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">package</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1229,15 +1277,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">封装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1320,7 +1368,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;span&gt;从事前端工作七年，喜欢挑战！&lt;/span&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;span&gt;卖马为生！&lt;/span&gt;</div>
   	  	
     	</section>
     

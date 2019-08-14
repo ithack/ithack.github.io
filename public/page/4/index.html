@@ -186,6 +186,346 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-一道面试题引起的猜想" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/18/一道面试题引起的猜想.html">一道面试题引起的猜想</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/18/一道面试题引起的猜想.html" class="archive-article-date">
+  	<time datetime="2016-08-18T08:44:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之前有一道面试题困惑我很久，后来在网上搜索了一下，貌似很多人都会进入误区，但到现在为止我还没有看到一个合理的解释这让我很郁闷！<br>面试题如下：</p>
+<pre>
+var foo={n:1};
+var bar=foo;
+foo.x=foo={n:2};
+console.log(foo.x) //输出？
+</pre>
+
+<p>答案是：</p>
+<pre>
+console.log(a.x); // undefined
+</pre>
+不知道各位有没有答对，至少我是答错了。
+
+遂借此机会好好看看JS连等赋值是怎么回事;在网上查了很多的资料，最后发现两个非常好的联等赋值的栗子（[栗子1](http://segmentfault.com/q/1010000002637728)，[栗子2](http://www.iteye.com/topic/785445)），最后看了一下[小小沧海](https://www.cnblogs.com/xxcanghai/p/4998076.html?utm_source=tuicool&utm_medium=referral)的文章，觉得可以和大家分享下；
+
+首先我们考虑一行代码：A=B=C;赋值语句的执行顺序是从右到左，所以我们猜想一下到底是：B=C;A=C;还是B=C;A=B;
+
+我们都知道若两个对象同时指向一个对象，那么对这个对象的修改是同步的，如：
+
+<pre>
+var a={n:1};
+var b=a;
+a.n=2;
+console.log(b);//Object {n: 2}
+</pre>
+
+<p>所以可以根据这个特性来测试连续赋值的顺序。<br>首先setter和getter是应用于变量名的，而不是变量真正储存的对象，如下：<br>
+        
+          <a class="article-more-a" href="/2016/08/18/一道面试题引起的猜想.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">面试题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/18/一道面试题引起的猜想.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-常见的JS排序算法的实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/16/常见的JS排序算法的实现.html">常见的JS排序算法的实现</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/16/常见的JS排序算法的实现.html" class="archive-article-date">
+  	<time datetime="2016-08-16T07:29:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天就来说一说几种我们平时面试和实际应用中的JS排序的实现方法！下面的方法用了ES6中的一些新属性，但整体思路是不变的！</p>
+<p>原文：<a href="http://h3manth.com/javascript-sorting/" target="_blank" rel="noopener">Sorting Algorithms in Javascript</a></p>
+<p>译文：排序算法的JavaScript实现</p>
+<p>译者：dwqs</p>
+<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><blockquote>
+<p>let quicksort = function(arr) {<br>　if(arr.length &lt;= 1)return arr;<br>　let pivot = Math.floor((arr.length -1)/2);<br>　let val = arr[pivot], less = [], more = [];<br>　arr.splice(pivot, 1);<br>　arr.forEach(function(e,i,a){<br>　　e &lt; val ? less.push(e) : more.push(e);<br>　});<br>　return (quicksort(less)).concat([val],quicksort(more));<br>}</p>
+</blockquote>
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><pre>
+let compare = (n1, n2) => n1 - n2;
+
+let bubbleSort = (arr, cmp = compare) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i; j > 0; j--) {
+      if (cmp(arr[j], arr[j - 1]) < 0) {
+        [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
+      }
+    }
+  }
+  return arr;
+};
+</pre>
+        
+          <a class="article-more-a" href="/2016/08/16/常见的JS排序算法的实现.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/16/常见的JS排序算法的实现.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS3实现关闭X按钮" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/12/CSS3实现关闭X按钮.html">CSS3实现关闭X按钮</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/12/CSS3实现关闭X按钮.html" class="archive-article-date">
+  	<time datetime="2016-08-12T02:11:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天做一个小的页面时用到了弹框，一般弹框都有close按钮，有时我们为了偷懒直接用个X来做关闭按钮！但这种情况基本很难看，所以我们需要UI给我设计一个关闭按钮，或者我们要用font-face来做这个关闭，这样做起来美观，但是却有一点麻烦！之前我无意间发现一个好玩的方法，简单好用,今天分享一下；</p>
+<p>用CSS3设计出来的样式来呈现出关闭按钮的样子，这样以后想设计简单的对话框，就不需要求美工来帮忙画按钮的图片了。先来看看样式:</p>
+<p><pre><br>/<em> basic style </em>/<br>.close {<br>    background: orange;<br>    color: red;<br>    border-radius: 12px;<br>    line-height: 20px;<br>    text-align: center;<br>    height: 20px;<br>    width: 20px;<br>    font-size: 18px;<br>    padding: 1px;<br>}<br>/<em> use cross as close button </em>/<br>.close::before {<br>    content: “\2716”;<br>}<br>/<em> place the button on top-right </em>/<br>.close {<br>    top: -10px;<br>    right: -10px;<br>    position: absolute;<br>}<br></pre><br>然后直接把它加到HTML元素上就可以看到效果了：</p>
+<p><pre><br>&lt;div style=”height: 100px; width: 100px; border: 1px solid black; position: relative;”&gt;<span class="close"></span>&lt;/div&gt;<br></pre><br>这主要是利用了在CSS的::before伪属性可以直接添加内容的特点，这样就可以直接设置样式在class上而不用做其它操作。当然这里用::after效果也是一样的。唯一要注意的是如果要指定关闭按钮在特定位置，就需要使用到position:absolut;，相应的其父元素就不能是默认的position:static;。像上边的示例中就使用的是position:relative;以保证按钮呈现在正确的位置上。</p>
+<p>对于按钮中的叉按钮，用的是Unicode中的一种标识，以下这些也可以使用：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标识</th>
+<th style="text-align:center">编码(16进制)</th>
+<th style="text-align:center">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="\images\CSS3实现关闭X按钮\2716.png" alt=""></td>
+<td style="text-align:center">\2716</td>
+<td style="text-align:center">粗体乘法</td>
+</tr>
+<tr>
+<td style="text-align:center">✗</td>
+<td style="text-align:center">\2717</td>
+<td style="text-align:center">交叉</td>
+</tr>
+<tr>
+<td style="text-align:center">✘</td>
+<td style="text-align:center">\2718</td>
+<td style="text-align:center">粗体交叉</td>
+</tr>
+<tr>
+<td style="text-align:center">×</td>
+<td style="text-align:center">\00D7</td>
+<td style="text-align:center">乘法符号</td>
+</tr>
+<tr>
+<td style="text-align:center">⨯</td>
+<td style="text-align:center">\2A2F</td>
+<td style="text-align:center">向量乘积</td>
+</tr>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:center">\78</td>
+<td style="text-align:center">小写字母</td>
+</tr>
+<tr>
+<td style="text-align:center">X</td>
+<td style="text-align:center">\58</td>
+<td style="text-align:center">大写字母</td>
+</tr>
+</tbody>
+</table>
+<p>只是使用了不同字符后，可能居中位置会有偏差需要重新调整。</p>
+<p>再结合JavaScript和CSS3的gradient，就能完成一个看起来还不错的对话框了。效果如下图：</p>
+<p><img src="\images\CSS3实现关闭X按钮\close.png" alt=""></p>
+<p>其实我们可以完全用字符编码解决关闭X按钮的美观问题，上面是一种不用美工不用font-face的解决方案，在这个基础上我们也可以发散思维，用另一种方法解决，这里这是做一个简单的介绍，我们可以利用css3的旋转属性，父级有个边框，子级有个边框，把子级旋转九十度，和父级交叉，把父级旋转45°这样也是一个关闭X按钮！</p>
+<p>如果大家还有什么好的建议和想法，欢迎留言分享！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/12/CSS3实现关闭X按钮.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-简单说下this对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -763,18 +1103,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -791,6 +1119,18 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">eslint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
@@ -803,6 +1143,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -811,7 +1155,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">vue-router</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue3.x</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">DllPlugin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">package</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -855,15 +1215,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">封装</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -946,7 +1306,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;span&gt;从事前端工作七年，喜欢挑战！&lt;/span&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;span&gt;卖马为生！&lt;/span&gt;</div>
   	  	
     	</section>
     
