@@ -1,0 +1,123 @@
+# Header
+
+menu:
+  主页: /
+  所有文章: /archives
+  随笔: /tag/随笔/
+  关于我: /about
+
+# SubNav
+subnav:
+  github: "https://ithack.github.io"
+  weibo: "http://weibo.com/271855993?is_all=1"
+  #rss: "#"
+  zhihu: "https://www.zhihu.com/people/yy-yy-98"
+  #qq: "#"
+  #weixin: "#"
+  #jianshu: "#"
+  #douban: "#"
+  #segmentfault: "#"
+  #bilibili: "#"
+  #acfun: "#"
+  #mail: "mailto:litten225@qq.com"
+  #facebook: "#"
+  #google: "#"
+  twitter: "https://twitter.com/bragonro"
+  #linkedin: "#"
+
+rss: /atom.xml
+
+# 是否需要修改 root 路径
+# 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
+# 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
+root: 
+
+# Content
+
+# 文章太长，截断按钮文字
+excerpt_link: 
+# 文章卡片右下角常驻链接，不需要请设置为false
+show_all_link: '展开全文'
+# 数学公式
+mathjax: false
+# 是否在新窗口打开链接
+open_in_new: true
+
+# 打赏
+# 请在需要打赏的文章的md文件头部，设置属性reward: true
+
+# 打赏基础设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
+reward_type: 2
+# 打赏wording
+reward_wording: '有钱没钱捧个场'
+# 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
+alipay: /images/ipay/ap.jpg
+# 微信二维码图片地址
+weixin: /images/ipay/wx.jpg
+
+# Miscellaneous
+baidu_analytics: ''
+google_analytics: ''
+favicon: http://oap59rfi2.bkt.clouddn.com/favicon-20170427050949517.ico
+
+#你的头像url
+avatar: "http://oap59rfi2.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720160722111113.jpg"
+
+#是否开启分享
+share_jia: true
+
+#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus 不需要使用某项，直接设置值为false，或注释掉
+#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
+
+#1、多说
+duoshuo: false
+
+#2、网易云跟帖
+wangyiyun: "63d9a500c8eb45dbadac52b3d433dbc8"
+
+#3、畅言
+changyan_appid: false
+changyan_conf: false
+
+#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
+disqus: false
+
+# 样式定制 - 一般不需要修改，除非有很强的定制欲望…
+style:
+  # 头像上面的背景颜色
+  header: '#4d4d4d'
+  # 右滑板块背景
+  slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
+
+# slider的设置
+slider:
+  # 是否默认展开tags板块
+  showTags: true
+
+# 智能菜单
+# 如不需要，将该对应项置为false
+# 比如
+#smart_menu:
+friends: false
+smart_menu:
+  innerArchive: '所有文章'
+  # friends: '友链'
+  aboutme: '关于我'
+
+# friends:
+#   友情链接1: http://localhost:4000/
+#   友情链接2: http://localhost:4000/
+#   友情链接3: http://localhost:4000/
+#   友情链接4: http://localhost:4000/
+#   友情链接5: http://localhost:4000/
+#   友情链接6: http://localhost:4000/
+
+aboutme: <span>从事前端工作四年，喜欢挑战！打算组建个威信前端群，欢迎加我好友</span><span><img src="/images/ipay/my.jpg"></span>
+
+
+#版权声明
+#版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明
+#当前应用的版权协议地址。
+#版权协议的名称
+#版权协议的Logo
+
