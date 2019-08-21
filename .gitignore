@@ -1,4 +1,5 @@
 .DS_Store
 Thumbs.db
+.deploy_git/
 *.log
 node_modules/
