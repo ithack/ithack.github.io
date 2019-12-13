@@ -109,6 +109,8 @@ var _hmt = _hmt || [];
 		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yy-yy-98" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="weixin" target="_blank" href="/images/ipay/my-wx.jpg" title="weixin"><i class="icon-weixin"></i></a>
+		        
 					<a class="twitter" target="_blank" href="https://twitter.com/bragonro" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
@@ -154,6 +156,8 @@ var _hmt = _hmt || [];
 			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yy-yy-98" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="weixin" target="_blank" href="/images/ipay/my-wx.jpg" title="weixin"><i class="icon-weixin"></i></a>
+			        
 						<a class="twitter" target="_blank" href="https://twitter.com/bragonro" title="twitter"><i class="icon-twitter"></i></a>
 			        
 				</div>
@@ -185,6 +189,114 @@ var _hmt = _hmt || [];
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-关于translate会使内容变得模糊的问题-实战小记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/22/关于translate会使内容变得模糊的问题-实战小记.html">关于translate会使内容变得模糊的问题--实战小记</a>
+    </h1>
+  
+
+        
+        <a href="/2016/08/22/关于translate会使内容变得模糊的问题-实战小记.html" class="archive-article-date">
+  	<time datetime="2016-08-22T09:31:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>刚刚，在调试一个vue的单页面应用时发现一个字体模糊问题！现在来说说问题！</p>
+<p>具体页面是这样的，有一个弹框，这个弹框需要水平垂直居中！其实一般情况我们首先想到的是：transform的translate方法!具体方法如：</p>
+<pre>
+.main{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);//或transform: translate3d(-50%, -50%,0)
+}
+</pre>
+这样main这个div就会居中显示了！但是如我一开始说的，这样做这个div里的文字会变得模糊，具体原因我还没了解(需要等这个项目忙完去研究下，很快就这一两天的事！)，所以我们需要改变一下我们的方式这里先说下其中一个也是用CSS3实现的方法，就是比较麻烦，要在main这个div外层再加个div，这个div的class为prant，css如下：
+<pre>
+.prant{
+  height:100%;
+  width:100%;position:absolute;z-index:10002;top:0;left:0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center; 
+}
+</pre>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">CSS3</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">transform</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">translate</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/08/22/关于translate会使内容变得模糊的问题-实战小记.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-一道面试题引起的猜想" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -234,8 +346,6 @@ console.log(b);//Object {n: 2}
 </pre>
 
 <p>所以可以根据这个特性来测试连续赋值的顺序。<br>首先setter和getter是应用于变量名的，而不是变量真正储存的对象，如下：<br>
-        
-          <a class="article-more-a" href="/2016/08/18/一道面试题引起的猜想.html#more">more >></a>
         
       
 
@@ -334,8 +444,6 @@ let bubbleSort = (arr, cmp = compare) => {
   return arr;
 };
 </pre>
-        
-          <a class="article-more-a" href="/2016/08/16/常见的JS排序算法的实现.html#more">more >></a>
         
       
 
@@ -553,8 +661,6 @@ let bubbleSort = (arr, cmp = compare) => {
 <p><pre><br>var obj= “window”;<br>function Test(){<br>    var obj = “fun”;<br>    alert(this.obj);<br>}<br>sayName();    // “window”<br></pre></p>
 <p>#作为对象的方法调用#<br>当作为对象内部的方法被调用时，这里 this 指向这个方法所在的对象
         
-          <a class="article-more-a" href="/2016/08/10/简单说下this对象.html#more">more >></a>
-        
       
 
       
@@ -687,8 +793,6 @@ let bubbleSort = (arr, cmp = compare) => {
 <p>第三：跨域并非浏览器限制了发起跨站请求，而是跨站请求可以正常发起，但是返回结果被浏览器拦截了。最好的例子是 crsf 跨站攻击原理，请求是发送到了后端服务器无论是否跨域！注意：有些浏览器不允许从HTTPS的域跨域访问HTTP，比如Chrome和Firefox，这些浏览器在请求还未发出的时候就会拦截请求，这是一个特例</p>
 <p>虾米是集中跨域方法总结：<br>
         
-          <a class="article-more-a" href="/2016/08/10/JavaScript跨域浅谈.html#more">more >></a>
-        
       
 
       
@@ -781,8 +885,6 @@ let bubbleSort = (arr, cmp = compare) => {
 <pre><code>x == y
 </code></pre><p>其中x和y是六种类型中某一种类型的值。</p>
 <p>当x和y的类型相同时，x == y可以转化为x === y，而后者是很简单的(唯一需要注意的可能是NaN)，所以下面我们只考虑x和y的类型不同的情况。<br>
-        
-          <a class="article-more-a" href="/2016/08/09/聊一聊-运算符.html#more">more >></a>
         
       
 
@@ -948,8 +1050,6 @@ let bubbleSort = (arr, cmp = compare) => {
 <p>1）正式安装HEXO　</p>
 <p>   可以打开CMD或gitBash命令行执行如下<code>npm install -g hexo</code> 安装hexo</p>
 <p>2）初始化你的本地hexo项目<br>
-        
-          <a class="article-more-a" href="/2016/07/21/github上免费搭建自己的博客.html#more">more >></a>
         
       
 
@@ -1127,7 +1227,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1136,6 +1236,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1151,7 +1255,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue3.x</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">DllPlugin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">package</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1167,11 +1287,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">package</a>
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1180,18 +1296,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3.x</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">DllPlugin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1211,19 +1315,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">封装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1306,7 +1406,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;span&gt;卖马为生！&lt;/span&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;img src=&quot;/images/my_gzh.jpg&quot; /&gt;</div>
   	  	
     	</section>
     

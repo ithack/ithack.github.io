@@ -109,6 +109,8 @@ var _hmt = _hmt || [];
 		        
 					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yy-yy-98" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
+					<a class="weixin" target="_blank" href="/images/ipay/my-wx.jpg" title="weixin"><i class="icon-weixin"></i></a>
+		        
 					<a class="twitter" target="_blank" href="https://twitter.com/bragonro" title="twitter"><i class="icon-twitter"></i></a>
 		        
 			</div>
@@ -154,6 +156,8 @@ var _hmt = _hmt || [];
 			        
 						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/yy-yy-98" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
+						<a class="weixin" target="_blank" href="/images/ipay/my-wx.jpg" title="weixin"><i class="icon-weixin"></i></a>
+			        
 						<a class="twitter" target="_blank" href="https://twitter.com/bragonro" title="twitter"><i class="icon-twitter"></i></a>
 			        
 				</div>
@@ -186,6 +190,86 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Vue奇淫技笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/26/Vue奇淫技笔记.html">Vue奇淫技笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/26/Vue奇淫技笔记.html" class="archive-article-date">
+  	<time datetime="2018-09-26T07:43:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>​    vue可视化项目暂时告一段落了，后续整理项目结构会更新上来，今天闲来无事先更新一把vue一些奇淫笔记，之所以称之为奇淫，可能是因为觉得有意思，也可能是觉得比较好玩，并不一定建议开发中用，这些奇淫的技能有些可能透过代码熟悉vue的运行机制等问题；</p>
+<h5 id="奇淫笔记一："><a href="#奇淫笔记一：" class="headerlink" title="奇淫笔记一："></a>奇淫笔记一：</h5><p>​    如果你只在子组件里面改变父组件的一个值，不妨试试 <code>$emit(&#39;input&#39;)</code>,会直接改变 v-model<br>我们正常的父子组件通信是 父组件通过 props 传给子组件，子组件通过 <code>this.$emit(&#39;eventName&#39;,value)</code>通知父组件绑定在 @eventName 上的方法来做相应的处理。<br>​    但是这边有个特例，vue 默认会监听组件的 input 事件，而且会把子组件里面传出来的值，赋给当前绑定到 v-model 上的值<br><strong>正常用法 - 父组件</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;subComponent :data=<span class="string">"param"</span> @dataChange=<span class="string">"dataChangeHandler"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">subComponent</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/template&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script &gt;</span></span><br><span class="line"><span class="regexp">  export default &#123;</span></span><br><span class="line"><span class="regexp">    data () &#123;</span></span><br><span class="line"><span class="regexp">      return &#123;</span></span><br><span class="line"><span class="regexp">        param:'xxxxxx'</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    methods:&#123;</span></span><br><span class="line"><span class="regexp">      dataChangeHandler (newParam) &#123;</span></span><br><span class="line"><span class="regexp">        this.param = newParam</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/26/Vue奇淫技笔记.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vuedraggable-拖拽异步组件问题记录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -209,8 +293,6 @@ var _hmt = _hmt || [];
         <p>最近一直在做<a href="https://github.com/ithack/vueCMS" target="_blank" rel="noopener">可视化拖拽系统</a>，一期基本功能已经完成，二期在完善系统，第一步就是把所有组件异步加载，这样有些组件不用的话不必要加载，js也就没那么大了，本来认为很简单一件事，但当异步组件遇上vuedrag就出了问题；研究了很长一段时间vuedraggable的实现方式，最终找到了问题，首先说一下问题</p>
 <p>我们可视化系统拖拽组件，当把组件异步处理后会出现连续拖拽两个相同的异步组件会出现store里的JSON Tree多出一个非DOM节点，这个DOM节点是在component组件名进入前已经把左边组件DOM放到了这个JSON Tree里，这样就出现DOM树结构解析出现问题，我查了一下vuedraggable的API，发现并没有任何一个执行顺序可以控制add的插入节点字符串，这样就导致了后边再拖拽就会导致component解析问题；</p>
 <p>在查找代码后发现，其实在draggable拖拽松手那一刻到add回到那一刻分别由vue和sortablejs执行了两个事件，一个是vue的input事件（也就是v-model用到的数据绑定）另一个是sortable里的change事件源码如下：</p>
-        
-          <a class="article-more-a" href="/2018/07/30/vuedraggable-拖拽异步组件问题记录.html#more">more >></a>
         
       
 
@@ -300,8 +382,6 @@ var _hmt = _hmt || [];
 <p>文章最后更新一把最新遇到的问题与解决思路！</p>
 <p>手机上的浏览器有一个特性，名叫“往返缓存”（back-forward cache，或bfcache），可以在用户使用浏览器的“后退”和“前进”按钮时加快页面的转换速度。这个缓存中不仅保存着页面数据，还保存了DOM和JavaScript的状态；实际上是将整个页面都保存在了内存里。如果页面位于bfcache中，那么再次打开该页面就不会触发load事件。尽管由于内存中保存了整个页面的状态，不触发load事件也不应该会导致什么问题，但为了更形象地说明bfcache的行为，Firefox还是提供了一些新事件。   第一个事件就是pageshow，这个事件在页面显示时触发，无论页面是否来自bfcache。在重新加载页面中，pageshow会在load事件触发后触发；而对于bfcache中的页面，pageshow会在页面状态完全恢复的那一刻触发。
         
-          <a class="article-more-a" href="/2018/07/18/移动端pageshow-and-pagehide.html#more">more >></a>
-        
       
 
       
@@ -384,8 +464,6 @@ var _hmt = _hmt || [];
       
         <p>已经停更一年了，平时不是没时间更新，就是不知道记录什么！平时遇到的问题和解决思路都简单的弄了个list作为文章更新点，今天忙里抽闲，在单位的电脑装上blog环境，开始更新一个从零到一纯手动搭建的关于<a href="https://github.com/ithack/vueCMS" target="_blank" rel="noopener">vue可视化系统，组件拼接页面</a></p>
 <p>，从开始的毫无头绪，到目前的一步步踩坑经历了从绝望看到希望，感觉自己变牛逼了（其实并没有）！好了废话不多说，内容比较多和杂，一步一步来；
-        
-          <a class="article-more-a" href="/2018/07/12/vue拖拽组件vue可视化问题记录.html#more">more >></a>
         
       
 
@@ -474,8 +552,6 @@ var _hmt = _hmt || [];
 <p>我们已经提供了一份要安装的文件，请首先到 <a href="https://github.com/feix760/WebViewDebugHook" target="_blank" rel="noopener">https://github.com/feix760/WebViewDebugHook</a> 下载文件。</p>
 <h3 id="1、root设备"><a href="#1、root设备" class="headerlink" title="1、root设备"></a>1、root设备</h3><p>因为涉及到 root 权限，因此需要将手机进行 root。有很多工具可以来 root，比如KingRoot、一键root、360一键root等。如果你安装了QQ电脑管家，可以在“电脑管家-工具箱-其他”列表里面看到KingRoot。
         
-          <a class="article-more-a" href="/2017/10/18/Chrome inspect调试webview的强制开启方法.html#more">more >></a>
-        
       
 
       
@@ -551,8 +627,6 @@ var _hmt = _hmt || [];
         <p> 这两周手里的项目第一期0的阶段已经基本结束了，后边的迭代还没有开始，所以这两天闲来没事在梳理在做项目时遇到的问题和需要优化的点，昨天晚上加班点击做过的东西发现一个可优化的问题，之前没有做是因为时间紧任务重，所以用了一个比较暴力的方法暂时解决了，但是当时我思考中有一个思路觉得可以解决却没有用，所以就用了一点时间解决这个问题，下边就来说说场景：</p>
 <p>在app里有个列表页和详情页，列表页大概就和朋友圈布局差不多，有内容和图片，详情页里只是多了个评论，列表的页面是原生的，详情页是h5的，下面问题来了，在原生里图片是正方形的，不管我上传什么样的图片都是正方形，看上去是图片裁剪，但实际上如果宽&gt;高这个正方形里展示的是图片高度100%，宽度截取然后展示平铺展示，这样看没有变形效果；我们在h5页面当时没有做太多想法，因为公司用的是七牛云的图片存贮，所以用了七牛云的API里的裁剪，直接硬生生的搞成了正方向，就变成了如下效果：</p>
 <p>app详情效果</p>
-        
-          <a class="article-more-a" href="/2017/08/16/css实现正方形图片展示网格布局.html#more">more >></a>
         
       
 
@@ -721,8 +795,6 @@ var _hmt = _hmt || [];
 <p>​    在整个项目开发过程中其实没遇到什么特别难的技术问题，主要是公司的node框架使用上可能有很多不是太了解踩了一些坑，这里就不多说了；同步开发的三个项目其中两个是vue+nuxt+公司node架构搭建中间成做的后台系统，vue对于我来说没什么挑战性分配给我的工作早早就解决了，之后主要工作就是一直带一个校招新手做一个h5页面，嵌套在APP中的一个项目，由于这个新手没做过项目所以基本手把手教，之前在大数字也带过一个校招研究生两个对比还是大数字的校招基础扎实一点，没带多久基本就已经出师了；现在这个貌似带了这一整个项目进步也不是很大，主要是基础不扎实，很多东西都不了解；主要在这个项目中遇到很多坑，主要内部的node框架用了<a href="http://www.xidea.org/lite/index.html" target="_blank" rel="noopener">lite</a>模版，这个模版之前从未听过有一些不太习惯；不过在做这个h5项目中还是有一点收获的，仔细想来最大的收获是在教的过程中发现自己的不足；感觉在做项目的时候遇到很多问题都像闯关一样，每过一关都觉得好爽；</p>
 <p>​    好了废话不多说，进入主题，不知道谁遇到过，反正我遇到了，（我的应用场景：在一个详情页最下边有一个发布评论的div，这个div是fixed的，里边有个input和submit按钮，在详情的content里有一个评论的click事件，点击后我会让这个fixed里的input聚焦，在APP里会唤起键盘，做完后发现安卓没有问题，在IOS里可以唤起键盘但是fixed这个div会被键盘遮挡住，体验不好，所以需要解决这个问题，就有了之后的一切摸索过程……）之前没遇到过第一次遇到我 首先百度原因，各种说法都有如下是查到的两个比较靠谱的评论链接，或许你也回遇到相同的问题，希望对你有所帮助：</p>
         
-          <a class="article-more-a" href="/2017/08/10/实战记录：IOS关于input聚焦弹出系统虚拟键盘时，挡住input.html#more">more >></a>
-        
       
 
       
@@ -802,8 +874,6 @@ var _hmt = _hmt || [];
         <p>有时候我们在开发环境用node运行本地项目的时候会爆出“Error: listen EADDRINUSE :::8080”这样的错误提示如下图：</p>
 <p><img src="\images\关闭node占用端口\1.png" alt="1"></p>
 <p>这种情况我们都知道是8080端口被占用了，也许我们有其他的项目在运行占用这个端口；但今天我之所以要暴力解决是因为我发现我其他项目并没有运行，也看不到哪个应用占用这个端口，这时候我们怎么办，貌似我们只有重启电脑这种办法，今天我来分享一个暴力敲码关闭占用这个端口的应用步骤如下（此处以8080端口为例）：
-        
-          <a class="article-more-a" href="/2017/07/12/暴力关闭node占用的端口号.html#more">more >></a>
         
       
 
@@ -907,93 +977,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/06/30/实战react小记二.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-实战react小记一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/19/实战react小记一.html">实战react小记一</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/19/实战react小记一.html" class="archive-article-date">
-  	<time datetime="2017-06-19T09:13:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​    最近公司调整，我有机会从0开始做一个项目感觉很爽；下面简单说一下我们的技术选型：</p>
-<p>​    1.前端展示页选用公司自己的nodejs框架搭建前端页面</p>
-<p>​    2.后台系统用react作为框架搭建后台页面</p>
-<p>​    3.后台系统是用nodejs作为中间层接收后端接口数据后渲染模版传给客户端（浏览器）</p>
-<p>​    之前一直在看react的demo和API从来没有在项目中用过，之前看demo和api时觉得react的写法上实在让我这个纯前端觉得高大上同时望而却步的感觉，这次有机会用react在实际项目中使用内心却有那么一点的小激动；好了废话不多说，下面就说说react吧（由于第一次用，记录不对的地方还请看官大大批评指正）</p>
-<p>​    由于是实战小记，这里就不说react是什么，react解决了什么等问题了，这些问题可以在搜索引擎搜到一堆大大们的文章学习，今天以实战经历为主；我们用了（<a href="https://ant.design/" target="_blank" rel="noopener">antDesign</a>）这个前端框架的，先说说react创建组件的ES5和ES6两种方法：</p>
-<p>ES5：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> reactDOM <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="comment">/*子组件*/</span></span><br><span class="line"><span class="keyword">var</span> Hello = React.createClass(&#123;</span><br><span class="line">  getIntialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//初始化组件状态</span></span><br><span class="line">  getDefaultProps： <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//初始化组件的默认属性</span></span><br><span class="line">  </span><br><span class="line">  propTypes: &#123;&#125;, <span class="comment">//规定属性的存在性和类型</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">//一些生命周期相关函数</span></span><br><span class="line">  componentWillMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被嵌入之前触发</span></span><br><span class="line">  componentDidMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被嵌入之后触发</span></span><br><span class="line">  componentWillReceiveProps: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//当props有改变时触发</span></span><br><span class="line">  componentWillUnmount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;, <span class="comment">//组件被注销之前触发</span></span><br><span class="line">  <span class="comment">//渲染函数，不能省略    </span></span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span> ;     </span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Hello</span><br><span class="line"><span class="comment">/*父组件*/</span></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Hello name=<span class="string">"John"</span> /&gt;,</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'App'</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2017/06/19/实战react小记一.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/19/实战react小记一.html">展开全文 >></a>
         </p>
       
 
@@ -1136,7 +1119,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1145,6 +1128,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1160,7 +1147,23 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MongoDB</a>
+                <a href="javascript:void(0)" class="js-tag color2">vue3.x</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">DllPlugin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">package</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1176,11 +1179,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">package</a>
+                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1189,18 +1188,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vue3.x</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">DllPlugin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1220,19 +1207,15 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">拖拽</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">elementUI</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">封装</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1315,7 +1298,7 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;span&gt;卖马为生！&lt;/span&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;img src=&quot;/images/my_gzh.jpg&quot; /&gt;</div>
   	  	
     	</section>
     
